@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router';
-//import Image from 'next/image'
-import { FormWrapper } from './FormWrapper';
-//import { AiOutlineRadiusUpright } from 'react-icons/ai';
+import FormWrapper from './FormWrapper';
 
 const Form = ({ Login, error }) => {
     const [details, setDetails] = useState({ email: "", password: "" });
@@ -25,12 +23,12 @@ const Form = ({ Login, error }) => {
                         <div className="form-inner">
 
                             <div className="companyLogo">
-                                 <div className="login_otish">
+                                <div className="login_otish">
                                     <h2>Login</h2>
                                 </div>
                                 <div className="login_otish">
                                     <div className="nature">
-                                        <img src="https://top-school.uz/wp-content/uploads/2020/04/FB_IMG_1616150236272.jpg" alt="soliq gerb"/>
+                                        <img src="https://top-school.uz/wp-content/uploads/2020/04/FB_IMG_1616150236272.jpg" alt="soliq gerb" />
                                     </div>
                                 </div>
                             </div>

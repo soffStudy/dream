@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GloginW } from './LoginWrapper';
+import GloginW from './LoginWrapper';
 import Form from './Form';
 import { useRouter } from 'next/router';
 // import Menu from "../menu"

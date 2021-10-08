@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const GloginW = styled.div`
+const GloginW = styled.div`
     padding-top: 70px;
     /* background-color: blueviolet; */
     height: 100vh;
@@ -59,3 +59,5 @@ background: linear-gradient(321deg, rgba(6,87,171,1) 0%, rgba(120,2,255,1) 46%, 
   background-position: 100%, 0%;
 } 
 `;
+
+export default GloginW

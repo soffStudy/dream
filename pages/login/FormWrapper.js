@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FormWrapper = styled.div`
+const FormWrapper = styled.div`
 
     .button {
         appearance: none;
@@ -160,3 +160,5 @@ export const FormWrapper = styled.div`
     }
    
 `;
+
+export default FormWrapper
