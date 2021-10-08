@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Asosiy from './asosiy'
+// import Asosiy from './asosiy'
+import Login from './../pages/login/Login'
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <Asosiy></Asosiy>
+        <Login />
+        {/* <Asosiy></Asosiy> */}
       </main>
     </div>
   )
