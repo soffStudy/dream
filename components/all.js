@@ -1,6 +1,6 @@
 import React from 'react'
 import Footer from './footer'
-import Dashboard from './dashboard'
+import Dashboard from './dashboard2'
 import Layout from '../styleW/layout'
 
 const All = ({ children }) => {
