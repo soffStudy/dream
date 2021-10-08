@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Glogin from './../pages/login/Login'
 
 export default function Home() {
   return (
@@ -10,7 +11,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>salom</h1>
+       {/* // <h1>salom</h1>// */}
+        <Glogin />
       </main>
     </div>
   )
