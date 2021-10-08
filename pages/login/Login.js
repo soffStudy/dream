@@ -31,10 +31,10 @@ function Glogin() {
         email: details.email
       })
       router.push({
-        pathname: "hujjatlar",
+        pathname: "asosiy",
         query: details.role
       })
-      router.push("hujjatlar")
+      router.push("asosiy")
     } else {
       console.log("Ma'lumot topilmadi");
 
