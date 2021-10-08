@@ -26,7 +26,10 @@ export const FormWrapper = styled.div`
         border: none;
         outline: none;
     }
-
+    /* btn hover */
+    
+       
+          /* hover */
     form {
         display: block;
         position: relative;

@@ -5,8 +5,8 @@ export const GloginW = styled.div`
     /* background-color: blueviolet; */
     height: 100vh;
     /* background: linear-gradient(-45deg, #040139, #0e0b4b, #3183CB, #040139); */
-    background: rgb(6,87,171);
-background: linear-gradient(321deg, rgba(6,87,171,1) 0%, rgba(120,2,255,1) 46%, rgba(72,3,145,1) 100%);
+    background: rgb(6,171,155);
+    background: linear-gradient(321deg, rgba(6,171,155,1) 0%, rgba(2,20,255,1) 46%, rgba(3,111,145,1) 100%);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     /* animatsia */
