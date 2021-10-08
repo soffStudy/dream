@@ -12,7 +12,7 @@ const YangiHujjat = () => {
                     <meta name="description" content="dream education haqida toliq malumot" />
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
-                <h1>yangi hujjat</h1>
+                <h1 className='text-center'>yangi hujjat</h1>
             </YangiHujjatW>
         </All>
     )
