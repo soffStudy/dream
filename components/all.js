@@ -6,9 +6,11 @@ import Layout from '../styleW/layout'
 const All = ({ children }) => {
     return (
         <Layout>
-            <div className='d-flex '>
+            <div className=' '>
 
-                <Dashboard />
+                <div className='dashboard'>
+                    <Dashboard />
+                </div>
 
                 <div className='w-100'>
                     {children}

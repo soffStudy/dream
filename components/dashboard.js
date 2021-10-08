@@ -6,14 +6,21 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import Link from 'next/link'
+import Link from 'next/link';
+import { FaListUl } from "react-icons/fa";
+import { AiTwotoneHome } from "react-icons/ai";
+import { HiOutlineDocument, HiOutlineDocumentAdd } from "react-icons/hi";
+import Layout from '../styleW/layout';
+// import { FaListUl } from "react-icons/fa";
+
+
+
+
 
 export default function TemporaryDrawer() {
     const [state, setState] = React.useState({
         top: false,
         left: false,
-        bottom: false,
-        right: false,
     });
 
     const toggleDrawer = (anchor, open) => (event) => {
@@ -34,19 +41,19 @@ export default function TemporaryDrawer() {
             <List>
                 <Link href="asosiy">
                     <ListItem button>
-                        <a>Asosiy</a>
+                        <a><span className='mb-2 fs-5'><AiTwotoneHome /> </span>Asosiy</a>
                     </ListItem>
                 </Link>
 
                 <Link href="hujjatlar">
                     <ListItem button>
-                        <a>hujjatlar</a>
+                        <a><span className='mb-2 fs-5'><HiOutlineDocument /> </span>Hujjatlar</a>
                     </ListItem>
                 </Link>
 
                 <Link href="yangiHujjat">
                     <ListItem button>
-                        <a>Yangu hujjatlar</a>
+                        <a><span className='mb-2 fs-5'><HiOutlineDocumentAdd /> </span>Yangu hujjatlar</a>
                     </ListItem>
                 </Link>
 
@@ -67,7 +74,7 @@ export default function TemporaryDrawer() {
         <div>
             {['left'].map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+                    <Button onClick={toggleDrawer(anchor, true)} className="fw-bold fs-3 btn-primary" > <FaListUl /></Button>
                     <Drawer
                         anchor={anchor}
                         open={state[anchor]}
