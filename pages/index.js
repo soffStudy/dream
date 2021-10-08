@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Asosiy from './asosiy'
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>salom</h1>
+        <Asosiy></Asosiy>
       </main>
     </div>
   )
