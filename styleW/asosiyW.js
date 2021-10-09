@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const AsosiyW = styled.div`
-color: black;
 .asosiyCardlar{
     margin: 10px;
     padding: 10px;

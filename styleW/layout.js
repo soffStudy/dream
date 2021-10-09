@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Layout = styled.div`
-color: green;
+padding-left:100px;
 
 .dashboard{
 position: sticky;
