@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 const HujjatlarW = styled.div`
-color: blue;
+   height: 100vh;
+    color: blue;
+    
 `;
 
 export default HujjatlarW

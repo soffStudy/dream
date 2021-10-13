@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const FormWrapper = styled.div`
+const FormWrapper = styled.div`
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 60px;
 
     .button {
         appearance: none;
@@ -163,3 +167,5 @@ export const FormWrapper = styled.div`
     }
    
 `;
+
+export default FormWrapper;
