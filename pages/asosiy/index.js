@@ -32,6 +32,7 @@ const Asosiy = () => {
                                                 <p>lorem ipsum</p>
                                         </div>
                                     </div>
+                                </a>
                                 </Link>
                             </div>
 
@@ -46,6 +47,7 @@ const Asosiy = () => {
                                             <p>lorem ipsum</p>
                                         </div>
                                     </div>
+                                </a>
                                 </Link>
                             </div>
 
