@@ -8,6 +8,14 @@ position: sticky;
 top: 10px;
 }
 
+.smMenu{
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
 `;
 
 export default Layout

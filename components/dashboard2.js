@@ -16,6 +16,9 @@ import Link from 'next/link';
 import { FaListUl } from "react-icons/fa";
 import { AiTwotoneHome, AiOutlineArrowLeft } from "react-icons/ai";
 import { HiOutlineDocument, HiOutlineDocumentAdd } from "react-icons/hi";
+import { BsPeopleFill } from "react-icons/bs";
+
+
 
 const drawerWidth = 240;
 
@@ -114,7 +117,18 @@ export default function MiniDrawer() {
                         <FaListUl />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        ma'lumotlar
+                        <div className="container d-flex justify-conte">
+                            <div>
+                                <img src="	https://dreamedu.uz/images/dreamedu/logo/photo_2021-04-19_16-41-50.jpg" alt="dream edu rasmlar" width="100" height='50' />
+                            </div>
+                            <div className='smMenu'>
+                                <ul>
+                                    <li>+99891-191-94-42</li>
+                                    <li>+99891-191-55-78</li>
+                                </ul>
+                            </div>
+                            <p>konsultatsiya</p>
+                        </div>
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -168,7 +182,7 @@ export default function MiniDrawer() {
                     <Link href="xodimlar">
                         <ListItem button>
                             <ListItemIcon>
-                                <span className='mb-2 fs-4 ms-1 '><HiOutlineDocumentAdd /> </span>
+                                <span className='mb-2 fs-4 ms-1 '><BsPeopleFill /> </span>
                             </ListItemIcon>
                             <ListItemText>
                                 Xodimlar
