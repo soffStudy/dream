@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import FooterWrapper from '../styleW/footerW'
 
 const Footer = () => {
+    const [isOpen, setOpen] = useState(false)
+
     return (
-        <div>
-            <h1 className='text-center'>Footer</h1>
-        </div>
+        <FooterWrapper>
+            <div className="container">
+                <div className='footer'>
+                    <img src="logoSchool.jpg" alt="logo rasm 4k photo tv noutbook 2021 covid" />
+                    <h3>Консалтинг</h3>
+                </div>
+            </div>
+        </FooterWrapper>
     )
 }
 

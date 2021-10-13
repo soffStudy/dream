@@ -13,8 +13,6 @@ const Form = ({ Login, error }) => {
 
     // bu yerda malumotlar kiritiladi va tekshiriladi. Agar togri bolsa yozilgan page ga otadi, notogri bolsa otmaydi
 
-
-
     return (
         <FormWrapper>
             <div className="row mt-3">
@@ -32,19 +30,9 @@ const Form = ({ Login, error }) => {
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="radio_button">
-                                <input type="radio" value="user" name="radio" onChange={(e) => setDetails({ admin: e.target.value })} />
-                                <label className="text-secondary ms-2">Users</label>
-                                <input type="radio" value="admin" name="radio" onChange={(e) => setDetails({ admin: e.target.value })} />
-                                <label className="text-secondary ms-2">Admin</label>
-                            </div> */}
                             <div className="text-danger">
                                 {(error != "") ? (<div className="error">{error}</div>) : ""}
                             </div>
-                            {/* <div className="form-group">
-                                <label htmlFor="name">Login: </label>
-                                <input type="text" name="name" id="name" className="fjf" onChange={e => setDetails({ ...details, name: e.target.value })} value={details.name} onClick={console.log(details.name)} />
-                            </div> */}
                             <div className="form-group">
                                 <label htmlFor="email">Login: </label>
                                 <input type="text" name="email" id="email" className="fjf" onChange={e => setDetails({ ...details, email: e.target.value })} value={details.email} onClick={console.log(details.email)} />

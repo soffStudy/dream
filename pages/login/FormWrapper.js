@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 const FormWrapper = styled.div`
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 60px;
 
     .button {
         appearance: none;
@@ -26,7 +30,10 @@ const FormWrapper = styled.div`
         border: none;
         outline: none;
     }
-
+    /* btn hover */
+    
+       
+          /* hover */
     form {
         display: block;
         position: relative;
@@ -161,4 +168,4 @@ const FormWrapper = styled.div`
    
 `;
 
-export default FormWrapper
+export default FormWrapper;

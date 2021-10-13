@@ -1,17 +1,18 @@
 import React from 'react'
 import Head from 'next/head'
 import All from '../../components/all'
-import YangiHujjatW from '../../styleW/yangiHujjatW'
+import YangiHujjatW from './yangiHujjatW'
 
 const YangiHujjat = () => {
     return (
         <All>
+            <Head>
+                <title>Dream</title>
+                <meta name="description" content="dream education haqida toliq malumot" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <YangiHujjatW>
-                <Head>
-                    <title>Dream</title>
-                    <meta name="description" content="dream education haqida toliq malumot" />
-                    <link rel="icon" href="/favicon.ico" />
-                </Head>
+                
                 <h1 className='text-center'>yangi hujjat</h1>
                 <div className="container">
                     <div className="row">
