@@ -8,9 +8,7 @@ const All = ({ children }) => {
         <Layout>
             <div className=' '>
 
-                <div className='dashboard'>
-                    <Dashboard />
-                </div>
+                <Dashboard />
 
                 <div className='w-100'>
                     {children}

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import GloginW from './LoginWrapper';
 import Form from './Form';
 import { useRouter } from 'next/router';
-// import Menu from "../menu"
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Head from 'next/head'
@@ -24,8 +23,6 @@ function Glogin() {
   const Login = details => {
 
     if (details.email == adminUser.email && details.password == adminUser.password) {
-      // console.log("logged in");
-
       setUser({
         name: details.name,
         email: details.email
@@ -38,15 +35,9 @@ function Glogin() {
     } else {
       console.log("Ma'lumot topilmadi");
 
-      // console.log(details);
-
       setError("Error")
     }
   }
-
-  // const Logout = () => {
-  //   setUser({ name: "", email: "" })
-  // }
 
   return (
 

@@ -131,7 +131,7 @@ export default function MiniDrawer() {
                     <Link href="asosiy">
                         <ListItem button>
                             <ListItemIcon>
-                                <span className='mb-2 fs-5'><AiTwotoneHome /> </span>
+                                <span className='mb-2 ms-1 fs-4 text-center'><AiTwotoneHome /> </span>
                             </ListItemIcon>
                             <ListItemText>
                                 Asosiy
@@ -143,7 +143,7 @@ export default function MiniDrawer() {
                     <Link href="hujjatlar">
                         <ListItem button>
                             <ListItemIcon>
-                                <span className='mb-2 fs-5'><HiOutlineDocument /> </span>
+                                <span className='mb-2 fs-4 ms-1 '><HiOutlineDocument /> </span>
                             </ListItemIcon>
                             <ListItemText>
                                 Hujjatlar
@@ -155,10 +155,23 @@ export default function MiniDrawer() {
                     <Link href="yangiHujjat">
                         <ListItem button>
                             <ListItemIcon>
-                                <span className='mb-2 fs-5'><HiOutlineDocumentAdd /> </span>
+                                <span className='mb-2 fs-4 ms-1 '><HiOutlineDocumentAdd /> </span>
                             </ListItemIcon>
                             <ListItemText>
                                 Yangi Hujjatlar
+                            </ListItemText>
+
+                        </ListItem>
+                    </Link>
+
+
+                    <Link href="xodimlar">
+                        <ListItem button>
+                            <ListItemIcon>
+                                <span className='mb-2 fs-4 ms-1 '><HiOutlineDocumentAdd /> </span>
+                            </ListItemIcon>
+                            <ListItemText>
+                                Xodimlar
                             </ListItemText>
 
                         </ListItem>
