@@ -10,22 +10,12 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import TableSortLabel from '@mui/material/TableSortLabel';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
-import { data } from '../table/data';
+import { data } from './data';
 import { useRouter } from 'next/router';
-import All from '../../components/all'
-import TableWrapper from '../table/TableWrapper';
-
 
 function createData(name, calories, fat, carbs, protein) {
   return {
@@ -68,42 +58,42 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-    {
-        id: 'name',
-        numeric: false,
-        disablePadding: true,
-        label: 'F.I.O',
-    },
-    {
-        id: 'address',
-        numeric: false,
-        disablePadding: true,
-        label: 'Manzil',
-    },
-    {
-        id: 'tel',
-        numeric: true,
-        disablePadding: false,
-        label: 'Telefon raqam',
-    },
-    {
-        id: 'state',
-        numeric: false,
-        disablePadding: false,
-        label: 'Topshirgan davlati',
-    },
-    {
-        id: 'direction',
-        numeric: true,
-        disablePadding: false,
-        label: "Topshirgan yo'nalishi",
-    },
-     {
-        id: 'active',
-        numeric: true,
-        disablePadding: false,
-        label: 'Active',
-    }
+  {
+    id: 'name',
+    numeric: false,
+    disablePadding: true,
+    label: 'F.I.O',
+  },
+  {
+    id: 'address',
+    numeric: false,
+    disablePadding: true,
+    label: 'Manzil',
+  },
+  {
+    id: 'tel',
+    numeric: true,
+    disablePadding: false,
+    label: 'Telefon raqam',
+  },
+  {
+    id: 'state',
+    numeric: false,
+    disablePadding: false,
+    label: 'Topshirgan davlati',
+  },
+  {
+    id: 'direction',
+    numeric: true,
+    disablePadding: false,
+    label: "Topshirgan yo'nalishi",
+  },
+  {
+    id: 'active',
+    numeric: true,
+    disablePadding: false,
+    label: 'Active',
+  }
 ];
 
 function EnhancedTableHead(props) {
@@ -202,8 +192,6 @@ export default function EnhancedTable() {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
-      <All>
-          <TableWrapper>
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <TableContainer>
@@ -236,7 +224,6 @@ export default function EnhancedTable() {
                       role="checkbox"
                       tabIndex={-1}
                       key={row.name}
-                      className={` ${row.actives== "tolagan" && "ff" || "d-none"}`}
                     >
                       <TableCell
                         component="th"
@@ -250,7 +237,7 @@ export default function EnhancedTable() {
                       <TableCell align="right">{row.tel}</TableCell>
                       <TableCell align="right">{row.state}</TableCell>
                       <TableCell align="right">{row.direction}</TableCell>
-                      <TableCell align="right"><div className={` yumaloq  ${row.actives== "tolagan" && "yashil" || "d-none"}`}></div> </TableCell>
+                      <TableCell align="right"><div className={` yumaloq  ${row.actives == "tolagan" && "yashil" || "sariq"}`}></div> </TableCell>
 
                     </TableRow>
                   );
@@ -268,7 +255,7 @@ export default function EnhancedTable() {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[10, 15, 25]}
+          rowsPerPageOptions={[5, 10, 25]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}
@@ -282,7 +269,5 @@ export default function EnhancedTable() {
         label="Dense padding"
       />
     </Box>
-    </TableWrapper>
-    </All>
   );
 }

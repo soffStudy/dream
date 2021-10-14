@@ -21,7 +21,7 @@ const Hujjatlar = () => {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <h1>Hujjatlar</h1>
-
+                <Table/>
 
             </HujjatlarW>
         </All>

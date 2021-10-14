@@ -59,86 +59,15 @@ const Docs = () => {
         if (value.id == state) fullData = value;
     })
 
-    const printPageFun = (divName) => {
-        var printContents = document.getElementById(divName).innerHTML
-        var originalContents = document.body.innerHTML
-        document.body.innerHTML = printContents
-        window.print()
-        document.body.innerHTML = originalContents
-    }
     return (
         <All>
             <DocsWrapper>
-                <div className='d-flex justify-content-end m-2'>
-                    <button className="btn btn-primary" onClick={() => printPageFun('print')}>
-                        download
-                    </button>
-                </div>
+
+
                 <div className="container docs2">
-                    <a target="_blank" download href="rasm.jpg">Download</a>
+                    <img src="favicon.ico" alt="next" />
+                    <a href="favicon.ico" download> Download</a>
 
-                    <div className='ijrochi' id='print'>
-                        <p className='ijro'>
-                            Ижрочи:
-                        </p>
-                        <p>
-                            "DREAM EDU" МЧЖ
-                        </p>
-                        <p>
-                            Юридик манзил: Тошкент ш., Чилонзор т.,
-                            Бунёдкор шох кўчаси, 52-уй.
-                            H/R: 20208000705300796001
-                            Банк: “Ўзсаноатқурилишбанк” АТБ
-                            Сергели филиали
-                            MFO: 00403
-                            ИИН: 307874545
-                        </p>
-                        <p>
-                            Директор:____________ Н.А.Раҳмутуллаева
-                        </p>
-                        <p className='text-start'>
-                            +998971991300<br />
-                            +998971991400<br />
-                            +998971991500<br />
-                        </p>
-                    </div>
-                    <div className='byurtma'>
-
-                        <p className='byurtmachi'>
-                            Буюртмачи :
-                        </p>
-
-                        <p>
-                            ФИО: <strong>{fullData.name}</strong>
-                        </p>
-
-                        <p>
-                            Паспорт серияси:
-                            _________________________________________
-                        </p>
-
-                        <p>
-                            Қачон ва ким томонидан берилган:
-                            _________________________________________
-                            _________________________________________
-                        </p>
-
-                        <p>
-                            Яшаш манзили:<br />
-                            <strong>{fullData.address}</strong>
-                        </p>
-
-                        <p>
-                            Тел: _______________________
-                            _______________________
-                        </p>
-
-                        <p className='text-center'>
-                            _________<br />
-                            имзо
-                        </p>
-
-                    </div>
                 </div>
             </DocsWrapper>
         </All>

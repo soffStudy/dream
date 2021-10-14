@@ -7,11 +7,9 @@ const FooterWrapper = styled.div`
        
         background-color: blue;
         padding: 20px;
-        border-radius: 10px;
-        ul{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        border-radius: 16px;
+        bottom: 0 !important;
+        h3{
             color: white;
             font-size: 18px;
         }

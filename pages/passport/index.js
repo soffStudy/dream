@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Head from 'next/head'
 import All from '../../components/all'
-import AsosiyW from '../asosiy/asosiyW'
 import Link from 'next/link'
+import PasswordWrapper from './passportW'
 
 const Passport = () => {
-
-
 
     return (
         <All>
@@ -15,43 +13,34 @@ const Passport = () => {
                 <meta name="description" content="dream education haqida toliq malumot" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <AsosiyW>
-
+            <PasswordWrapper>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-4 col-md-6 col-sm-12">
+                        <div className="col-6">
                             <Link href='docs'>
-                                <a>
-                                    <div className='asosiyCardlar'>
+                                <div className='passport'>
+                                    <p>
                                         passport
-                                    </div>
-                                </a>
+                                    </p>
+                                    <p className='dreamEdu'>
+                                        Dream Edu
+                                    </p>
+                                </div>
                             </Link>
                         </div>
-                        <div className="col-lg-4 col-md-6 col-sm-12">
-                            <Link href='docs'>
-                                <a>
-                                    <div className='asosiyCardlar'>
-                                        Hujjat 1
-                                    </div>
-                                </a>
-                            </Link>
-                        </div>
-                        <div className="col-lg-4 col-md-6 col-sm-12">
-                            <Link href='docs'>
-                                <a>
-                                    <div className='asosiyCardlar'>
-                                        Hujjat 2
-                                    </div>
-                                </a>
+                        <div className="col-6">
+                            <Link href='#'>
+                                <div className=' passport'>
+                                    <p>passport</p>
+                                    <p className='dreamEdu'>Dream Edu</p>
+                                </div>
                             </Link>
                         </div>
                     </div>
                 </div>
-
-            </AsosiyW>
+            </PasswordWrapper>
         </All>
     )
 }
 
-export default Passport
+export default Passport;
