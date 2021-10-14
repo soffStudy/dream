@@ -11,6 +11,7 @@ export const data = [
                 payment2: "15-sentabr 3 000 000",
                 manager: "Mushtariy",
                 status: "active",
+                statusRealTime: 'tolagan',
                 id: "1",
                 actives: "tolagan"
         },
@@ -24,6 +25,7 @@ export const data = [
                 payment2: "15-sentabr 3 000 000",
                 manager: "Madina",
                 status: "Checked",
+                statusRealTime: 'tolagan',
                 id: "2",
                 actives: "tolagan"
         },
@@ -37,8 +39,9 @@ export const data = [
                 payment2: "15-sentabr 3 000 000",
                 manager: "Komila",
                 status: "Not active",
+                statusRealTime: 'tolamagan',
                 id: "3",
-                actives: "tolagan"
+                actives: "tolamagan"
         },
         {
                 name: "Doniyor Deff",
@@ -50,6 +53,7 @@ export const data = [
                 payment2: "15-sentabr 3 000 000",
                 manager: "Omina",
                 status: "Checked",
+                statusRealTime: 'tolamagan',
                 id: "4",
                 actives: "tolamagan"
         },
@@ -63,6 +67,7 @@ export const data = [
                 payment2: "15-sentabr 3 000 000",
                 manager: "Salima",
                 status: "active",
+                statusRealTime: 'tolagan',
                 id: "5",
                 actives: "tolagan"
         },

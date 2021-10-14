@@ -9,19 +9,8 @@ const Hujjatlar = () => {
 
     return (
         <All>
-             <Head>
-                <title>Dream</title>
-                <meta name="description" content="dream education haqida toliq malumot" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
             <HujjatlarW>
-                <Head>
-                    <title id="dream">Dream</title>
-                    <meta name="description" content="dream education haqida toliq malumot" />
-                    <link rel="icon" href="/favicon.ico" />
-                </Head>
-                {/* <h1>Hujjatlar</h1> */}
-                <Table/>
+              <h1>salom</h1>
 
             </HujjatlarW>
         </All>

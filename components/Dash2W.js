@@ -8,9 +8,9 @@ const DashWrapper = styled.div`
         background-color: #2D285E;
     }
     .dreamLogo{
-        width: 100px;
-        height: 70px;
-        object-fit: cover;
+        width: 180px;
+        /* height: 70px; */
+        /* object-fit: cover; */
     }
 `;
 

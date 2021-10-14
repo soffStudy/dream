@@ -21,14 +21,21 @@ const Passport = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-6">
-                            <Link href='docs'>
+                            
                                 <div className='passport'>
                                     <AccountBoxIcon className='fs-2'/>
                                     <p>
                                         Passport
                                     </p>
+                                    <div className='d-flex justify-content-between w-100 p-2'>
+                                    <Link href='docs'>
+                                        <button className='btn btn-light'>Korish</button>
+                                    </Link>
+                                        
+                                        <a href="favicon.ico" download><button className='btn btn-primary'>download</button></a>
+                                    </div>
                                 </div>
-                            </Link>
+                           
                         </div>
                         <div className="col-6">
                             <Link href='#'>

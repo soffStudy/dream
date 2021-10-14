@@ -120,23 +120,17 @@ export default function MiniDrawer() {
                         <FaListUl />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div" className='w-100'>
-                        <div className="container d-flex align-items-center justify-content-between w-100">
-                            <div>
-                                <img src="dream.png" alt="dream edu rasmlar"  className='dreamLogo' />
-                            </div>
-                            <div className='smMenu'>
-                                <ul>
-                                    <li>+99891-191-94-42</li>
-                                    <li>+99891-191-55-78</li>
-                                </ul>
-                            </div>
+                        <div className="container d-flex align-items-center justify-content-end w-100">
                             <p>Konsultatsiya</p>
                         </div>
                     </Typography>
                 </Toolbar>
             </AppBar>
             <Drawer variant="permanent" open={open}>
-                <DrawerHeader>
+                <DrawerHeader className='d-flex justify-content-between'>
+                            <div>
+                                <img src="DreamEduLogo.png" alt="dream edu rasmlar"  width="110px" />
+                            </div>
                     <IconButton onClick={handleDrawerClose}>
                         <AiOutlineArrowLeft />
                     </IconButton>
@@ -195,16 +189,7 @@ export default function MiniDrawer() {
                     </Link>
 
                 </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                menu                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
+          
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />

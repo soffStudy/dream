@@ -12,11 +12,11 @@ import Select from '@mui/material/Select';
 import StudentTable from './table.js'
 import ResponsiveDatePickers from './pickers'
 import BasicDatePicker from './pickers2'
-// import All from '../../components/all'
+import All from '../../components/all'
 
 
 const Table = () => {
-    const router = useRouter()
+    const router = useRouter();
     const [searchStern, setSearchstern] = useState('');
     const [age, setAge] = React.useState('');
 
@@ -29,9 +29,10 @@ const Table = () => {
         router.push("passport")
         console.log(ID);
     }
+    
 
     return (
-        // <All>
+        <All>
 
 
             <TableWrapper>
@@ -107,7 +108,7 @@ const Table = () => {
                 </table> */}
                 <StudentTable />
             </TableWrapper>
-        // </All> 
+        </All> 
     )
 }
 
