@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import All from '../../components/all'
-import HujjatlarW from '../../styleW/hujjatlar'
+import HujjatlarW from './../hujjatlar/hujjatlar'
 
 const Hujjatlar = () => {
     return (

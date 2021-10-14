@@ -21,11 +21,8 @@ import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
-import { data } from '../table/data';
+import { data } from './data';
 import { useRouter } from 'next/router';
-import All from '../../components/all'
-import TableWrapper from '../table/TableWrapper';
-
 
 function createData(name, calories, fat, carbs, protein) {
   return {
@@ -202,8 +199,6 @@ export default function EnhancedTable() {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
-      <All>
-          <TableWrapper>
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <TableContainer>
@@ -236,7 +231,6 @@ export default function EnhancedTable() {
                       role="checkbox"
                       tabIndex={-1}
                       key={row.name}
-                      className={` ${row.actives== "tolagan" && "d-none" || ""}`}
                     >
                       <TableCell
                         component="th"
@@ -250,7 +244,7 @@ export default function EnhancedTable() {
                       <TableCell align="right">{row.tel}</TableCell>
                       <TableCell align="right">{row.state}</TableCell>
                       <TableCell align="right">{row.direction}</TableCell>
-                      <TableCell align="right"><div className={` yumaloq  ${row.actives== "tolagan" && "d-none" || "sariq"}`}></div> </TableCell>
+                      <TableCell align="right"><div className={` yumaloq  ${row.actives== "tolagan" && "yashil" || "sariq"}`}></div> </TableCell>
 
                     </TableRow>
                   );
@@ -282,7 +276,5 @@ export default function EnhancedTable() {
         label="Dense padding"
       />
     </Box>
-    </TableWrapper>
-    </All>
   );
 }

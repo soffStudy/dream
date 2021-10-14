@@ -10,6 +10,7 @@ const FooterWrapper = styled.div`
         background-color: blue;
         padding: 20px;
         border-radius: 16px;
+        bottom: 0 !important;
         h3{
             color: white;
         }

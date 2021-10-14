@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import All from '../../components/all'
-import AsosiyW from '../asosiy/asosiyW'
 import Link from 'next/link'
+import PasswordWrapper from './passportW'
 
 const Passport = () => {
-
-
 
     return (
         <All>
@@ -15,32 +13,34 @@ const Passport = () => {
                 <meta name="description" content="dream education haqida toliq malumot" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <AsosiyW>
-
+            <PasswordWrapper>
                 <div className="container">
                     <div className="row">
                         <div className="col-6">
-                            
-                                <Link href='docs'>
-                                <div className='bg-warning'>
-                                    passport
+                            <Link href='docs'>
+                                <div className='passport'>
+                                    <p>
+                                         passport
+                                    </p>
+                                    <p className='dreamEdu'>
+                                         Dream Edu
+                                    </p>
                                 </div>
-                                </Link>
+                            </Link>
                         </div>
-
                         <div className="col-6">
-                        <Link href='#'>
-                                <div className='bg-warning'>
-                                    passport
+                            <Link href='#'>
+                                <div className=' passport'>
+                                    <p>passport</p>
+                                    <p className='dreamEdu'>Dream Edu</p>
                                 </div>
-                                </Link>
+                            </Link>
                         </div>
                     </div>
                 </div>
-              
-            </AsosiyW>
+            </PasswordWrapper>
         </All>
     )
 }
 
-export default Passport
+export default Passport;

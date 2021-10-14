@@ -22,7 +22,7 @@ const Asosiy = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4 col-md-6 col-sm-12">
-                            <Link href="jamiTalabalar">
+                            <Link href="table">
                                 <a>
                                     <div className='asosiyCardlar'>
                                         <p>Jami talabalr soni</p>
@@ -67,7 +67,7 @@ const Asosiy = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </AsosiyW>
         </All>
     )

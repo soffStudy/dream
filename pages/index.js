@@ -1,6 +1,7 @@
 import Head from 'next/head'
 // import Asosiy from './asosiy'
 import Login from './../pages/login/Login'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function Home() {
