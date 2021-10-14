@@ -4,6 +4,22 @@ const TableWrapper = styled.div`
    .table{
        margin-top: 10px;
    }
+   .css-177gid-MuiTableCell-root{
+       text-align: center !important;
+   }
+   
+   .css-1azl6jz-MuiTableCell-root{
+       text-align: start !important;
+   }
+   .css-1ygcj2i-MuiTableCell-root{
+       text-align: start !important;
+   }
+   .css-10dfkli-MuiTableCell-root{
+       text-align: center;
+   }
+   .tlgan{
+       text-align: end !important;
+   }
     tr {
         transition: 0.8s;
         &:hover{
@@ -12,10 +28,10 @@ const TableWrapper = styled.div`
             transform: translateY(-4px);
         }
     }
-    th{
+    /* th{
         background-color: black;
-        color: white;
-    }
+        color: black;
+    } */
     .searchIn{
         outline: none;
        
@@ -42,6 +58,8 @@ const TableWrapper = styled.div`
         width: 20px;
         height: 20px;
         border-radius: 50%;
+        text-align: end !important;
+        margin-left: 30px;
     }
     .yashil{
         background-color: green;

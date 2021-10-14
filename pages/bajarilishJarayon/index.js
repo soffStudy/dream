@@ -239,7 +239,7 @@ export default function EnhancedTable() {
                       className={` ${row.actives== "tolagan" && "d-none" || ""}`}
                     >
                       <TableCell
-                        component="th"
+                        // component="th"
                         id={labelId}
                         scope="row"
                         padding="none"

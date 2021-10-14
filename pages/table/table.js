@@ -201,7 +201,7 @@ export default function EnhancedTable() {
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <TableContainer>
+        <TableContainer className='materialTable'>
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
@@ -231,9 +231,10 @@ export default function EnhancedTable() {
                       role="checkbox"
                       tabIndex={-1}
                       key={row.name}
+                      
                     >
                       <TableCell
-                        component="th"
+                        // component="th"
                         id={labelId}
                         scope="row"
                         padding="none"
@@ -244,7 +245,7 @@ export default function EnhancedTable() {
                       <TableCell align="right">{row.tel}</TableCell>
                       <TableCell align="right">{row.state}</TableCell>
                       <TableCell align="right">{row.direction}</TableCell>
-                      <TableCell align="right"><div className={` yumaloq  ${row.actives== "tolagan" && "yashil" || "sariq"}`}></div> </TableCell>
+                      <TableCell align="right" className="tlgan"><div className={` yumaloq  ${row.actives== "tolagan" && "yashil" || "sariq"}`}></div> </TableCell>
 
                     </TableRow>
                   );
