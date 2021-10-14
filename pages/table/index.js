@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import TableWrapper from './TableWrapper';
-import { data } from './data';
-import Link from 'next/link'
+// import { data } from './data';
+// import Link from 'next/link'
 import { useRouter } from 'next//router';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -10,26 +10,18 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import StudentTable from './table.js'
-import All from '../../components/all'
+import ResponsiveDatePickers from './pickers'
+import BasicDatePicker from './pickers2'
+// import All from '../../components/all'
 
 
 const Table = () => {
     const router = useRouter()
-
-    const[searchStern, setSearchstern] = useState('');
-
-    // const studentFullData = (val) => {
-    //     console.log(val)
-    //     router.push({
-    //         pathname: 'docs',
-    //         query: val
-    //     })
-    // }
-
+    const [searchStern, setSearchstern] = useState('');
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
-      setAge(event.target.value); 
+        setAge(event.target.value);
     };
 
     const handleRowClick = (ID) => {
@@ -39,33 +31,37 @@ const Table = () => {
     }
 
     return (
-        <All>
-     
+        // <All>
 
-        <TableWrapper>
-            <h1>Table</h1>
-              <div className='inputs'>
-                     <Box sx={{ minWidth: 120 }} className='me-3'>
+
+            <TableWrapper>
+                <h1>Talabalrning umumiy ma'lumotlari</h1>
+                <div className='inputs'>
+                    <TextField id="filled-basic" label="Filled" variant="filled" onChange={event => { setSearchstern(event.target.value) }} />
+                    <Box sx={{ minWidth: 120 }} className='ms-3 options'>
                         <FormControl fullWidth >
                             <InputLabel id="demo-simple-select-label">Status</InputLabel>
                             <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={age}
-                            label="Age"
-                            onChange={handleChange}
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value={age}
+                                label="Age"
+                                onChange={handleChange}
                             >
-                            <MenuItem value={10}>Active</MenuItem>
-                            <MenuItem value={20}>Checked</MenuItem>
-                            <MenuItem value={30}>Not active</MenuItem>
+                                <MenuItem value={10}>Active</MenuItem>
+                                <MenuItem value={20}>Checked</MenuItem>
+                                <MenuItem value={30}>Not active</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>
-                    <TextField id="filled-basic" label="Filled" variant="filled"  onChange={event=>{setSearchstern(event.target.value)}}/>
-              </div>
-               
-            {/* mani teybilim */}
-                <table className="table">
+                    <div className='inputs_22'>
+                        <ResponsiveDatePickers/>
+                        <BasicDatePicker  />
+                    </div>
+                </div>
+
+                {/* mani teybilim */}
+                {/* <table className="table">
                     <thead>
                         <tr>
                             <th scope="col">Isim Familiya</th>
@@ -80,21 +76,21 @@ const Table = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    {
-                        data.filter((val)=>{
-                        if(searchStern == ""){
-                                return val
-                        }else if(val.address.toLowerCase().includes(searchStern.toLowerCase())){
-                            return val
-                        }else if(val.name.toLowerCase().includes(searchStern.toLowerCase())){
-                            return val
-                        }else if(val.tel.toLowerCase().includes(searchStern.toLowerCase())){
-                            return val
-                        }
-                            }).map((val, key)=>{
-                                return(
+                        {
+                            data.filter((val) => {
+                                if (searchStern == "") {
+                                    return val
+                                } else if (val.address.toLowerCase().includes(searchStern.toLowerCase())) {
+                                    return val
+                                } else if (val.name.toLowerCase().includes(searchStern.toLowerCase())) {
+                                    return val
+                                } else if (val.tel.toLowerCase().includes(searchStern.toLowerCase())) {
+                                    return val
+                                }
+                            }).map((val, key) => {
+                                return (
                                     <tr key={key} style={{ cursor: 'pointer' }} onClick={() => handleRowClick(val.id)}>
-                                        <td>{val.name}</td> 
+                                        <td>{val.name}</td>
                                         <td>{val.address}</td>
                                         <td>{val.tel}</td>
                                         <td>{val.state}</td>
@@ -106,13 +102,12 @@ const Table = () => {
                                     </tr>
                                 )
                             })
-                    }
+                        }
                     </tbody>
-                    </table>
-                 {/* mani teybilim */}
-                 <StudentTable/>
-        </TableWrapper>
-        </All>
+                </table> */}
+                <StudentTable />
+            </TableWrapper>
+        // </All> 
     )
 }
 

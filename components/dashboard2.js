@@ -16,6 +16,10 @@ import Link from 'next/link';
 import { FaListUl } from "react-icons/fa";
 import { AiTwotoneHome, AiOutlineArrowLeft } from "react-icons/ai";
 import { HiOutlineDocument, HiOutlineDocumentAdd } from "react-icons/hi";
+import { BsPeopleFill } from "react-icons/bs";
+import DashWrapper from './Dash2W';
+
+
 
 const drawerWidth = 240;
 
@@ -97,6 +101,8 @@ export default function MiniDrawer() {
     };
 
     return (
+
+        <DashWrapper>
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar position="fixed" open={open}>
@@ -113,8 +119,19 @@ export default function MiniDrawer() {
                     >
                         <FaListUl />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        ma'lumotlar
+                    <Typography variant="h6" noWrap component="div" className='w-100'>
+                        <div className="container d-flex align-items-center justify-content-between w-100">
+                            <div>
+                                <img src="dream.png" alt="dream edu rasmlar"  className='dreamLogo' />
+                            </div>
+                            <div className='smMenu'>
+                                <ul>
+                                    <li>+99891-191-94-42</li>
+                                    <li>+99891-191-55-78</li>
+                                </ul>
+                            </div>
+                            <p>Konsultatsiya</p>
+                        </div>
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -168,7 +185,7 @@ export default function MiniDrawer() {
                     <Link href="xodimlar">
                         <ListItem button>
                             <ListItemIcon>
-                                <span className='mb-2 fs-4 ms-1 '><HiOutlineDocumentAdd /> </span>
+                                <span className='mb-2 fs-4 ms-1 '><BsPeopleFill /> </span>
                             </ListItemIcon>
                             <ListItemText>
                                 Xodimlar
@@ -183,7 +200,7 @@ export default function MiniDrawer() {
                     {['All mail', 'Trash', 'Spam'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
-                                hjg                            </ListItemIcon>
+                                menu                            </ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItem>
                     ))}
@@ -193,5 +210,6 @@ export default function MiniDrawer() {
                 <DrawerHeader />
             </Box>
         </Box>
+        </DashWrapper>
     );
 }

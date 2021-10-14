@@ -3,10 +3,11 @@ import All from '../../components/all'
 import Link from 'next/link'
 import DocsWrapper from './docsW'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 const Docs = () => {
     const owners = [
-    
+
         {
             name: "Ibrohim Akromov",
             address: "Toshkent shahar Yashnobod tumani Ohangrabo-54 +998946910781",
@@ -37,9 +38,9 @@ const Docs = () => {
             address: "Surxondaryo viloyti chegara-11 +998941122211",
             id: "6",
         }
-    
+
     ]
-    
+
 
 
 
@@ -59,27 +60,21 @@ const Docs = () => {
         if (value.id == state) fullData = value;
     })
 
-    // const printPageFun = (divName) => {
-    //     let printContents = document.getElementById(divName).innerHTML;
-    //     let originalContents = document.body.innerHTML;
-    //     document.body.innerHTML = printContents;
-    //     window.print();
-    //     document.body.innerHTML = originalContents;
-    // }
-
-    //  <button className="btn btn-primary" onClick={() => printPageFun('print')}>
-    //     download
-    // </button> 
-
     return (
         <All>
+            <Head>
+                <title>Dream</title>
+                <meta name="description" content="dream education haqida toliq malumot" />
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet"></link>
+            </Head>
             <DocsWrapper>
-
-           
                 <div className="container docs2">
-                 <img src="favicon.ico" alt="next" />
-                 <a href="favicon.ico" download> Download</a>
-                
+                    <img src="favicon.ico" alt="next" />
+                    <a href="favicon.ico" download> Download</a>
+
                 </div>
             </DocsWrapper>
         </All>

@@ -20,7 +20,7 @@ const Hujjatlar = () => {
                     <meta name="description" content="dream education haqida toliq malumot" />
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
-                <h1>Hujjatlar</h1>
+                {/* <h1>Hujjatlar</h1> */}
                 <Table/>
 
             </HujjatlarW>

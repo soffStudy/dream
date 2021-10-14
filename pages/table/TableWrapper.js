@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 const TableWrapper = styled.div`
-   .table{
-       margin-top: 10px;
+font-family: 'Josefin Sans', sans-serif;
+   table{
+       margin-top: 15px;
    }
    .css-177gid-MuiTableCell-root{
        text-align: center !important;
@@ -16,22 +17,38 @@ const TableWrapper = styled.div`
    }
    .css-10dfkli-MuiTableCell-root{
        text-align: center;
+       &:hover{
+           color: white;
+       }
+   }
+   .css-1qgma8u-MuiButtonBase-root-MuiTableSortLabel-root:hover{
+       color: white;
    }
    .tlgan{
        text-align: end !important;
    }
+
+   .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+       margin-left: 10px;
+   }
     tr {
         transition: 0.8s;
+        cursor: pointer;
+
         &:hover{
             background-color: gray;
             color: white;
             transform: translateY(-4px);
         }
     }
-    /* th{
-        background-color: black;
-        color: black;
-    } */
+    th{
+        background-color: #2D285E;
+        color: white;
+        &:hover{
+            color: white;
+        }
+       
+    }
     .searchIn{
         outline: none;
        
@@ -50,7 +67,7 @@ const TableWrapper = styled.div`
     }
     .inputs{
         display: flex;
-        justify-content: end;
+        justify-content: start;
         align-items: center;
         padding: 0 20px;
     }
@@ -66,6 +83,9 @@ const TableWrapper = styled.div`
     }
     .sariq{
         background-color: yellow;
+    }
+    .options{
+        min-width: 200px;
     }
     
 `;

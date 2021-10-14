@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const PasswordWrapper = styled.div`
     height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
 
     .passport{
         width: 400px;
@@ -26,13 +27,9 @@ const PasswordWrapper = styled.div`
 
         &:hover {
             transition: 1s !important;
-           
-
-        }
-
-        &:hover .dreamEdu{
-            display: block;
-            opacity: 0.7;
+            transform: scale(1.1);
+            box-shadow: 9px 9px 14px #00000078,
+            -9px -9px 14px #FFFFFF26;;
         }
     }
 
