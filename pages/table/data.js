@@ -1,30 +1,35 @@
 
 export const data = [
-    
+
     {
         name: "Ibrohim Akromov",
         address: "Toshkent shahar Yashnobod tumani Ohangrabo-54 +998946910781",
         id: "1",
+        rang: "yashil"
     },
     {
         name: "Izzat Toychiyev",
         address: "Toshkent shahar Yashnobod tumani Tosh kochasi-78 +998978888778",
         id: "2",
+        rang: "qizil"
     },
     {
         name: "Asad fbjfj",
         address: "Qashqadaryo viloyati Qamashi tumani Terak-90 +998997777700",
         id: "3",
+        rang: "yashil"
     },
     {
         name: "Doniyor ffef",
         address: "Samarqand viloyati Registon-554 +99890999999",
         id: "4",
+        rang: "qizil"
     },
     {
         name: "Anvar Toychidfyev",
         address: "Andijon viloyati Asaka-97 +998998576423",
         id: "5",
+        rang: "yashil"
     },
     {
         name: "Kamol fsf",

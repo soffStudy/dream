@@ -116,10 +116,10 @@ export default function MiniDrawer() {
                     >
                         <FaListUl />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        <div className="container d-flex justify-conte">
+                    <Typography variant="h6" noWrap component="div" className='w-100'>
+                        <div className="container d-flex justify-content-between w-100">
                             <div>
-                                <img src="	https://dreamedu.uz/images/dreamedu/logo/photo_2021-04-19_16-41-50.jpg" alt="dream edu rasmlar" width="100" height='50' />
+                                <img src="https://dreamedu.uz/images/dreamedu/logo/photo_2021-04-19_16-41-50.jpg" alt="dream edu rasmlar" width="100" height='40' />
                             </div>
                             <div className='smMenu'>
                                 <ul>
@@ -197,7 +197,7 @@ export default function MiniDrawer() {
                     {['All mail', 'Trash', 'Spam'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
-                                hjg                            </ListItemIcon>
+                                menu                            </ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItem>
                     ))}

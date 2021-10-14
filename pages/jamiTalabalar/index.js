@@ -4,10 +4,6 @@ import Jadvallar from '../../styleW/jadvallar'
 
 const JamiTalabalar = () => {
 
-    let JamiTalabalar=[
-        {ism:"Aziz" , familiya:"Sulaymonov" , passportID:"AB2233564"},
-        {}
-    ];
     return (
         <All>
             <Jadvallar>

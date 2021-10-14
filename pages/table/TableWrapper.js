@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 const TableWrapper = styled.div`
+    min-height:90vh;
+    
     td {
         max-width: 150px;
     }
@@ -19,6 +21,12 @@ const TableWrapper = styled.div`
         margin-top: 10px;
         padding-top: 14px;
         z-index: 0;
+    }
+    .yashil{
+        background-color: #25C039;
+    }
+    .sariq{
+        background-color: #FFFF37;
     }
 `;
 

@@ -19,25 +19,36 @@ const Passport = () => {
 
                 <div className="container">
                     <div className="row">
-                        <div className="col-6">
-                            
-                                <Link href='docs'>
-                                <div className='bg-warning'>
-                                    passport
-                                </div>
-                                </Link>
+                        <div className="col-lg-4 col-md-6 col-sm-12">
+                            <Link href='docs'>
+                                <a>
+                                    <div className='asosiyCardlar'>
+                                        passport
+                                    </div>
+                                </a>
+                            </Link>
                         </div>
-
-                        <div className="col-6">
-                        <Link href='#'>
-                                <div className='bg-warning'>
-                                    passport
-                                </div>
-                                </Link>
+                        <div className="col-lg-4 col-md-6 col-sm-12">
+                            <Link href='docs'>
+                                <a>
+                                    <div className='asosiyCardlar'>
+                                        Hujjat 1
+                                    </div>
+                                </a>
+                            </Link>
+                        </div>
+                        <div className="col-lg-4 col-md-6 col-sm-12">
+                            <Link href='docs'>
+                                <a>
+                                    <div className='asosiyCardlar'>
+                                        Hujjat 2
+                                    </div>
+                                </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
-              
+
             </AsosiyW>
         </All>
     )

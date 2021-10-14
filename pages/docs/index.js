@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 const Docs = () => {
     const owners = [
-    
+
         {
             name: "Ibrohim Akromov",
             address: "Toshkent shahar Yashnobod tumani Ohangrabo-54 +998946910781",
@@ -37,9 +37,9 @@ const Docs = () => {
             address: "Surxondaryo viloyti chegara-11 +998941122211",
             id: "6",
         }
-    
+
     ]
-    
+
 
 
 
@@ -60,23 +60,24 @@ const Docs = () => {
     })
 
     const printPageFun = (divName) => {
-        let printContents = document.getElementById(divName).innerHTML;
-        let originalContents = document.body.innerHTML;
-        document.body.innerHTML = printContents;
-        window.print();
-        document.body.innerHTML = originalContents;
+        var printContents = document.getElementById(divName).innerHTML
+        var originalContents = document.body.innerHTML
+        document.body.innerHTML = printContents
+        window.print()
+        document.body.innerHTML = originalContents
     }
-
     return (
         <All>
             <DocsWrapper>
-
-           
-                <div className="container docs2">
+                <div className='d-flex justify-content-end m-2'>
                     <button className="btn btn-primary" onClick={() => printPageFun('print')}>
                         download
                     </button>
-                    <div className='ijrochi'>
+                </div>
+                <div className="container docs2">
+                    <a target="_blank" download href="rasm.jpg">Download</a>
+
+                    <div className='ijrochi' id='print'>
                         <p className='ijro'>
                             Ижрочи:
                         </p>
@@ -96,19 +97,19 @@ const Docs = () => {
                             Директор:____________ Н.А.Раҳмутуллаева
                         </p>
                         <p className='text-start'>
-                            +998971991300<br/>
-                            +998971991400<br/>
-                            +998971991500<br/>
+                            +998971991300<br />
+                            +998971991400<br />
+                            +998971991500<br />
                         </p>
                     </div>
                     <div className='byurtma'>
-                        
+
                         <p className='byurtmachi'>
                             Буюртмачи :
                         </p>
 
                         <p>
-                            ФИО: <strong>{ fullData.name }</strong>
+                            ФИО: <strong>{fullData.name}</strong>
                         </p>
 
                         <p>
@@ -123,8 +124,8 @@ const Docs = () => {
                         </p>
 
                         <p>
-                            Яшаш манзили:<br/>
-                            <strong>{ fullData.address }</strong>
+                            Яшаш манзили:<br />
+                            <strong>{fullData.address}</strong>
                         </p>
 
                         <p>
@@ -132,8 +133,8 @@ const Docs = () => {
                             _______________________
                         </p>
 
-                         <p className='text-center'>
-                             _________<br/>
+                        <p className='text-center'>
+                            _________<br />
                             имзо
                         </p>
 

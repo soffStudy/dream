@@ -9,11 +9,13 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import All from '../../components/all'
+
 
 const Table = () => {
     const router = useRouter()
 
-    const[searchStern, setSearchstern] = useState('');
+    const [searchStern, setSearchstern] = useState('');
 
     // const studentFullData = (val) => {
     //     console.log(val)
@@ -26,7 +28,7 @@ const Table = () => {
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
-      setAge(event.target.value); 
+        setAge(event.target.value);
     };
 
     const handleRowClick = (ID) => {
@@ -35,76 +37,78 @@ const Table = () => {
     }
 
     return (
-     
+        <All>
 
-        <TableWrapper>
-            <h1>Table</h1>
-              <div className='d-flex'>
-                   <Box
-                            component="form"
-                            sx={{
-                                '& > :not(style)': { m: 1, width: '25ch' },
-                            }}
-                            noValidate
-                            autoComplete="off"
-                            ></Box>
-                    <TextField id="filled-basic" label="Filled" variant="filled"  onChange={event=>{setSearchstern(event.target.value)}}/>
-                    
+            <TableWrapper>
+                <h1>Table</h1>
+                <div className='d-flex'>
+                    <Box
+                        component="form"
+                        sx={{
+                            '& > :not(style)': { m: 1, width: '25ch' },
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    ></Box>
+                    <TextField id="filled-basic" label="Filled" variant="filled" onChange={event => { setSearchstern(event.target.value) }} />
+
                     <Box sx={{ minWidth: 120 }}>
-                    <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                        <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={age}
-                        label="Age"
-                        onChange={handleChange}
-                        >
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                        </Select>
-                    </FormControl>
+                        <FormControl fullWidth>
+                            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value={age}
+                                label="Age"
+                                onChange={handleChange}
+                            >
+                                <MenuItem value={10}>Ten</MenuItem>
+                                <MenuItem value={20}>Twenty</MenuItem>
+                                <MenuItem value={30}>Thirty</MenuItem>
+                            </Select>
+                        </FormControl>
                     </Box>
-              </div>
-               
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Isim Familiya</th>
-                        <th scope="col">Manzili va Telefon raqami</th>
-                        <th scope="col">id</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {
-                    data.filter((val)=>{
-                    if(searchStern == ""){
-                            return val
-                    }else if(val.address.toLowerCase().includes(searchStern.toLowerCase())){
-                        return val
-                    }else if(val.name.toLowerCase().includes(searchStern.toLowerCase())){
-                        return val
-                    }else if(val.id.toLowerCase().includes(searchStern.toLowerCase())){
-                        return val
-                    }
-                        }).map((val, key)=>{
-                            return(
-                                <Link href="passport">
-                                  <tr key={key} style={{ cursor: 'pointer' }} onClick={() => handleRowClick(val.id)}>
-                                    <td>{val.name}</td> 
-                                    <td>{val.address}</td>
-                                    <td>{val.id}</td>
-                                </tr>
-                                </Link>
-                              
-                            )
-                        })
-                        // .indexOf(q.toLowerCase()) > -1,
-                }
-                </tbody>
+                </div>
+
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Isim Familiya</th>
+                            <th scope="col">Manzili va Telefon raqami</th>
+                            <th scope="col">id</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            data.filter((val) => {
+                                if (searchStern == "") {
+                                    return val
+                                } else if (val.address.toLowerCase().includes(searchStern.toLowerCase())) {
+                                    return val
+                                } else if (val.name.toLowerCase().includes(searchStern.toLowerCase())) {
+                                    return val
+                                } else if (val.id.toLowerCase().includes(searchStern.toLowerCase())) {
+                                    return val
+                                }
+                            }).map((val, key) => {
+                                return (
+                                    <Link href="passport">
+                                        <tr key={key} style={{ cursor: 'pointer' }} onClick={() => handleRowClick(val.id)}
+                                            className={val.rang == "yashil" && "yashil" || "sariq"} >
+                                            <td>{val.name}</td>
+                                            <td>{val.address}</td>
+                                            <td>{val.id}</td>
+                                        </tr>
+                                    </Link>
+
+                                )
+                            })
+                            // .indexOf(q.toLowerCase()) > -1,
+                        }
+                    </tbody>
                 </table>
-        </TableWrapper>
+            </TableWrapper>
+        </All>
     )
 }
 
