@@ -17,6 +17,13 @@ import { FaListUl } from "react-icons/fa";
 import { AiTwotoneHome, AiOutlineArrowLeft } from "react-icons/ai";
 import { HiOutlineDocument, HiOutlineDocumentAdd } from "react-icons/hi";
 import { BsPeopleFill } from "react-icons/bs";
+import DashWrapper from './Dash2W';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Footer from './footer';
+
 
 
 
@@ -87,7 +94,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
-export default function MiniDrawer() {
+export default function MiniDrawer({ children }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -98,105 +105,130 @@ export default function MiniDrawer() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar position="fixed" open={open}>
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{
-                            marginRight: '36px',
-                            ...(open && { display: 'none' }),
-                        }}
-                    >
-                        <FaListUl />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div" className='w-100'>
-                        <div className="container d-flex justify-content-between w-100">
-                            <div>
-                                <img src="https://dreamedu.uz/images/dreamedu/logo/photo_2021-04-19_16-41-50.jpg" alt="dream edu rasmlar" width="100" height='40' />
+
+        <DashWrapper>
+            <Box sx={{ display: 'flex' }}>
+                <CssBaseline />
+                <AppBar position="fixed" open={open}>
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{
+                                marginRight: '36px',
+                                ...(open && { display: 'none' }),
+                            }}
+                        >
+                            <FaListUl />
+                        </IconButton>
+
+                        <Typography variant="h6" noWrap component="div" className='w-100'>
+                            <div className="container d-flex align-items-center justify-content-end w-100">
+                                {/* select dashboard un */}
+
+                                <FormControl variant="standard" className='text-light' sx={{ m: 1, minWidth: 120 }}>
+                                    <InputLabel id="demo-simple-select-standard-label" className='text-light' >Age</InputLabel>
+                                    <Select
+                                        labelId="demo-simple-select-standard-label"
+                                        id="demo-simple-select-standard"
+                                        value={age}
+                                        onChange={handleChange}
+                                        label="Age"
+                                        className='text-light'
+
+                                    >
+                                        <MenuItem value="">
+                                            <em>None</em>
+                                        </MenuItem>
+                                        <MenuItem value={10}>Ten</MenuItem>
+                                        <MenuItem value={20}>Twenty</MenuItem>
+                                        <MenuItem value={30}>Thirty</MenuItem>
+                                    </Select>
+                                </FormControl>
                             </div>
-                            <div className='smMenu'>
-                                <ul>
-                                    <li>+99891-191-94-42</li>
-                                    <li>+99891-191-55-78</li>
-                                </ul>
-                            </div>
-                            <p>konsultatsiya</p>
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+                <Drawer variant="permanent" open={open}>
+                    <DrawerHeader className='d-flex justify-content-between'>
+                        <div>
+                            <img src="DreamEduLogo.png" alt="dream edu rasmlar" width="130px" />
                         </div>
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Drawer variant="permanent" open={open}>
-                <DrawerHeader>
-                    <IconButton onClick={handleDrawerClose}>
-                        <AiOutlineArrowLeft />
-                    </IconButton>
-                </DrawerHeader>
-                <Divider />
-                <List>
+                        <IconButton onClick={handleDrawerClose}>
+                            <AiOutlineArrowLeft />
+                        </IconButton>
+                    </DrawerHeader>
+                    <Divider />
+                    <List>
 
 
-                    <Link href="asosiy">
-                        <ListItem button>
-                            <ListItemIcon>
-                                <span className='mb-2 ms-1 fs-4 text-center'><AiTwotoneHome /> </span>
-                            </ListItemIcon>
-                            <ListItemText>
-                                Asosiy
-                            </ListItemText>
+                        <Link href="asosiy">
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <span className='mb-2 ms-1 fs-4 text-center'><AiTwotoneHome /> </span>
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Asosiy
+                                </ListItemText>
 
-                        </ListItem>
-                    </Link>
+                            </ListItem>
+                        </Link>
 
-                    <Link href="hujjatlar">
-                        <ListItem button>
-                            <ListItemIcon>
-                                <span className='mb-2 fs-4 ms-1 '><HiOutlineDocument /> </span>
-                            </ListItemIcon>
-                            <ListItemText>
-                                Hujjatlar
-                            </ListItemText>
+                        <Link href="hujjatlar">
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <span className='mb-2 fs-4 ms-1 '><HiOutlineDocument /> </span>
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Hujjatlar
+                                </ListItemText>
 
-                        </ListItem>
-                    </Link>
+                            </ListItem>
+                        </Link>
 
-                    <Link href="yangiHujjat">
-                        <ListItem button>
-                            <ListItemIcon>
-                                <span className='mb-2 fs-4 ms-1 '><HiOutlineDocumentAdd /> </span>
-                            </ListItemIcon>
-                            <ListItemText>
-                                Yangi Hujjatlar
-                            </ListItemText>
+                        <Link href="yangiHujjat">
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <span className='mb-2 fs-4 ms-1 '><HiOutlineDocumentAdd /> </span>
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Yangi Hujjatlar
+                                </ListItemText>
 
-                        </ListItem>
-                    </Link>
+                            </ListItem>
+                        </Link>
 
 
-                    <Link href="xodimlar">
-                        <ListItem button>
-                            <ListItemIcon>
-                                <span className='mb-2 fs-4 ms-1 '><BsPeopleFill /> </span>
-                            </ListItemIcon>
-                            <ListItemText>
-                                Xodimlar
-                            </ListItemText>
+                        <Link href="xodimlar">
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <span className='mb-2 fs-4 ms-1 '><BsPeopleFill /> </span>
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Xodimlar
+                                </ListItemText>
 
-                        </ListItem>
-                    </Link>
+                            </ListItem>
+                        </Link>
 
-                </List>
-                <Divider />
-            </Drawer>
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                <DrawerHeader />
+                    </List>
+
+                </Drawer>
+                <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                    {children}
+                    <DrawerHeader />
+                </Box>
             </Box>
-        </Box>
+            <Footer />
+        </DashWrapper>
     );
 }

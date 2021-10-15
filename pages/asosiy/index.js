@@ -1,15 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
-import All from '../../components/all'
 import AsosiyW from './asosiyW'
 import Link from 'next/link'
-import { HiArrowSmRight } from "react-icons/hi";
+import AOS from 'aos'
 import { BiCalendarPlus, BiCalendarMinus, BiCalendarCheck, BiCalendarEdit } from "react-icons/bi";
+import { useRouter } from 'next/router'
+import Dashboard2 from '../../components/dashboard2'
 
 
 const Asosiy = () => {
+    const router = useRouter();
+
+    const handleRowClick = () => {
+        router.push(
+            { pathname: '/table', query: { types: 'tolagan' } }
+        );
+        console.log(router.query.keyword);
+    }
+
+    const handleRowClick2 = () => {
+        router.push(
+            { pathname: '/table', query: { types: 'tolamagan' } }
+        );
+        console.log(router.query.keyword);
+    }
+
+    useEffect(() => {
+        AOS.init();
+    })
+
     return (
-        <All>
+        <Dashboard2>
             <AsosiyW>
                 <Head>
                     <title>Dream</title>
@@ -19,64 +40,45 @@ const Asosiy = () => {
                 <h1 className='text-center'>Asosiy</h1>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-4 col-md-6 col-sm-12">
-                            <div className='asosiyCardlar'>
-                                <div className='d-flex justify-content-between'>
-                                    <p className='fs-3'><BiCalendarEdit /></p>
-                                    <p className='mt-2'>270</p>
-                                </div>
-                                <p>Bajaraib bo'lingan talabalar soni</p>
-                                <div className="d-flex justify-content-end">
-                                    <Link href="table">
-                                        <button className='btn btn-primary fs-5'>
-                                            <HiArrowSmRight />
-                                        </button>
-                                    </Link>
-                                </div>
-                            </div>
 
+                        <div className="col-lg-4 col-md-6 col-sm-12">
+                            <Link href="table">
+                                <div className='asosiyCardlar' data-aos="fade-up-right">
+                                    <div className=''>
+                                        <BiCalendarEdit className='fs-1' />
+                                        <p className='mt-2 h1 fw-bold'>270</p>
+                                    </div>
+                                    <p>Barcha talabalar</p>
+                                </div>
+                            </Link>
                         </div>
 
                         <div className="col-lg-4 col-md-6 col-sm-12">
-                            <div className='asosiyCardlar'>
-                                <div className='d-flex justify-content-between'>
-                                    <p className='fs-3'><BiCalendarCheck /></p>
-                                    <p className='mt-2'>250</p>
+                            <div className='asosiyCardlar' data-aos="fade-zoom-in" onClick={() => handleRowClick2()}>
+                                <div className=''>
+                                    <BiCalendarMinus className='fs-1' />
+                                    <p className='mt-2 h1 fw-bold'>171</p>
                                 </div>
-                                <p>Bajarilish jarayonidagi talabalr soni</p>
-                                <div className="d-flex justify-content-end">
-                                    <Link href="bajarilishJarayon">
-                                        <button className='btn btn-primary fs-5'>
-                                            <HiArrowSmRight />
-                                        </button>
-                                    </Link>
-                                </div>
+                                <p>Puli to'lanmagan talabalar </p>
                             </div>
-
                         </div>
 
                         <div className="col-lg-4 col-md-6 col-sm-12">
-                            <div className='asosiyCardlar'>
-                                <div className='d-flex justify-content-between'>
-                                    <p className='fs-3'><BiCalendarMinus /></p>
-                                    <p className='mt-2'>20</p>
-                                </div>
-                                <p>Bajaraib bo'lingan talabalar soni</p>
-                                <div className="d-flex justify-content-end">
-                                    <Link href="yuklamaganTalabalar">
-                                        <button className='btn btn-primary fs-5'>
-                                            <HiArrowSmRight />
-                                        </button>
-                                    </Link>
+                            <div className='asosiyCardlar' onClick={() => handleRowClick()} >
+                                <div className=''>
+                                    <BiCalendarPlus className='fs-1' />
+                                    <p className='mt-2 h1 fw-bold'>99</p>
+                                    <p>To'lov tugatilgan talabalar</p>
                                 </div>
                             </div>
-
                         </div>
+
+
                     </div>
                 </div>
 
             </AsosiyW>
-        </All>
+        </Dashboard2>
     )
 }
 

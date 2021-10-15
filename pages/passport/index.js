@@ -1,45 +1,79 @@
 import React from 'react'
 import Head from 'next/head'
-import All from '../../components/all'
+import Dashboard2 from '../../components/dashboard2'
 import Link from 'next/link'
 import PasswordWrapper from './passportW'
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import { AiFillPicture, AiOutlineDownload } from "react-icons/ai";
+import { HiOutlineDocumentDuplicate } from "react-icons/hi";
+
+
+
 
 const Passport = () => {
 
     return (
-        <All>
+        <Dashboard2>
             <Head>
                 <title>Dream</title>
                 <meta name="description" content="dream education haqida toliq malumot" />
                 <link rel="icon" href="/favicon.ico" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet"></link>
             </Head>
             <PasswordWrapper>
                 <div className="container">
                     <div className="row">
-                        <div className="col-6">
-                            <Link href='docs'>
-                                <div className='passport'>
-                                    <p>
-                                        passport
-                                    </p>
-                                    <p className='dreamEdu'>
-                                        Dream Edu
-                                    </p>
+                        <div className="col-lg-4 col-md-6 col-sm-12">
+                            <div className='passport'>
+                                <AccountBoxIcon className='fs-2' />
+                                <p>
+                                    Passport
+                                </p>
+                                <div className=' p-2'>
+                                    <Link href='docs'>
+                                        <button className='btn btn-light m-1'><AiFillPicture className='fs-4 mb-1' />  Ko'rish</button>
+                                    </Link>
+
+                                    <a href="favicon.ico" download><button className='btn btn-primary m-1'><AiOutlineDownload className='fs-4 mb-1' /> Yuklash</button></a>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
-                        <div className="col-6">
-                            <Link href='#'>
-                                <div className=' passport'>
-                                    <p>passport</p>
-                                    <p className='dreamEdu'>Dream Edu</p>
+
+                        <div className="col-lg-4 col-md-6 col-sm-12">
+                            <div className='passport'>
+                                <HiOutlineDocumentDuplicate className='fs-2' />
+                                <p>
+                                    Hujjat 1
+                                </p>
+                                <div className=' p-2'>
+                                    <Link href='docs/hujjat1'>
+                                        <button className='btn btn-light m-1'><AiFillPicture className='fs-4 mb-1' />  Ko'rish</button>
+                                    </Link>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
+
+                        <div className="col-lg-4 col-md-6 col-sm-12">
+                            <div className='passport'>
+                                <HiOutlineDocumentDuplicate className='fs-2' />
+                                <p>
+                                    Hujjat 2
+                                </p>
+                                <div className=' p-2'>
+                                    <Link href='docs/hujjat2'>
+                                        <button className='btn btn-light m-1'><AiFillPicture className='fs-4 mb-1' />  Ko'rish</button>
+                                    </Link>
+
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </PasswordWrapper>
-        </All>
+        </Dashboard2>
     )
 }
 

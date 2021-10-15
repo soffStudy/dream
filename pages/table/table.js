@@ -14,7 +14,8 @@ import Paper from '@mui/material/Paper';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { visuallyHidden } from '@mui/utils';
-import { data } from './data';
+import Data from './data';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 function createData(name, calories, fat, carbs, protein) {
@@ -27,7 +28,7 @@ function createData(name, calories, fat, carbs, protein) {
   };
 }
 
-const rows = data
+// const rows = data
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -102,7 +103,6 @@ function EnhancedTableHead(props) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
-  console.log(rows)
   return (
     <TableHead>
       <TableRow>
@@ -149,6 +149,23 @@ export default function EnhancedTable() {
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const router = useRouter();
+  const [newData, setNewData] = React.useState([])
+  const [rows, setRows] = React.useState([])
+
+
+  useEffect(() => {
+    let exactData = []
+    if (Object.keys(routerr.query).length != 0) {
+      Data.map((item) => {
+        if (item.statusRealTime == routerr.query.types) {
+          exactData.push(item)
+        }
+      })
+      setRows(exactData)
+    } else {
+      setRows(Data)
+    }
+  }, []);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -191,10 +208,14 @@ export default function EnhancedTable() {
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
+
+  const routerr = useRouter();
+  console.log(routerr.query.types);
+
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <TableContainer>
+        <TableContainer className='materialTable'>
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
@@ -209,8 +230,7 @@ export default function EnhancedTable() {
               rowCount={rows.length}
             />
             <TableBody>
-              {/* if you don't need to support IE11, you can replace the `stableSort` call with:
-                 rows.slice().sort(getComparator(order, orderBy)) */}
+
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
@@ -218,6 +238,7 @@ export default function EnhancedTable() {
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
+
                     <TableRow
                       hover
                       onClick={(event) => handleClick(row.id)}
@@ -226,7 +247,7 @@ export default function EnhancedTable() {
                       key={row.name}
                     >
                       <TableCell
-                        component="th"
+                        // component="th"
                         id={labelId}
                         scope="row"
                         padding="none"

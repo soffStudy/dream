@@ -1,5 +1,5 @@
 
-export const data = [
+const Data = [
 
         {
                 name: "Ibrohim Akromov",
@@ -11,7 +11,9 @@ export const data = [
                 payment2: "15-sentabr 3 000 000",
                 manager: "Mushtariy",
                 status: "active",
+                statusRealTime: 'tolagan',
                 id: "1",
+                passport:"passport1.jpg",
                 actives: "tolagan"
         },
         {
@@ -24,7 +26,9 @@ export const data = [
                 payment2: "15-sentabr 3 000 000",
                 manager: "Madina",
                 status: "Checked",
+                statusRealTime: 'tolagan',
                 id: "2",
+                passport:"passport1.jpg",
                 actives: "tolagan"
         },
         {
@@ -37,8 +41,10 @@ export const data = [
                 payment2: "15-sentabr 3 000 000",
                 manager: "Komila",
                 status: "Not active",
+                statusRealTime: 'tolamagan',
                 id: "3",
-                actives: "tolagan"
+                passport:"passport1.jpg",
+                actives: "tolamagan"
         },
         {
                 name: "Doniyor Deff",
@@ -50,7 +56,9 @@ export const data = [
                 payment2: "15-sentabr 3 000 000",
                 manager: "Omina",
                 status: "Checked",
+                statusRealTime: 'tolamagan',
                 id: "4",
+                passport:"passport1.jpg",
                 actives: "tolamagan"
         },
         {
@@ -63,7 +71,9 @@ export const data = [
                 payment2: "15-sentabr 3 000 000",
                 manager: "Salima",
                 status: "active",
+                statusRealTime: 'tolagan',
                 id: "5",
+                passport:"passport1.jpg",
                 actives: "tolagan"
         },
         {
@@ -77,7 +87,10 @@ export const data = [
                 manager: "Salima",
                 status: "active",
                 id: "6",
+                passport:"passport1.jpg",
                 actives: "tolamagan"
         }
 
 ]
+
+export default Data 

@@ -1,30 +1,15 @@
 import React from 'react'
-import Head from 'next/head'
-import All from '../../components/all'
-import HujjatlarW from './hujjatlar'
-import Table from './../table'
+import Dashboard2 from '../../components/dashboard2'
+import AsosiyW from '../asosiy/asosiyW'
+
 
 const Hujjatlar = () => {
-
-
     return (
-        <All>
-             <Head>
-                <title>Dream</title>
-                <meta name="description" content="dream education haqida toliq malumot" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <HujjatlarW>
-                <Head>
-                    <title id="dream">Dream</title>
-                    <meta name="description" content="dream education haqida toliq malumot" />
-                    <link rel="icon" href="/favicon.ico" />
-                </Head>
+        <Dashboard2>
+            <AsosiyW>
                 <h1>Hujjatlar</h1>
-                <Table/>
-
-            </HujjatlarW>
-        </All>
+            </AsosiyW>
+        </Dashboard2>
     )
 }
 

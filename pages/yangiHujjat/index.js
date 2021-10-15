@@ -1,19 +1,19 @@
 import React from 'react'
 import Head from 'next/head'
-import All from '../../components/all'
+import Dashboard2 from '../../components/dashboard2'
 import YangiHujjatW from './yangiHujjatW'
 
 const YangiHujjat = () => {
     return (
-        <All>
+        <Dashboard2>
             <Head>
                 <title>Dream</title>
                 <meta name="description" content="dream education haqida toliq malumot" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <YangiHujjatW>
-                
-                <h1 className='text-center'>yangi hujjat</h1>
+
+                <h1 className='text-center mt-5'>yangi hujjat</h1>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-sm-12">
@@ -45,7 +45,7 @@ const YangiHujjat = () => {
                     </div>
                 </div>
             </YangiHujjatW>
-        </All>
+        </Dashboard2>
     )
 }
 

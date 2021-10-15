@@ -1,11 +1,40 @@
 import styled from 'styled-components'
 
 const TableWrapper = styled.div`
-   .table{
-       margin-top: 10px;
+font-family: 'Josefin Sans', sans-serif;
+   table{
+       margin-top: 15px;
+   }
+   .css-177gid-MuiTableCell-root{
+       text-align: center !important;
+   }
+   
+   .css-1azl6jz-MuiTableCell-root{
+       text-align: start !important;
+   }
+   .css-1ygcj2i-MuiTableCell-root{
+       text-align: start !important;
+   }
+   .css-10dfkli-MuiTableCell-root{
+       text-align: center;
+       &:hover{
+           color: white;
+       }
+   }
+   .css-1qgma8u-MuiButtonBase-root-MuiTableSortLabel-root:hover{
+       color: white;
+   }
+   .tlgan{
+       text-align: end !important;
+   }
+
+   .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+       margin-left: 10px;
    }
     tr {
         transition: 0.8s;
+        cursor: pointer;
+
         &:hover{
             background-color: gray;
             color: white;
@@ -13,8 +42,12 @@ const TableWrapper = styled.div`
         }
     }
     th{
-        background-color: black;
+        background-color: #2D285E;
         color: white;
+        &:hover{
+            color: white;
+        }
+       
     }
     .searchIn{
         outline: none;
@@ -34,7 +67,7 @@ const TableWrapper = styled.div`
     }
     .inputs{
         display: flex;
-        justify-content: end;
+        justify-content: start;
         align-items: center;
         padding: 0 20px;
     }
@@ -42,12 +75,17 @@ const TableWrapper = styled.div`
         width: 20px;
         height: 20px;
         border-radius: 50%;
+        text-align: end !important;
+        margin-left: 30px;
     }
     .yashil{
         background-color: green;
     }
     .sariq{
         background-color: yellow;
+    }
+    .options{
+        min-width: 200px;
     }
     
 `;

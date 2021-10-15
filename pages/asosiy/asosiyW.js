@@ -3,14 +3,53 @@ import styled from "styled-components";
 const AsosiyW = styled.div`
 color: black;
 height: 100vh;
+font-family: 'Josefin Sans', sans-serif;
+margin-top: 100px;
+
 .asosiyCardlar{
     margin: 10px;
     padding: 10px;
-    background-image: radial-gradient( circle 976px at 51.2% 51%,  rgba(11,27,103,1) 0%, rgba(16,66,157,1) 0%, rgba(11,27,103,1) 17.3%, rgba(11,27,103,1) 58.8%, rgba(11,27,103,1) 71.4%, rgba(16,66,157,1) 100.2%, rgba(187,187,187,1) 100.2% );
+    background-position: center;
+    background-size: cover;
+    background-color: #2D285E;
+    color: white;
+    text-align: center;
     border-radius: 10px;
-    box-shadow: 5px 6px 10px 0 black;
+    box-shadow: 3px 4px 8px 0 black;
     height: 170px;
     transition:  1s !important;
+
+    &:hover{
+        background-color: #2D285E;
+        transform: scale(1.1);
+        .logoAsosiy{  
+        transform: scale(1.2);
+        }
+        .boxForButton{
+            transform: translateX(80%);
+        }
+    }
+    .logoAsosiy{
+        transition: 0.5s;
+        width: 70px;
+        height: 40px;
+        object-fit: cover;
+        margin: 0;
+        padding: 0;
+    }
+    .boxForButton{
+        transition: 0.5s;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    /* &:hover{
+        transform: scale(1.1);
+        box-shadow: 5px 6px 10px 0 black;
+        background: url('DreamEduLogo.png');
+        background-position: right;
+        background-color: #2D285E;
+    } */
 }
 
 a{
