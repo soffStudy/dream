@@ -1,25 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import Dashboard2 from '../../components/dashboard2'
-import Link from 'next/link'
-import DocsWrapper from './docsW'
+import DocsWrapper from '../docs/docsW'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Data from '../table/data'
+import { AiFillPrinter } from "react-icons/ai";
+
 
 const Docs = () => {
 
-
     const router = useRouter();
     let fullData = {};
-
     const [state, setstate] = useState(1);
 
     useEffect(() => {
         setstate(localStorage && localStorage.getItem("ID"));
 
     }, []);
-
-
 
     Data.map(value => {
         if (value.id == state) fullData = value;
@@ -44,7 +41,7 @@ const Docs = () => {
                 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet"></link>
             </Head>
             <DocsWrapper>
-                <div> <button className='btn btn-primary mt-2' onClick={() => printPageFun('print')}>Pechat</button></div>
+                <div className="d-flex justify-content-end me-3 mb-3" > <button className='btn btn-primary mt-2' onClick={() => printPageFun('print')}> <span className="fs-4" ><AiFillPrinter /></span> Pechat</button></div>
                 <div className="container docs2" id="print">
                     <h1>hujjat N2</h1>
                     <h1>{fullData.id}  : id raqami</h1>

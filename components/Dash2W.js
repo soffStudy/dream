@@ -12,6 +12,12 @@ const DashWrapper = styled.div`
         /* height: 70px; */
         /* object-fit: cover; */
     }
+    .selecting{
+        background-color: white !important;
+        width: 90px;
+        height: 40px;
+        padding: 0 !important;
+    }
 `;
 
 export default DashWrapper;

@@ -23,6 +23,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Footer from './footer';
+import { useRouter } from 'next/router';
 
 
 
@@ -109,6 +110,13 @@ export default function MiniDrawer({ children }) {
     const handleChange = (event) => {
         setAge(event.target.value);
     };
+    const router = useRouter();
+
+    const handleRowClick2 = () => {
+        router.push("konsultatsiya");
+        console.log(router.query.keyword);
+    }
+
 
     return (
         <DashWrapper>
@@ -133,25 +141,23 @@ export default function MiniDrawer({ children }) {
                             <div className="container d-flex align-items-center justify-content-end w-100">
                                 {/* select dashboard un */}
 
-                                <FormControl variant="standard" className='text-light' sx={{ m: 1, minWidth: 120 }}>
-                                    <InputLabel id="demo-simple-select-standard-label" className='text-light' >Age</InputLabel>
-                                    <Select
-                                        labelId="demo-simple-select-standard-label"
-                                        id="demo-simple-select-standard"
-                                        value={age}
-                                        onChange={handleChange}
-                                        label="Age"
-                                        className='text-light'
-
-                                    >
-                                        <MenuItem value="">
-                                            <em>None</em>
-                                        </MenuItem>
-                                        <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>Twenty</MenuItem>
-                                        <MenuItem value={30}>Thirty</MenuItem>
-                                    </Select>
-                                </FormControl>
+                                <div>
+                                    <FormControl>
+                                        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={age}
+                                            label="Age"
+                                            onChange={handleChange}
+                                            className='selecting'
+                                        >
+                                            <MenuItem value={10} onClick={() => handleRowClick2()} >Konsultatsiya</MenuItem>
+                                            <MenuItem value={20}>Twenty</MenuItem>
+                                            <MenuItem value={30}>Thirty</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                </div>
                             </div>
                         </Typography>
                     </Toolbar>
@@ -159,7 +165,7 @@ export default function MiniDrawer({ children }) {
                 <Drawer variant="permanent" open={open}>
                     <DrawerHeader className='d-flex justify-content-between'>
                         <div>
-                            <img src="DreamEduLogo.png" alt="dream edu rasmlar" width="130px" />
+                            <img src="de2.png" alt="dream edu rasmlar" width="130px" />
                         </div>
                         <IconButton onClick={handleDrawerClose}>
                             <AiOutlineArrowLeft />

@@ -48,7 +48,7 @@ const Passport = () => {
                                     Hujjat 1
                                 </p>
                                 <div className=' p-2'>
-                                    <Link href='docs/hujjat1'>
+                                    <Link href='hujjat1'>
                                         <button className='btn btn-light m-1'><AiFillPicture className='fs-4 mb-1' />  Ko'rish</button>
                                     </Link>
                                 </div>
@@ -62,7 +62,7 @@ const Passport = () => {
                                     Hujjat 2
                                 </p>
                                 <div className=' p-2'>
-                                    <Link href='docs/hujjat2'>
+                                    <Link href='hujjat2'>
                                         <button className='btn btn-light m-1'><AiFillPicture className='fs-4 mb-1' />  Ko'rish</button>
                                     </Link>
 
