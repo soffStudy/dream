@@ -20,28 +20,33 @@ const Passport = () => {
             <PasswordWrapper>
                 <div className="container">
                     <div className="row">
-                        <div className="col-6">
-                            
-                                <div className='passport'>
-                                    <AccountBoxIcon className='fs-2'/>
-                                    <p>
-                                        Passport
-                                    </p>
-                                    <div className='d-flex justify-content-between w-100 p-2'>
+                        <div className="col-sm-6">
+                            <div className='passport'>
+                                <AccountBoxIcon className='fs-1'/>
+                                <p>
+                                    Passport
+                                </p>
+                                <div className='btns w-100 p-2'>
                                     <Link href='docs'>
-                                        <button className='btn btn-light'>Korish</button>
+                                        <button className='btn btn-light me-2'>See</button>
                                     </Link>
-                                        
-                                        <a href="favicon.ico" download><button className='btn btn-primary'>download</button></a>
-                                    </div>
+                                    
+                                    <a href="favicon.ico" download><button className='btn btn-primary ms-2'>download</button></a>
                                 </div>
-                           
+                            </div>
                         </div>
-                        <div className="col-6">
+                        <div className="col-sm-6">
                             <Link href='#'>
                                 <div className=' passport'>
-                                <AccountBoxIcon className='fs-2'/>
+                                <AccountBoxIcon className='fs-1'/>
                                     <p>Passport</p>
+                                    <div className='btns w-100 p-2'>
+                                        <Link href='docs'>
+                                            <button className='btn btn-light me-2'>See</button>
+                                        </Link>
+                                        
+                                        <a href="favicon.ico" download><button className='btn btn-primary ms-2'>download</button></a>
+                                    </div>
                                 </div>
                             </Link>
                         </div>

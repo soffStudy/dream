@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 const TableWrapper = styled.div`
-font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    min-height: 100vh;
+    
    table{
        margin-top: 15px;
    }

@@ -18,12 +18,15 @@ import { AiTwotoneHome, AiOutlineArrowLeft } from "react-icons/ai";
 import { HiOutlineDocument, HiOutlineDocumentAdd } from "react-icons/hi";
 import { BsPeopleFill } from "react-icons/bs";
 import DashWrapper from './Dash2W';
+import Clock from './clock'
 
 
 
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
+    
+   
     width: drawerWidth,
     transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
@@ -31,6 +34,7 @@ const openedMixin = (theme) => ({
     }),
     overflowX: 'hidden',
 });
+
 
 const closedMixin = (theme) => ({
     transition: theme.transitions.create('width', {
@@ -120,8 +124,16 @@ export default function MiniDrawer() {
                         <FaListUl />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div" className='w-100'>
-                        <div className="container d-flex align-items-center justify-content-end w-100">
-                            <p>Konsultatsiya</p>
+                        <div className="container d-flex align-items-center justify-content-end w-100 mt-2">
+                           <div>
+                               <select >
+                                   <option>Exit</option>
+                                   <option>Settings</option>
+                               </select>
+                           </div>
+                           <div className='ms-4'>
+                                <Clock />
+                           </div>
                         </div>
                     </Typography>
                 </Toolbar>

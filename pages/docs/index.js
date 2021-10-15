@@ -74,7 +74,6 @@ const Docs = () => {
                 <div className="container docs2">
                     <img src="favicon.ico" alt="next" />
                     <a href="favicon.ico" download> Download</a>
-
                 </div>
             </DocsWrapper>
         </All>

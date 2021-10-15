@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const PasswordWrapper = styled.div`
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Josefin Sans', sans-serif;
 
     .passport{
@@ -30,29 +30,27 @@ const PasswordWrapper = styled.div`
             transform: scale(1.1);
             box-shadow: 9px 9px 14px #00000078,
             -9px -9px 14px #FFFFFF26;;
+           
         }
     }
 
+    .btns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     @keyframes animation-name {   
-        0%{
-            background-position: 0% 50%;
-        }
-        50%{
-            background-position: 100% 50%;
-        }
-        100%{
-            background-position: 0% 50%;
-        }
-                /* 0% {     
-                   color: white;   
-                }   
-                50% {     
-                    color: green;   
-                } 
-                100% {
-                    color: blue;
-                } */
+            0%{
+                background-position: 0% 50%;
             }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0% 50%;
+            }
+        }
 `;
 
 export default PasswordWrapper;

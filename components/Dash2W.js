@@ -12,6 +12,22 @@ const DashWrapper = styled.div`
         /* height: 70px; */
         /* object-fit: cover; */
     }
+   .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+       height: 15px;
+       width: 100px;
+   }
+   .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
+       min-height: 15px;
+       color: #fff;
+   }
+   select{
+       padding: 10px;
+       outline: none;
+       border-radius: 5px;
+       color: #2D285E;
+       font-weight: bold;
+   }
+
 `;
 
 export default DashWrapper;
