@@ -55,7 +55,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
 }));
 
@@ -112,7 +111,6 @@ export default function MiniDrawer({ children }) {
     };
 
     return (
-
         <DashWrapper>
             <Box sx={{ display: 'flex' }}>
                 <CssBaseline />
