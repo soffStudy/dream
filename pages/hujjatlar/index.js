@@ -1,19 +1,15 @@
 import React from 'react'
-import Head from 'next/head'
-import All from '../../components/all'
-import HujjatlarW from './hujjatlar'
-import Table from './../table'
+import Dashboard2 from '../../components/dashboard2'
+import AsosiyW from '../asosiy/asosiyW'
+
 
 const Hujjatlar = () => {
-
-
     return (
-        <All>
-            <HujjatlarW>
-              <h1>salom</h1>
-
-            </HujjatlarW>
-        </All>
+        <Dashboard2>
+            <AsosiyW>
+                <h1>Hujjatlar</h1>
+            </AsosiyW>
+        </Dashboard2>
     )
 }
 

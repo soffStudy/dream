@@ -18,7 +18,14 @@ import { AiTwotoneHome, AiOutlineArrowLeft } from "react-icons/ai";
 import { HiOutlineDocument, HiOutlineDocumentAdd } from "react-icons/hi";
 import { BsPeopleFill } from "react-icons/bs";
 import DashWrapper from './Dash2W';
-import Clock from './clock'
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Footer from './footer';
+import { useRouter } from 'next/router';
+import Clock from './clock';
+
 
 
 
@@ -53,7 +60,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
 }));
 
@@ -92,7 +98,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
-export default function MiniDrawer() {
+export default function MiniDrawer({ children }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -103,110 +109,142 @@ export default function MiniDrawer() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
+    const router = useRouter();
+
+    const handleRowClick2 = () => {
+        router.push("konsultatsiya");
+        console.log(router.query.keyword);
+    }
+
+    const handleRowClick3 = () => {
+        router.push("/");
+        console.log(router.query.keyword);
+    }
+
 
     return (
-
         <DashWrapper>
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar position="fixed" open={open}>
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{
-                            marginRight: '36px',
-                            ...(open && { display: 'none' }),
-                        }}
-                    >
-                        <FaListUl />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div" className='w-100'>
-                        <div className="container d-flex align-items-center justify-content-end w-100 mt-2">
-                           <div>
-                               <select >
-                                   <option>Exit</option>
-                                   <option>Settings</option>
-                               </select>
-                           </div>
-                           <div className='ms-4'>
+            <Box sx={{ display: 'flex' }}>
+                <CssBaseline />
+                <AppBar position="fixed" open={open}>
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{
+                                marginRight: '36px',
+                                ...(open && { display: 'none' }),
+                            }}
+                        >
+                            <FaListUl />
+                        </IconButton>
+
+                        <Typography variant="h6" noWrap component="div" className='w-100'>
+                            <div className="container d-flex align-items-center justify-content-end w-100">
+                                {/* select dashboard un */}
+
+                                <div className='me-3'>
+                                    <FormControl>
+                                        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={age}
+                                            label="Age"
+                                            onChange={handleChange}
+                                            className='selecting'
+                                        >
+                                            <MenuItem value={10} onClick={() => handleRowClick2()} >Konsultatsiya</MenuItem>
+                                            <MenuItem value={20} onClick={() => handleRowClick3()}>Exit</MenuItem>
+                                            <MenuItem value={30}>Thirty</MenuItem>
+                                        </Select>
+                                         
+                                    </FormControl>
+                                   
+                                </div>
                                 <Clock />
-                           </div>
-                        </div>
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Drawer variant="permanent" open={open}>
-                <DrawerHeader className='d-flex justify-content-between'>
-                            <div>
-                                <img src="DreamEduLogo.png" alt="dream edu rasmlar"  width="110px" />
                             </div>
-                    <IconButton onClick={handleDrawerClose}>
-                        <AiOutlineArrowLeft />
-                    </IconButton>
-                </DrawerHeader>
-                <Divider />
-                <List>
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+                <Drawer variant="permanent" open={open}>
+                    <DrawerHeader className='d-flex justify-content-between'>
+                        <div>
+                            <img src="de2.png" alt="dream edu rasmlar" width="130px" />
+                        </div>
+                        <IconButton onClick={handleDrawerClose}>
+                            <AiOutlineArrowLeft />
+                        </IconButton>
+                    </DrawerHeader>
+                    <Divider />
+                    <List>
 
 
-                    <Link href="asosiy">
-                        <ListItem button>
-                            <ListItemIcon>
-                                <span className='mb-2 ms-1 fs-4 text-center'><AiTwotoneHome /> </span>
-                            </ListItemIcon>
-                            <ListItemText>
-                                Asosiy
-                            </ListItemText>
+                        <Link href="asosiy">
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <span className='mb-2 ms-1 fs-4 text-center'><AiTwotoneHome /> </span>
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Asosiy
+                                </ListItemText>
 
-                        </ListItem>
-                    </Link>
+                            </ListItem>
+                        </Link>
 
-                    <Link href="hujjatlar">
-                        <ListItem button>
-                            <ListItemIcon>
-                                <span className='mb-2 fs-4 ms-1 '><HiOutlineDocument /> </span>
-                            </ListItemIcon>
-                            <ListItemText>
-                                Hujjatlar
-                            </ListItemText>
+                        <Link href="hujjatlar">
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <span className='mb-2 fs-4 ms-1 '><HiOutlineDocument /> </span>
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Hujjatlar
+                                </ListItemText>
 
-                        </ListItem>
-                    </Link>
+                            </ListItem>
+                        </Link>
 
-                    <Link href="yangiHujjat">
-                        <ListItem button>
-                            <ListItemIcon>
-                                <span className='mb-2 fs-4 ms-1 '><HiOutlineDocumentAdd /> </span>
-                            </ListItemIcon>
-                            <ListItemText>
-                                Yangi Hujjatlar
-                            </ListItemText>
+                        <Link href="yangiHujjat">
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <span className='mb-2 fs-4 ms-1 '><HiOutlineDocumentAdd /> </span>
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Yangi Hujjatlar
+                                </ListItemText>
 
-                        </ListItem>
-                    </Link>
+                            </ListItem>
+                        </Link>
 
 
-                    <Link href="xodimlar">
-                        <ListItem button>
-                            <ListItemIcon>
-                                <span className='mb-2 fs-4 ms-1 '><BsPeopleFill /> </span>
-                            </ListItemIcon>
-                            <ListItemText>
-                                Xodimlar
-                            </ListItemText>
+                        <Link href="xodimlar">
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <span className='mb-2 fs-4 ms-1 '><BsPeopleFill /> </span>
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Xodimlar
+                                </ListItemText>
 
-                        </ListItem>
-                    </Link>
+                            </ListItem>
+                        </Link>
 
-                </List>
-          
-            </Drawer>
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                <DrawerHeader />
+                    </List>
+
+                </Drawer>
+                <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                    {children}
+                    <DrawerHeader />
+                </Box>
             </Box>
-        </Box>
+            <Footer />
         </DashWrapper>
     );
 }

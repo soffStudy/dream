@@ -7,27 +7,31 @@ const DashWrapper = styled.div`
     .css-1191obr-MuiPaper-root-MuiAppBar-root{
         background-color: #2D285E;
     }
+    .css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+        height: auto;
+    }
+
     .dreamLogo{
         width: 180px;
         /* height: 70px; */
         /* object-fit: cover; */
     }
-   .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
-       height: 15px;
-       width: 100px;
-   }
-   .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
-       min-height: 15px;
-       color: #fff;
-   }
-   select{
-       padding: 10px;
-       outline: none;
-       border-radius: 5px;
-       color: #2D285E;
-       font-weight: bold;
-   }
-
+    .selecting{
+        background-color: white !important;
+        width: 90px;
+        height: 40px;
+        padding: 0 !important;
+    }
+    .seconds{
+        font-size: 11px;
+        
+    }
+    .secondCard{
+        display: flex;
+        justify-content: center;
+        padding: 0 5px 0 5px;
+        text-shadow: 2px 2px 5px white;
+    }
 `;
 
 export default DashWrapper;

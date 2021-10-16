@@ -4,6 +4,7 @@ const AsosiyW = styled.div`
 color: black;
 height: 100vh;
 font-family: 'Josefin Sans', sans-serif;
+margin-top: 100px;
 
 .asosiyCardlar{
     margin: 10px;

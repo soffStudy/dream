@@ -14,7 +14,7 @@ import Paper from '@mui/material/Paper';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { visuallyHidden } from '@mui/utils';
-import { data } from './data';
+import Data from './data';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
@@ -90,6 +90,18 @@ const headCells = [
     label: "Topshirgan yo'nalishi",
   },
   {
+    id: 'payment',
+    numeric: true,
+    disablePadding: false,
+    label: '1-tolov',
+  },
+  {
+    id: 'payment2',
+    numeric: true,
+    disablePadding: false,
+    label: '2-tolov',
+  },
+  {
     id: 'active',
     numeric: true,
     disablePadding: false,
@@ -155,15 +167,15 @@ export default function EnhancedTable() {
 
   useEffect(() => {
     let exactData = []
-    if(Object.keys(routerr.query).length != 0) {
-      data.map((item) => {
-        if(item.statusRealTime == routerr.query.types) {
+    if (Object.keys(routerr.query).length != 0) {
+      Data.map((item) => {
+        if (item.statusRealTime == routerr.query.types) {
           exactData.push(item)
         }
       })
       setRows(exactData)
     } else {
-      setRows(data)
+      setRows(Data)
     }
   }, []);
 
@@ -208,9 +220,9 @@ export default function EnhancedTable() {
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
-   
-    const routerr = useRouter();
-    console.log(routerr.query.types);
+
+  const routerr = useRouter();
+  console.log(routerr.query.types);
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -238,7 +250,7 @@ export default function EnhancedTable() {
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
-                    
+
                     <TableRow
                       hover
                       onClick={(event) => handleClick(row.id)}
@@ -258,6 +270,8 @@ export default function EnhancedTable() {
                       <TableCell align="right">{row.tel}</TableCell>
                       <TableCell align="right">{row.state}</TableCell>
                       <TableCell align="right">{row.direction}</TableCell>
+                      <TableCell align="right">{row.payment}</TableCell>
+                      <TableCell align="right">{row.payment2}</TableCell>
                       <TableCell align="right"><div className={` yumaloq  ${row.actives == "tolagan" && "yashil" || "sariq"}`}></div> </TableCell>
 
                     </TableRow>

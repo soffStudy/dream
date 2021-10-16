@@ -3,6 +3,7 @@ import styled from "styled-components";
 const DocsWrapper = styled.div`
     color: black;
     height: 100vh;
+    margin-top: 100px;
 
     .docs2{
         border-radius: 5px;

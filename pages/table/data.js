@@ -1,5 +1,5 @@
 
-export const data = [
+const Data = [
 
         {
                 name: "Ibrohim Akromov",
@@ -13,6 +13,7 @@ export const data = [
                 status: "active",
                 statusRealTime: 'tolagan',
                 id: "1",
+                passport:"passport1.jpg",
                 actives: "tolagan"
         },
         {
@@ -27,6 +28,7 @@ export const data = [
                 status: "Checked",
                 statusRealTime: 'tolagan',
                 id: "2",
+                passport:"passport1.jpg",
                 actives: "tolagan"
         },
         {
@@ -41,6 +43,7 @@ export const data = [
                 status: "Not active",
                 statusRealTime: 'tolamagan',
                 id: "3",
+                passport:"passport1.jpg",
                 actives: "tolamagan"
         },
         {
@@ -55,6 +58,7 @@ export const data = [
                 status: "Checked",
                 statusRealTime: 'tolamagan',
                 id: "4",
+                passport:"passport1.jpg",
                 actives: "tolamagan"
         },
         {
@@ -69,6 +73,7 @@ export const data = [
                 status: "active",
                 statusRealTime: 'tolagan',
                 id: "5",
+                passport:"passport1.jpg",
                 actives: "tolagan"
         },
         {
@@ -82,7 +87,10 @@ export const data = [
                 manager: "Salima",
                 status: "active",
                 id: "6",
+                passport:"passport1.jpg",
                 actives: "tolamagan"
         }
 
 ]
+
+export default Data 

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import All from '../../components/all'
+import Dashboard2 from '../../components/dashboard2'
 import Link from 'next/link'
 import DocsWrapper from './docsW'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import Data from '../table/data'
 
 const Docs = () => {
     const owners = [
@@ -44,7 +45,7 @@ const Docs = () => {
 
 
 
-
+    const router = useRouter();
     let fullData = [];
 
     const [state, setstate] = useState(1);
@@ -52,16 +53,18 @@ const Docs = () => {
     useEffect(() => {
         setstate(localStorage && localStorage.getItem("ID"));
 
+
     }, []);
 
 
 
-    owners.map(value => {
+    Data.map(value => {
+        console.log("salom");
         if (value.id == state) fullData = value;
     })
 
     return (
-        <All>
+        <Dashboard2>
             <Head>
                 <title>Dream</title>
                 <meta name="description" content="dream education haqida toliq malumot" />
@@ -72,11 +75,17 @@ const Docs = () => {
             </Head>
             <DocsWrapper>
                 <div className="container docs2">
+<<<<<<< HEAD
                     <img src="favicon.ico" alt="next" />
                     <a href="favicon.ico" download> Download</a>
+=======
+
+                    <img src={fullData.passport} alt="hujjat rasmi" />
+
+>>>>>>> a572f94e3b0e703ec3c84cfa035fc0d4a5e5066a
                 </div>
             </DocsWrapper>
-        </All>
+        </Dashboard2>
     )
 }
 

@@ -6,14 +6,14 @@ import Layout from '../styleW/layout'
 const All = ({ children }) => {
     return (
         <Layout>
-            <div className=' '>
 
-                <Dashboard />
 
-                <div className='w-100'>
-                    {children}
-                </div>
+            <Dashboard />
+
+            <div className='w-100'>
+                {children}
             </div>
+
 
             <Footer />
 

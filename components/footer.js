@@ -6,8 +6,9 @@ const Footer = () => {
     return (
         <FooterWrapper>
             <div className="container">
-                <p className='text-center'>Created by <strong className='text-danger'>Phonex team</strong> 2021</p>
+                <p className='text-center'><b>Created by</b> <strong className='text-danger'>Phonex team</strong></p>
             </div>
+
         </FooterWrapper>
     )
 }

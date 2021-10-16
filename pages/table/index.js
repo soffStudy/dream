@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import TableWrapper from './TableWrapper';
-// import { data } from './data';
-// import Link from 'next/link'
 import { useRouter } from 'next//router';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -12,7 +10,7 @@ import Select from '@mui/material/Select';
 import StudentTable from './table.js'
 import ResponsiveDatePickers from './pickers'
 import BasicDatePicker from './pickers2'
-import All from '../../components/all'
+import Dashboard2 from '../../components/dashboard2'
 
 
 const Table = () => {
@@ -29,10 +27,10 @@ const Table = () => {
         router.push("passport")
         console.log(ID);
     }
-    
+
 
     return (
-        <All>
+        <Dashboard2>
 
 
             <TableWrapper>
@@ -56,59 +54,13 @@ const Table = () => {
                         </FormControl>
                     </Box>
                     <div className='inputs_22'>
-                        <ResponsiveDatePickers/>
-                        <BasicDatePicker  />
+                        <ResponsiveDatePickers />
+                        <BasicDatePicker />
                     </div>
                 </div>
-
-                {/* mani teybilim */}
-                {/* <table className="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Isim Familiya</th>
-                            <th scope="col">Manzili</th>
-                            <th scope="col">Telefon raqami</th>
-                            <th scope="col">Topshirgan davlati</th>
-                            <th scope="col">Topshirgan yo'nalishi</th>
-                            <th scope="col">1-To'lov</th>
-                            <th scope="col">2-To'lov</th>
-                            <th scope="col">Manager</th>
-                            <th scope="col">Holati</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            data.filter((val) => {
-                                if (searchStern == "") {
-                                    return val
-                                } else if (val.address.toLowerCase().includes(searchStern.toLowerCase())) {
-                                    return val
-                                } else if (val.name.toLowerCase().includes(searchStern.toLowerCase())) {
-                                    return val
-                                } else if (val.tel.toLowerCase().includes(searchStern.toLowerCase())) {
-                                    return val
-                                }
-                            }).map((val, key) => {
-                                return (
-                                    <tr key={key} style={{ cursor: 'pointer' }} onClick={() => handleRowClick(val.id)}>
-                                        <td>{val.name}</td>
-                                        <td>{val.address}</td>
-                                        <td>{val.tel}</td>
-                                        <td>{val.state}</td>
-                                        <td>{val.direction}</td>
-                                        <td>{val.payment}</td>
-                                        <td>{val.payment2}</td>
-                                        <td>{val.manager}</td>
-                                        <td>{val.status}</td>
-                                    </tr>
-                                )
-                            })
-                        }
-                    </tbody>
-                </table> */}
                 <StudentTable />
             </TableWrapper>
-        </All> 
+        </Dashboard2>
     )
 }
 

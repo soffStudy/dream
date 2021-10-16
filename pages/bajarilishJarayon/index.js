@@ -21,7 +21,7 @@ import Switch from '@mui/material/Switch';
 import { visuallyHidden } from '@mui/utils';
 import { data } from '../table/data';
 import { useRouter } from 'next/router';
-import All from '../../components/all'
+import Dashboard2 from '../../components/dashboard2'
 import TableWrapper from '../table/TableWrapper';
 
 
@@ -200,7 +200,7 @@ export default function EnhancedTable() {
         page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
     return (
-        <All>
+        <Dashboard2>
             <TableWrapper>
                 <Box sx={{ width: '100%' }}>
                     <Paper sx={{ width: '100%', mb: 2 }}>
@@ -279,6 +279,6 @@ export default function EnhancedTable() {
                     />
                 </Box>
             </TableWrapper>
-        </All>
+        </Dashboard2>
     );
 }

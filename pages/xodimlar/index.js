@@ -1,20 +1,22 @@
 import React from 'react'
 import Head from 'next/head'
 import All from '../../components/all'
-import HujjatlarW from './../hujjatlar/hujjatlar'
+import Xodimlar from './xodimlarW'
+import Dashboard2 from '../../components/dashboard2'
+
 
 const Hujjatlar = () => {
     return (
-        <All>
-            <HujjatlarW>
+        <Dashboard2>
+            <Xodimlar>
                 <Head>
                     <title>Dream</title>
                     <meta name="description" content="dream education haqida toliq malumot" />
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
-                <h1>Xodimlar haqida ma'lumotlar</h1>
-            </HujjatlarW>
-        </All>
+                <h1 className='mt-5'>Xodimlar haqida ma'lumotlar</h1>
+            </Xodimlar>
+        </Dashboard2>
     )
 }
 
