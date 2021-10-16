@@ -171,19 +171,19 @@ export default function EnhancedTable() {
   const [rows, setRows] = React.useState([])
 
 
-  // useEffect(() => {
-  //   let exactData = []
-  //   if (Object.keys(routerr.query).length != 0) {
-  //     Data.map((item) => {
-  //       if (item.statusRealTime == routerr.query.types) {
-  //         exactData.push(item)
-  //       }
-  //     })
-  //     setRows(exactData)
-  //   } else {
-  //     setRows(Data)
-  //   }
-  // }, []);
+  useEffect(() => {
+    let exactData = []
+    if (Object.keys(routerr.query).length != 0) {
+      Data.map((item) => {
+        if (item.statusRealTime == routerr.query.types) {
+          exactData.push(item)
+        }
+      })
+      setRows(exactData)
+    } else {
+      setRows(Data)
+    }
+  }, []);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';

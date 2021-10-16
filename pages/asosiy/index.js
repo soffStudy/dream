@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Head from 'next/head'
 import AsosiyW from './asosiyW'
 import Link from 'next/link'
@@ -25,9 +25,7 @@ const Asosiy = () => {
         console.log(router.query.keyword);
     }
 
-    useEffect(() => {
-        AOS.init();
-    })
+   
 
     return (
         <Dashboard2>
@@ -43,7 +41,7 @@ const Asosiy = () => {
 
                         <div className="col-lg-4 col-md-6 col-sm-12">
                             <Link href="table">
-                                <div className='asosiyCardlar' data-aos="fade-up-right">
+                                <div className='asosiyCardlar'>
                                     <div className=''>
                                         <BiCalendarEdit className='fs-1' />
                                         <p className='mt-2 h1 fw-bold'>270</p>
@@ -54,7 +52,7 @@ const Asosiy = () => {
                         </div>
 
                         <div className="col-lg-4 col-md-6 col-sm-12">
-                            <div className='asosiyCardlar' data-aos="fade-zoom-in" onClick={() => handleRowClick2()}>
+                            <div className='asosiyCardlar'  onClick={() => handleRowClick2()}>
                                 <div className=''>
                                     <BiCalendarMinus className='fs-1' />
                                     <p className='mt-2 h1 fw-bold'>171</p>

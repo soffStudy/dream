@@ -13,9 +13,9 @@ const YangiHujjat = () => {
             </Head>
             <YangiHujjatW>
 
-                <h1 className='text-center mt-5'>yangi hujjat</h1>
+                <h1 className='text-center mt-5'>Yangi hujjat</h1>
                 <div className="container">
-                    <div className="row">
+                    <div className="row formaun">
                         <div className="col-lg-6 col-sm-12">
                             <div>
                                 <form>
@@ -59,12 +59,12 @@ const YangiHujjat = () => {
 
                                 <div className='d-flex  justify-content-between '>
                                     <div className='w-100 me-3  '>
-                                        <label htmlFor="tolov2" className='mt-3 mb-1'>2- to'lov qilingan sana</label>
+                                        <label htmlFor="tolov2" className='mt-3 mb-1'>2- To'lov </label>
                                         <input type="number" className='form-control' placeholder="8900000" id="tolov2" />
                                     </div>
 
                                     <div className='w-100'>
-                                        <label htmlFor="sana2" className='mt-3 mb-1'>Sana 2</label>
+                                        <label htmlFor="sana2" className='mt-3 mb-1'>2- To'lov qilingan sana</label>
                                         <input type="date" className='form-control' id="sana2" />
                                     </div>
 
