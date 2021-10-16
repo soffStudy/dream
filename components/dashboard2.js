@@ -143,7 +143,6 @@ export default function MiniDrawer({ children }) {
 
                                 <div>
                                     <FormControl>
-                                        <InputLabel id="demo-simple-select-label">Age</InputLabel>
                                         <Select
                                             labelId="demo-simple-select-label"
                                             id="demo-simple-select"

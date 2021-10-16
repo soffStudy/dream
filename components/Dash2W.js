@@ -9,13 +9,11 @@ const DashWrapper = styled.div`
     }
     .dreamLogo{
         width: 180px;
-        /* height: 70px; */
-        /* object-fit: cover; */
     }
     .selecting{
         background-color: white !important;
-        width: 90px;
-        height: 40px;
+        width: 101px;
+        height: 37  px;
         padding: 0 !important;
     }
 `;
