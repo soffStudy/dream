@@ -2,26 +2,18 @@ import styled from 'styled-components'
 
 const FooterWrapper = styled.div`
 
-    height: 200px;
+    height: 50px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    /* background: url('bg2.png'); */
-    background-size: 150% 150%;
-    /* animation: animation-name 15s ease infinite; */
+    animation: animation-name 15s ease infinite;
+    background: linear-gradient(-45deg, #040139, #0e0b4b, #3183CB, #040139);
+    background-size: 400% 400%;
+
     .css-11w94w9-MuiTableCell-root {
         padding-left: 10px;
-    }
-
-    .custom-shape-divider-top-1634363347 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
     }
 
     p{
@@ -54,7 +46,6 @@ const FooterWrapper = styled.div`
             left: 0;
             width: 100%;
             height: 250px;
-            /* background: url(https://media.geeksforgeeks.org/wp-content/uploads/20200326181026/wave3.png); */
             background-size: cover;
             background-repeat: no-repeat;
         }

@@ -30,7 +30,7 @@ function createData(name, calories, fat, carbs, protein) {
 
 // const rows = data
 
-function descendingComparator(a, b, orderBy) {
+function descendingComparator(a, b, orderBy) {``
   if (b[orderBy] < a[orderBy]) {
     return -1;
   }
@@ -111,7 +111,7 @@ const headCells = [
     id: 'active',
     numeric: true,
     disablePadding: false,
-    label: 'Active',
+    label: 'Statusi',
   }
 ];
 

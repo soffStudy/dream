@@ -6,7 +6,7 @@ const GloginW = styled.div`
     height: 100vh;
     /* background: linear-gradient(-45deg, #040139, #0e0b4b, #3183CB, #040139); */
     background: rgb(6,171,155);
-    background: linear-gradient(321deg, rgba(6,171,155,1) 0%, rgba(2,20,255,1) 46%, rgba(3,111,145,1) 100%);
+    background: linear-gradient(321deg,#e3ae15 0%,#2d285e 46%,#e3ae15 100%);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     /* animatsia */

@@ -34,7 +34,17 @@ const Table = () => {
 
 
             <TableWrapper>
-                <h1>Talabalrning umumiy ma'lumotlari</h1>
+                <h1>Talabalarning umumiy ma'lumotlari</h1>
+                <div className='statusW'>
+                    <div className='payment'>
+                        <div className='span1'></div>
+                        <p>To'lov tugatilgan talabalar</p>
+                    </div>
+                    <div className='payment'>
+                        <div className='span2'></div>
+                        <p>Pul to'lanmagan talabalar</p>
+                    </div>
+                </div>
                 <div className='inputs'>
                     <TextField id="filled-basic" label="Filled" variant="filled" onChange={event => { setSearchstern(event.target.value) }} />
                     <Box sx={{ minWidth: 120 }} className='ms-3 options'>
@@ -47,9 +57,8 @@ const Table = () => {
                                 label="Age"
                                 onChange={handleChange}
                             >
-                                <MenuItem value={10}>Active</MenuItem>
-                                <MenuItem value={20}>Checked</MenuItem>
-                                <MenuItem value={30}>Not active</MenuItem>
+                                <MenuItem value={10}>To'lov tugatilgan talabalar</MenuItem>
+                                <MenuItem value={20}>Pul to'lanmagan talabalar</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>

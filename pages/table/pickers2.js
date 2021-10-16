@@ -10,7 +10,7 @@ export default function BasicDatePicker() {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DatePicker
-        label="Basic example"
+        label="Tugallangan vaqt"
         value={value}
         onChange={(newValue) => {
           setValue(newValue);

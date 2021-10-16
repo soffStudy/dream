@@ -13,6 +13,7 @@ margin-top: 100px;
     background-size: cover;
     background-color: #2D285E;
     color: white;
+    cursor: pointer;
     text-align: center;
     border-radius: 10px;
     box-shadow: 3px 4px 8px 0 black;
@@ -99,6 +100,8 @@ a{
                 background-position: 0% 50%;
             }
         }
+
+
     
 }
 `;

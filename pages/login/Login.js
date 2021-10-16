@@ -24,14 +24,14 @@ function Glogin() {
 
     if (details.email == adminUser.email && details.password == adminUser.password) {
       setUser({
-        name: details.name,
+        name: details.email,
         email: details.email
       })
+      localStorage.setItem("name", details.email)
       router.push({
         pathname: "asosiy",
         query: details.role
       })
-      router.push("asosiy")
     } else {
       console.log("Ma'lumot topilmadi");
 

@@ -26,7 +26,7 @@ const Form = ({ Login, error }) => {
                                 </div>
                                 <div className="login_otish">
                                     <div className="nature">
-                                        <img src="https://top-school.uz/wp-content/uploads/2020/04/FB_IMG_1616150236272.jpg" alt="soliq gerb" />
+                                        <img src="de2.png" alt="Dream-edu logotipi" />
                                     </div>
                                 </div>
                             </div>
