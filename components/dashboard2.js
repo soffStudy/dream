@@ -24,6 +24,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Footer from './footer';
 import { useRouter } from 'next/router';
+import Clock from './clock';
 
 
 
@@ -31,6 +32,8 @@ import { useRouter } from 'next/router';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
+    
+   
     width: drawerWidth,
     transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
@@ -38,6 +41,7 @@ const openedMixin = (theme) => ({
     }),
     overflowX: 'hidden',
 });
+
 
 const closedMixin = (theme) => ({
     transition: theme.transitions.create('width', {
@@ -117,6 +121,11 @@ export default function MiniDrawer({ children }) {
         console.log(router.query.keyword);
     }
 
+    const handleRowClick3 = () => {
+        router.push("/");
+        console.log(router.query.keyword);
+    }
+
 
     return (
         <DashWrapper>
@@ -141,7 +150,7 @@ export default function MiniDrawer({ children }) {
                             <div className="container d-flex align-items-center justify-content-end w-100">
                                 {/* select dashboard un */}
 
-                                <div>
+                                <div className='me-3'>
                                     <FormControl>
                                         <Select
                                             labelId="demo-simple-select-label"
@@ -152,11 +161,14 @@ export default function MiniDrawer({ children }) {
                                             className='selecting'
                                         >
                                             <MenuItem value={10} onClick={() => handleRowClick2()} >Konsultatsiya</MenuItem>
-                                            <MenuItem value={20}>Twenty</MenuItem>
+                                            <MenuItem value={20} onClick={() => handleRowClick3()}>Exit</MenuItem>
                                             <MenuItem value={30}>Thirty</MenuItem>
                                         </Select>
+                                         
                                     </FormControl>
+                                   
                                 </div>
+                                <Clock />
                             </div>
                         </Typography>
                     </Toolbar>

@@ -75,9 +75,14 @@ const Docs = () => {
             </Head>
             <DocsWrapper>
                 <div className="container docs2">
+<<<<<<< HEAD
+                    <img src="favicon.ico" alt="next" />
+                    <a href="favicon.ico" download> Download</a>
+=======
 
                     <img src={fullData.passport} alt="hujjat rasmi" />
 
+>>>>>>> a572f94e3b0e703ec3c84cfa035fc0d4a5e5066a
                 </div>
             </DocsWrapper>
         </Dashboard2>

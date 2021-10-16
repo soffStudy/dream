@@ -25,7 +25,7 @@ const Passport = () => {
             <PasswordWrapper>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-4 col-md-6 col-sm-12">
+                        <div className="col-lg-4 col-md-6 col-sm-12 p-2">
                             <div className='passport'>
                                 <AccountBoxIcon className='fs-2' />
                                 <p>
@@ -41,7 +41,7 @@ const Passport = () => {
                             </div>
                         </div>
 
-                        <div className="col-lg-4 col-md-6 col-sm-12">
+                        <div className="col-lg-4 col-md-6 col-sm-12 p-2">
                             <div className='passport'>
                                 <HiOutlineDocumentDuplicate className='fs-2' />
                                 <p>
@@ -55,7 +55,7 @@ const Passport = () => {
                             </div>
                         </div>
 
-                        <div className="col-lg-4 col-md-6 col-sm-12">
+                        <div className="col-lg-4 col-md-6 col-sm-12 p-2">
                             <div className='passport'>
                                 <HiOutlineDocumentDuplicate className='fs-2' />
                                 <p>

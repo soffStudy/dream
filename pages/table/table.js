@@ -90,6 +90,18 @@ const headCells = [
     label: "Topshirgan yo'nalishi",
   },
   {
+    id: 'payment',
+    numeric: true,
+    disablePadding: false,
+    label: '1-tolov',
+  },
+  {
+    id: 'payment2',
+    numeric: true,
+    disablePadding: false,
+    label: '2-tolov',
+  },
+  {
     id: 'active',
     numeric: true,
     disablePadding: false,
@@ -258,6 +270,8 @@ export default function EnhancedTable() {
                       <TableCell align="right">{row.tel}</TableCell>
                       <TableCell align="right">{row.state}</TableCell>
                       <TableCell align="right">{row.direction}</TableCell>
+                      <TableCell align="right">{row.payment}</TableCell>
+                      <TableCell align="right">{row.payment2}</TableCell>
                       <TableCell align="right"><div className={` yumaloq  ${row.actives == "tolagan" && "yashil" || "sariq"}`}></div> </TableCell>
 
                     </TableRow>

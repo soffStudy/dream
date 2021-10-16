@@ -18,6 +18,9 @@ margin-top: 100px;
     box-shadow: 3px 4px 8px 0 black;
     height: 170px;
     transition:  1s !important;
+    animation: animation-name 15s ease infinite;
+    background: linear-gradient(-45deg, #040139, #0e0b4b, #3183CB, #040139);
+    background-size: 400% 400%;
 
     &:hover{
         background-color: #2D285E;
@@ -84,6 +87,18 @@ a{
         transition: all 1s cubic-bezier(.48, -0.28, -0.41, 1.4);
         overflow: hidden;
     }
+
+    @keyframes animation-name {   
+            0%{
+                background-position: 0% 50%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0% 50%;
+            }
+        }
     
 }
 `;
