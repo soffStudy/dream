@@ -30,7 +30,7 @@ function createData(name, calories, fat, carbs, protein) {
 
 // const rows = data
 
-function descendingComparator(a, b, orderBy) {
+function descendingComparator(a, b, orderBy) {``
   if (b[orderBy] < a[orderBy]) {
     return -1;
   }
@@ -59,6 +59,12 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
+  {
+    id: 'number',
+    numeric: false,
+    disablePadding: true,
+    label: 'Number',
+  },
   {
     id: 'name',
     numeric: false,
@@ -165,19 +171,19 @@ export default function EnhancedTable() {
   const [rows, setRows] = React.useState([])
 
 
-  useEffect(() => {
-    let exactData = []
-    if (Object.keys(routerr.query).length != 0) {
-      Data.map((item) => {
-        if (item.statusRealTime == routerr.query.types) {
-          exactData.push(item)
-        }
-      })
-      setRows(exactData)
-    } else {
-      setRows(Data)
-    }
-  }, []);
+  // useEffect(() => {
+  //   let exactData = []
+  //   if (Object.keys(routerr.query).length != 0) {
+  //     Data.map((item) => {
+  //       if (item.statusRealTime == routerr.query.types) {
+  //         exactData.push(item)
+  //       }
+  //     })
+  //     setRows(exactData)
+  //   } else {
+  //     setRows(Data)
+  //   }
+  // }, []);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -253,16 +259,19 @@ export default function EnhancedTable() {
 
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(row.id)}
+                      onClick={(event) => handleClick(index + 1)}
                       role="checkbox"
                       tabIndex={-1}
                       key={row.name}
                     >
+                      <TableCell align="right">{row.id}</TableCell>
+
                       <TableCell
                         // component="th"
                         id={labelId}
                         scope="row"
                         padding="none"
+                        className='ps-2'
                       >
                         {row.name}
                       </TableCell>
