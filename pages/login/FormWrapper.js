@@ -46,13 +46,13 @@ const FormWrapper = styled.div`
         padding: 30px;
         z-index: 2;
         border-radius: 10px;
-        border: 4px solid #223157;
+        border: 4px solid #d8b544;
         width: 500px;
         height: 420px;
         font-weight: bold;
         opacity: 0.9;
         h2 {
-        color: #888;
+        color: #d8b544;
         font-size: 28px;
         font-weight: 500;
         margin-bottom: 30px;
@@ -68,12 +68,15 @@ const FormWrapper = styled.div`
         width: 100%;
         margin-bottom: 15px;
         margin-top: 20px;
-                label {
+            label {
                 display: block;
-                color: #666;
-                font-size: 12px;
+                color: #d8b544;
+                font-size: 15px;
                 margin-bottom: 5px;
                 transition: 0.4s;
+            }
+            input {
+                border: 1px solid #d8b544;
             }
            
         }
@@ -103,8 +106,8 @@ const FormWrapper = styled.div`
         display: block;
         padding: 10px 15px;
         border-radius: 8px;
-        background-color: blue;
-        background: linear-gradient(90deg, rgb(25, 14, 184)10%, rgb(6, 6, 114)80%);
+        background-color: #d8b544;
+        /* background: linear-gradient(90deg, rgb(25, 14, 184)10%, rgb(6, 6, 114)80%); */
         background-size: 200%;
         background-position: 0%;
         transition: 0.4s;
@@ -124,7 +127,7 @@ const FormWrapper = styled.div`
         margin-bottom: 10px;
         height: 50px;
         img{
-            height: 70px;
+            height:50px;
         }
     }
 
@@ -132,7 +135,7 @@ const FormWrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-
+        color: #d8b544;
     }
 
     .radio_button {

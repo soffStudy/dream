@@ -59,6 +59,11 @@ const TableWrapper = styled.div`
     .css-10botns-MuiInputBase-input-MuiFilledInput-input{
         z-index: 0 !important;
     }
+
+    .css-11w94w9-MuiTableCell-root{
+        padding-left: 12px;
+    }
+
     .MuiFilledInput-input{
         height: 30px !important;
         z-index: 0;
@@ -90,6 +95,36 @@ const TableWrapper = styled.div`
     }
     .options{
         min-width: 200px;
+    }
+    .statusW{
+       
+        padding: 20px;
+        border-radius: 5px;
+        width: 500px;
+        display: flex;
+
+        p {
+            margin: 6px;
+        }
+
+        .span1{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: green;
+        }
+
+        .span2{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+
+        .payment{
+            display: flex;
+            align-items: center;
+        }
     }
     
 `;

@@ -19,12 +19,17 @@ import { HiOutlineDocument, HiOutlineDocumentAdd } from "react-icons/hi";
 import { BsPeopleFill } from "react-icons/bs";
 import DashWrapper from './Dash2W';
 import InputLabel from '@mui/material/InputLabel';
+import Avatar from '@mui/material/Avatar';
+import Menu from '@mui/material/Menu';
+import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Footer from './footer';
 import { useRouter } from 'next/router';
 import Clock from './clock';
+import { useEffect } from 'react';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 
 
@@ -101,6 +106,20 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function MiniDrawer({ children }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const openMenu = Boolean(anchorEl);
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+  
+    useEffect(() => {
+        const storage = localStorage.getItem("name");
+        console.log(storage);
+        if(!storage) router.push("/");
+    }, [])
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -122,6 +141,7 @@ export default function MiniDrawer({ children }) {
     }
 
     const handleRowClick3 = () => {
+        localStorage.clear()
         router.push("/");
         console.log(router.query.keyword);
     }
@@ -149,27 +169,50 @@ export default function MiniDrawer({ children }) {
                         <Typography variant="h6" noWrap component="div" className='w-100'>
                             <div className="container d-flex align-items-center justify-content-end w-100">
                                 {/* select dashboard un */}
-
-                                <div className='me-3'>
-                                    <FormControl>
-                                        <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={age}
-                                            label="Age"
-                                            onChange={handleChange}
-                                            className='selecting'
-                                        >
-                                            <MenuItem value={10} onClick={() => handleRowClick2()} >Konsultatsiya</MenuItem>
-                                            <MenuItem value={20} onClick={() => handleRowClick3()}>Exit</MenuItem>
-                                            <MenuItem value={30}>Thirty</MenuItem>
-                                        </Select>
-                                         
-                                    </FormControl>
-                                   
-                                </div>
                                 <Clock />
+                                <Tooltip title="Account settings">
+                                <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}>
+                                    <Avatar />
+                                </IconButton>
+                                </Tooltip>
+                                <Menu
+                                    anchorEl={anchorEl}
+                                    open={openMenu}
+                                    onClose={handleClose}
+                                    onClick={handleClose}
+                                    PaperProps={{
+                                    elevation: 0,
+                                    sx: {
+                                        overflow: 'visible',
+                                        filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                                        mt: 1.5,
+                                        '& .MuiAvatar-root': {
+                                        width: 32,
+                                        height: 32,
+                                        ml: -0.5,
+                                        mr: 1,
+                                        },
+                                        '&:before': {
+                                        content: '""',
+                                        display: 'block',
+                                        position: 'absolute',
+                                        top: 0,
+                                        right: 14,
+                                        width: 10,
+                                        height: 10,
+                                        bgcolor: 'background.paper',
+                                        transform: 'translateY(-50%) rotate(45deg)',
+                                        zIndex: 0,
+                                        },
+                                    },
+                                    }}
+                                    transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                                    anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                                >
+                                    <MenuItem onClick={() => handleRowClick3()}>
+                                    <ExitToAppIcon className='me-2'/> Tizimidan chiqish
+                                    </MenuItem>
+                                </Menu>
                             </div>
                         </Typography>
                     </Toolbar>
