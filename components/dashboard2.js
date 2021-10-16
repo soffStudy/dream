@@ -160,56 +160,11 @@ export default function MiniDrawer({ children }) {
 
                         <Typography variant="h6" noWrap component="div" className='w-100'>
                             <div className="container d-flex align-items-center justify-content-end w-100">
-                                {/* select dashboard un */}
 
-                                <div className='me-3'>
-                                    <FormControl>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={age}
-                                            label="Age"
-                                            onChange={handleChange}
-                                            className='selecting'
-                                        >
-                                            <MenuItem value={10} onClick={() => handleRowClick2()} >Konsultatsiya</MenuItem>
-                                            <MenuItem value={20} onClick={() => handleRowClick3()}>Exit</MenuItem>
-                                            <MenuItem value={30}>Thirty</MenuItem>
-                                        </Select>
-
-                                    </FormControl>
-
-                                    <Button
-                                        id="demo-positioned-button"
-                                        aria-controls="demo-positioned-menu"
-                                        aria-haspopup="true"
-                                        aria-expanded={open ? 'true' : undefined}
-                                        onClick={handleClick}
-                                    >
-                                        Dashboard
-                                    </Button>
-                                    <Menu
-                                        id="demo-positioned-menu"
-                                        aria-labelledby="demo-positioned-button"
-                                        anchorEl={anchorEl}
-                                        open={open2}
-                                        onClose={handleClose}
-                                        anchorOrigin={{
-                                            vertical: 'top',
-                                            horizontal: 'left',
-                                        }}
-                                        transformOrigin={{
-                                            vertical: 'top',
-                                            horizontal: 'left',
-                                        }}
-                                    >
-                                        <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                        <MenuItem onClick={handleClose}>My account</MenuItem>
-                                        <MenuItem onClick={handleClose}>Logout</MenuItem>
-                                    </Menu>
+                                <div className="d-flex justiy-content-center align-items-center h-100">
+                                    <Clock />
 
                                 </div>
-                                <Clock />
                             </div>
                         </Typography>
                     </Toolbar>

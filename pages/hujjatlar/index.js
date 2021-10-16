@@ -34,7 +34,6 @@ function createData(name, calories, fat, carbs, protein) {
     };
 }
 
-// const rows = data
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -105,13 +104,13 @@ const headCells = [
         id: 'payment',
         numeric: true,
         disablePadding: false,
-        label: '1-tolov',
+        label: "1-To'lov",
     },
     {
         id: 'payment2',
         numeric: true,
         disablePadding: false,
-        label: '2-tolov',
+        label: "2-To'lov",
     },
     {
         id: 'active',
@@ -130,13 +129,14 @@ function EnhancedTableHead(props) {
     return (
 
         <TableHead>
-            <TableRow>
+            <TableRow className="thuchun">
                 {headCells.map((headCell) => (
                     <TableCell
                         key={headCell.id}
                         align={headCell.numeric ? 'right' : 'left'}
                         padding={headCell.disablePadding ? 'none' : 'normal'}
                         sortDirection={orderBy === headCell.id ? order : false}
+                        className="fs-5 text-center"
                     >
                         <TableSortLabel
                             active={orderBy === headCell.id}
@@ -240,6 +240,7 @@ export default function EnhancedTable() {
     return (
         <Dashboard2>
             <Hujjat>
+                <h1 className='text-center'>Hujjatlar</h1>
                 <div className="buttonuchun">
                     <Link href="yangiHujjat">
                         <button className='btn btn-primary'>Yangi hujjat</button>
@@ -278,7 +279,7 @@ export default function EnhancedTable() {
                                                     tabIndex={-1}
                                                     key={row.name}
                                                 >
-                                                    <TableCell align="right">{row.id}</TableCell>
+                                                    <TableCell align="right">{index}</TableCell>
 
                                                     <TableCell
                                                         // component="th"
@@ -289,13 +290,13 @@ export default function EnhancedTable() {
                                                     >
                                                         {row.name}
                                                     </TableCell>
-                                                    <TableCell align="right">{row.address}</TableCell>
-                                                    <TableCell align="right">{row.tel}</TableCell>
-                                                    <TableCell align="right">{row.state}</TableCell>
-                                                    <TableCell align="right">{row.direction}</TableCell>
-                                                    <TableCell align="right">{row.payment}</TableCell>
-                                                    <TableCell align="right">{row.payment2}</TableCell>
-                                                    <TableCell align="right"><div className={` yumaloq  ${row.actives == "tolagan" && "yashil" || "sariq"}`}></div> </TableCell>
+                                                    <TableCell align="right" className="text-center">{row.address}</TableCell>
+                                                    <TableCell align="right" className="text-center">{row.tel}</TableCell>
+                                                    <TableCell align="right" className="text-center" >{row.state}</TableCell>
+                                                    <TableCell align="right" className="text-center">{row.direction}</TableCell>
+                                                    <TableCell align="right" className="text-center">{row.payment}</TableCell>
+                                                    <TableCell align="right" className="text-center">{row.payment2}</TableCell>
+                                                    <TableCell align="right" className="text-center"><div className={` yumaloq  ${row.actives == "tolagan" && "yashil" || "sariq"}`}></div></TableCell>
 
                                                 </TableRow>
                                             );
