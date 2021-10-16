@@ -111,7 +111,7 @@ const headCells = [
     id: 'active',
     numeric: true,
     disablePadding: false,
-    label: 'Statusi',
+    label: 'Status',
   }
 ];
 

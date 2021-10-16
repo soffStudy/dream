@@ -3,7 +3,7 @@ import styled from "styled-components";
 const DocsWrapper = styled.div`
     color: black;
     height: 100vh;
-    margin-top: 100px;
+    margin-top: 40px;
 
     .docs2{
         border-radius: 5px;
@@ -11,6 +11,13 @@ const DocsWrapper = styled.div`
         -10px -10px 23px #FFFFFF26;;
         padding: 20px;
         text-align: center;
+        img{
+            height: 400px;
+        }
+    }
+
+    .back{
+        padding: 10px;
     }
    
 `;

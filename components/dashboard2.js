@@ -25,7 +25,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import ExitToAppIcon from '@mui/material/Avatar';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import Footer from './footer';
 import { useRouter } from 'next/router';
 import Clock from './clock';

@@ -5,6 +5,7 @@ import DocsWrapper from './docsW'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Data from '../table/data'
+import AssignmentReturnIcon from '@mui/icons-material/AssignmentReturn';
 
 const Docs = () => {
     const owners = [
@@ -74,15 +75,13 @@ const Docs = () => {
                 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet"></link>
             </Head>
             <DocsWrapper>
-                <div className="container docs2">
-<<<<<<< HEAD
-                    <img src="favicon.ico" alt="next" />
-                    <a href="favicon.ico" download> Download</a>
-=======
-
+                <div className='back'>
+                    <Link href="passport">
+                        <button className='btn btn-primary '><AssignmentReturnIcon/></button>
+                    </Link>
+                </div>
+                <div className="container docs2 ">
                     <img src={fullData.passport} alt="hujjat rasmi" />
-
->>>>>>> a572f94e3b0e703ec3c84cfa035fc0d4a5e5066a
                 </div>
             </DocsWrapper>
         </Dashboard2>

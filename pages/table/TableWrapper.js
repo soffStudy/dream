@@ -96,12 +96,17 @@ const TableWrapper = styled.div`
     .options{
         min-width: 200px;
     }
+
+     .css-10dfkli-MuiTableCell-root{
+        padding-left: 15px;
+    }
+
     .statusW{
        
         padding: 20px;
         border-radius: 5px;
-        width: 500px;
         display: flex;
+        justify-content: flex-end;
 
         p {
             margin: 6px;

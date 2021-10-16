@@ -25,7 +25,9 @@ margin-top: 100px;
 
     &:hover{
         background-color: #2D285E;
-        transform: scale(1.1);
+        transition: .5s !important;
+        transform: translateY(-10px);
+        
         .logoAsosiy{  
         transform: scale(1.2);
         }

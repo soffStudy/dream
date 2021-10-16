@@ -35,16 +35,7 @@ const Table = () => {
 
             <TableWrapper>
                 <h1>Talabalarning umumiy ma'lumotlari</h1>
-                <div className='statusW'>
-                    <div className='payment'>
-                        <div className='span1'></div>
-                        <p>To'lov tugatilgan talabalar</p>
-                    </div>
-                    <div className='payment'>
-                        <div className='span2'></div>
-                        <p>Pul to'lanmagan talabalar</p>
-                    </div>
-                </div>
+               
                 <div className='inputs'>
                     <TextField id="filled-basic" label="Filled" variant="filled" onChange={event => { setSearchstern(event.target.value) }} />
                     <Box sx={{ minWidth: 120 }} className='ms-3 options'>
@@ -65,6 +56,16 @@ const Table = () => {
                     <div className='inputs_22'>
                         <ResponsiveDatePickers />
                         <BasicDatePicker />
+                    </div>
+                </div>
+                <div className='statusW'>
+                    <div className='payment'>
+                        <div className='span1'></div>
+                        <p>To'lov tugatilgan talabalar</p>
+                    </div>
+                    <div className='payment'>
+                        <div className='span2'></div>
+                        <p>Pul to'lanmagan talabalar</p>
                     </div>
                 </div>
                 <StudentTable />
