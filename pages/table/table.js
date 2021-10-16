@@ -60,6 +60,12 @@ function stableSort(array, comparator) {
 
 const headCells = [
   {
+    id: 'number',
+    numeric: false,
+    disablePadding: true,
+    label: 'Number',
+  },
+  {
     id: 'name',
     numeric: false,
     disablePadding: true,
@@ -253,16 +259,19 @@ export default function EnhancedTable() {
 
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(row.id)}
+                      onClick={(event) => handleClick(index + 1)}
                       role="checkbox"
                       tabIndex={-1}
                       key={row.name}
                     >
+                      <TableCell align="right">{row.id}</TableCell>
+
                       <TableCell
                         // component="th"
                         id={labelId}
                         scope="row"
                         padding="none"
+                        className='ps-2'
                       >
                         {row.name}
                       </TableCell>

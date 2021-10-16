@@ -25,6 +25,8 @@ import Select from '@mui/material/Select';
 import Footer from './footer';
 import { useRouter } from 'next/router';
 import Clock from './clock';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
 
 
 
@@ -32,8 +34,8 @@ import Clock from './clock';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
-    
-   
+
+
     width: drawerWidth,
     transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
@@ -126,6 +128,16 @@ export default function MiniDrawer({ children }) {
         console.log(router.query.keyword);
     }
 
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open2 = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+
 
     return (
         <DashWrapper>
@@ -164,9 +176,38 @@ export default function MiniDrawer({ children }) {
                                             <MenuItem value={20} onClick={() => handleRowClick3()}>Exit</MenuItem>
                                             <MenuItem value={30}>Thirty</MenuItem>
                                         </Select>
-                                         
+
                                     </FormControl>
-                                   
+
+                                    <Button
+                                        id="demo-positioned-button"
+                                        aria-controls="demo-positioned-menu"
+                                        aria-haspopup="true"
+                                        aria-expanded={open ? 'true' : undefined}
+                                        onClick={handleClick}
+                                    >
+                                        Dashboard
+                                    </Button>
+                                    <Menu
+                                        id="demo-positioned-menu"
+                                        aria-labelledby="demo-positioned-button"
+                                        anchorEl={anchorEl}
+                                        open={open2}
+                                        onClose={handleClose}
+                                        anchorOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'left',
+                                        }}
+                                        transformOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'left',
+                                        }}
+                                    >
+                                        <MenuItem onClick={handleClose}>Profile</MenuItem>
+                                        <MenuItem onClick={handleClose}>My account</MenuItem>
+                                        <MenuItem onClick={handleClose}>Logout</MenuItem>
+                                    </Menu>
+
                                 </div>
                                 <Clock />
                             </div>
@@ -205,18 +246,6 @@ export default function MiniDrawer({ children }) {
                                 </ListItemIcon>
                                 <ListItemText>
                                     Hujjatlar
-                                </ListItemText>
-
-                            </ListItem>
-                        </Link>
-
-                        <Link href="yangiHujjat">
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <span className='mb-2 fs-4 ms-1 '><HiOutlineDocumentAdd /> </span>
-                                </ListItemIcon>
-                                <ListItemText>
-                                    Yangi Hujjatlar
                                 </ListItemText>
 
                             </ListItem>
