@@ -8,11 +8,20 @@ const FooterWrapper = styled.div`
     justify-content: center;
     align-items: center;
     color: white;
-    background: url('bg2.png');
+    /* background: url('bg2.png'); */
     background-size: 150% 150%;
-    animation: animation-name 15s ease infinite;
+    /* animation: animation-name 15s ease infinite; */
     .css-11w94w9-MuiTableCell-root {
         padding-left: 10px;
+    }
+
+    .custom-shape-divider-top-1634363347 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
     }
 
     p{
@@ -45,8 +54,7 @@ const FooterWrapper = styled.div`
             left: 0;
             width: 100%;
             height: 250px;
-            background: url(
-https://media.geeksforgeeks.org/wp-content/uploads/20200326181026/wave3.png);
+            /* background: url(https://media.geeksforgeeks.org/wp-content/uploads/20200326181026/wave3.png); */
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -62,11 +70,6 @@ https://media.geeksforgeeks.org/wp-content/uploads/20200326181026/wave3.png);
                 background-position: 0% 50%;
             }
         }
-    @keyframes animation-name2 {
-        0%{
-            
-        }
-    }
 
 `;
 

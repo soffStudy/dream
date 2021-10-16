@@ -21,7 +21,7 @@ const Clock = () => {
     return (
         <Dash2W>
         <div className='d-flex'>
-            <span className={times.getMinutes()<= 9 && "d-block" || "d-none"}>0</span>
+            <span className={times.getHours()<= 9 && "d-block" || "d-none"}>0</span>
             <p>{times.getHours()}:</p>
 
             <span className={times.getMinutes()<= 9 && "d-block" || "d-none"}>0</span>
