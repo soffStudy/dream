@@ -11,6 +11,9 @@ const FooterWrapper = styled.div`
     background: url('bg2.png');
     background-size: 150% 150%;
     animation: animation-name 15s ease infinite;
+    .css-11w94w9-MuiTableCell-root {
+        padding-left: 10px;
+    }
 
     p{
         cursor: pointer;
