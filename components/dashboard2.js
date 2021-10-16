@@ -163,7 +163,6 @@ export default function MiniDrawer({ children }) {
 
                                 <div className="d-flex justiy-content-center align-items-center h-100">
                                     <Clock />
-
                                 </div>
                             </div>
                         </Typography>
@@ -188,9 +187,8 @@ export default function MiniDrawer({ children }) {
                                     <span className='mb-2 ms-1 fs-4 text-center'><AiTwotoneHome /> </span>
                                 </ListItemIcon>
                                 <ListItemText>
-                                    Asosiy
+                                    Asosiy.
                                 </ListItemText>
-
                             </ListItem>
                         </Link>
 
@@ -202,7 +200,6 @@ export default function MiniDrawer({ children }) {
                                 <ListItemText>
                                     Hujjatlar
                                 </ListItemText>
-
                             </ListItem>
                         </Link>
 
@@ -215,7 +212,6 @@ export default function MiniDrawer({ children }) {
                                 <ListItemText>
                                     Xodimlar
                                 </ListItemText>
-
                             </ListItem>
                         </Link>
 
