@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const TableWrapper = styled.div`
     font-family: 'Josefin Sans', sans-serif;
     min-height: 100vh;
+    margin-top: 50px;
     
    table{
        margin-top: 15px;
@@ -72,6 +73,7 @@ const TableWrapper = styled.div`
         justify-content: start;
         align-items: center;
         padding: 0 20px;
+        margin-top: 20px;
     }
     .yumaloq{
         width: 20px;

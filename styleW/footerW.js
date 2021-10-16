@@ -14,7 +14,7 @@ const FooterWrapper = styled.div`
 
     p{
         cursor: pointer;
-        color: #5CCD3E;
+        color: blue;
         text-shadow: 0 0 5px #FFF, 0 0 5px #FFF, 0 0 10px #FFF, 0 0 20px #00E7FF, 0 0 15px #00E7FF, 0 0 20px #00E7FF, 0 0 35px #00E7FF, 0 0 55px #00E7FF, -3px -10px 8px rgba(206,89,55,0.22);
         animation-name: animation-name2;
     }
