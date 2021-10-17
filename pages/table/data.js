@@ -13,8 +13,9 @@ const Data = [
                 status: "active",
                 statusRealTime: 'tolagan',
                 id: "1",
-                passport:"passport1.jpg",
-                actives: "tolagan"
+                passport: "passport1.jpg",
+                actives: "tolagan",
+                ustoz: "Sherzod",
         },
         {
                 name: "Izzat Toychiyev",
@@ -28,8 +29,10 @@ const Data = [
                 status: "Checked",
                 statusRealTime: 'tolagan',
                 id: "2",
-                passport:"passport1.jpg",
-                actives: "tolagan"
+                passport: "passport1.jpg",
+                actives: "tolagan",
+                ustoz: "Sherzod",
+
         },
         {
                 name: "Asad fbjfj",
@@ -43,8 +46,10 @@ const Data = [
                 status: "Not active",
                 statusRealTime: 'tolamagan',
                 id: "3",
-                passport:"passport1.jpg",
-                actives: "tolamagan"
+                passport: "passport1.jpg",
+                actives: "tolamagan",
+                ustoz: "Sherzod",
+
         },
         {
                 name: "Doniyor Deff",
@@ -58,8 +63,10 @@ const Data = [
                 status: "Checked",
                 statusRealTime: 'tolamagan',
                 id: "4",
-                passport:"passport1.jpg",
-                actives: "tolamagan"
+                passport: "passport1.jpg",
+                actives: "tolamagan",
+                ustoz: "Sherzod",
+
         },
         {
                 name: "Anvar Toychidfyev",
@@ -73,8 +80,10 @@ const Data = [
                 status: "active",
                 statusRealTime: 'tolagan',
                 id: "5",
-                passport:"passport1.jpg",
-                actives: "tolagan"
+                passport: "passport1.jpg",
+                actives: "tolagan",
+                ustoz: "Sherzod",
+
         },
         {
                 name: "Kamol fsf",
@@ -87,10 +96,12 @@ const Data = [
                 manager: "Salima",
                 status: "active",
                 id: "6",
-                passport:"passport1.jpg",
-                actives: "tolamagan"
+                passport: "passport1.jpg",
+                actives: "tolamagan",
+                ustoz: "Sherzod",
+
         }
 
 ]
 
-export default Data 
+export default Data
