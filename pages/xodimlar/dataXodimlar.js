@@ -7,18 +7,21 @@ const DataXodim = [
         direction: "Andijon viloyati",
         lavozimi: "Xisobchi 1",
         boshlaganVaqti: "15.02.2020",
-        xodimpassport:"de2.png",
-        id: "1"
+        xodimpassport: "de2.png",
+        id: "1",
+        ism: "Sherzod"
     },
 
     {
-        name: "Nuriddinov alisher",
+        name: "Nuriddinov Alisher",
         tel: "+998946000081",
         direction: "Toshkent shahri",
         lavozimi: "Xisobchi 2",
         boshlaganVaqti: "15.05.2020",
-        xodimpassport:"de2.png",
-        id: "2"
+        xodimpassport: "de2.png",
+        id: "2",
+        ism: "Alisher"
+
     },
 
     {
@@ -27,8 +30,10 @@ const DataXodim = [
         direction: "Buxoro viloyati",
         lavozimi: "Xisobchi 3",
         boshlaganVaqti: "20.02.2018",
-        xodimpassport:"de2.png",
-        id: "3"
+        xodimpassport: "de2.png",
+        id: "3",
+        ism: "Xusan"
+
     },
 
     {
@@ -37,8 +42,10 @@ const DataXodim = [
         direction: "Sirdaryo viloyati",
         lavozimi: "Xisobchi 4",
         boshlaganVaqti: "28.10.2020",
-        xodimpassport:"de2.png",
-        id: "4"
+        xodimpassport: "de2.png",
+        id: "4",
+        ism: "Begzod"
+
     },
 
     {
@@ -47,8 +54,10 @@ const DataXodim = [
         direction: "Samarqand viloyati",
         lavozimi: "Xisobchi 5",
         boshlaganVaqti: "09.07.2020",
-        xodimpassport:"de2.png",
-        id: "5"
+        xodimpassport: "de2.png",
+        id: "5",
+        ism: "Xojakbar"
+
     },
 
     {
@@ -57,8 +66,10 @@ const DataXodim = [
         direction: "Toshkent shahri",
         lavozimi: "Xisobchi 1",
         boshlaganVaqti: "15.02.2020",
-        xodimpassport:"de2.png",
-        id: "6"
+        xodimpassport: "de2.png",
+        id: "6",
+        ism: "Akbar"
+
     },
 ]
 

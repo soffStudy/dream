@@ -223,7 +223,7 @@ export default function EnhancedTable() {
         <Dashboard2>
             <Hujjat>
                 <h1 className='text-center'>Xodimlar ro'yxati</h1>
-                <div className="buttonuchun">
+                <div className="d-flex justify-content-end">
                     <Link href="yangiHujjat">
                         <button className='btn btn-primary'>Yangi hujjat</button>
                     </Link>

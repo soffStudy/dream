@@ -64,7 +64,7 @@ const Cards = () => {
                             <div className='passport'>
                                 <HiOutlineDocumentDuplicate className='fs-2' />
                                 <p>
-                                    Hujjat 1
+                                    Ish yuritgan talbalar ro'yxati
                                 </p>
                                 <div className=' p-2'>
                                     <Link href='hujjatXodim2'>
