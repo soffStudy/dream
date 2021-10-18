@@ -10,6 +10,7 @@ const DashWrapper = styled.div`
     .css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
         height: auto;
     }
+ 
 
     .dreamLogo{
         width: 180px;
@@ -22,7 +23,6 @@ const DashWrapper = styled.div`
     }
     .seconds{
         font-size: 11px;
-        
     }
     .secondCard{
         display: flex;

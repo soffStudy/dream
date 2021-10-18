@@ -75,13 +75,10 @@ const Docs = () => {
                 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet"></link>
             </Head>
             <DocsWrapper>
-                <div className='back'>
-                    <Link href="passport">
-                        <button className='btn btn-primary '><AssignmentReturnIcon/></button>
-                    </Link>
-                </div>
-                <div className="container docs2 ">
+                <div className="container docs2">
+
                     <img src={fullData.passport} alt="hujjat rasmi" />
+
                 </div>
             </DocsWrapper>
         </Dashboard2>

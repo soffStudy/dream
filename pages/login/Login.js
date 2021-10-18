@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Head from 'next/head'
+import MiniDrawer from './../../components/dashboard2'
 
 
 // Bu yrda email va password tekshiriladi
@@ -53,7 +54,8 @@ function Glogin() {
           <div className="loading">
             <Box sx={{ display: 'flex' }}>
               <CircularProgress className="loading2" />
-            </Box>
+            </Box><br/><br/>
+            <h1>{user.name}</h1> 
           </div>
         ) : (
           <Form Login={Login} error={error} />
