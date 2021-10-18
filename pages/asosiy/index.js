@@ -61,6 +61,7 @@ const Asosiy = () => {
                             </div>
                         </div>
 
+                        
                         <div className="col-lg-4 col-md-6 col-sm-12">
                             <div className='asosiyCardlar' onClick={() => handleRowClick()} >
                                 <div className=''>
@@ -70,8 +71,6 @@ const Asosiy = () => {
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
 

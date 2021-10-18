@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Dashboard2 from '../../components/dashboard2'
 import YangiHujjatW from './yangiHujjatW'
+import { useRouter } from 'next/router'
+import Data from './../table/data'
 
 const YangiHujjat = () => {
+    const router = useRouter();
+    let fullData = {};
+    const [state, setstate] = useState();
+
+    useEffect(() => {
+        setstate(localStorage && localStorage.getItem("ID"));
+    }, []);
+
+
+    Data.map(value => {
+        if (value.id == state) fullData = value;
+    });
+
     return (
         <Dashboard2>
             <Head>
@@ -19,17 +34,15 @@ const YangiHujjat = () => {
                         <div className="col-lg-6 col-sm-12">
                             <div>
                                 <form>
-                                    <label htmlFor="ism" className='mt-3 mb-1'>Ism</label>
-                                    <input type="text" className='form-control' placeholder="Ismoil" id="ism" />
+                                    <label htmlFor="ism" className='mt-3 mb-1'>F.I.O</label>
+                                    <input type="text" className='form-control' defaultValue={fullData.name} placeholder='name'id="ism" />
 
-                                    <label htmlFor="familiya" className='mt-3 mb-1'>Familiya</label>
-                                    <input type="text" className='form-control' placeholder="Bahodirov" id="familiya" />
 
                                     <label htmlFor="manzil" className='mt-3 mb-1'>Manzil</label>
-                                    <input type="text" className='form-control' placeholder="Toshkent shahar" id="manzil" />
+                                    <input type="text" className='form-control' defaultValue="gyg" id="manzil" />
 
                                     <label htmlFor="nomer" className='mt-3 mb-1'>Raqam</label>
-                                    <input type="number" className='form-control' placeholder="998946325632" id="nomer" />
+                                    <input type="number" className='form-control' placeholder={fullData.tel} id="nomer" />
 
                                     <label htmlFor="davlat" className='mt-3 mb-1'>Topshirgan davlat</label>
                                     <input type="text" className='form-control' placeholder="USA" id="davlat" />

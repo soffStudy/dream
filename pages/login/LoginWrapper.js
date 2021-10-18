@@ -5,9 +5,11 @@ const GloginW = styled.div`
     /* background-color: blueviolet; */
     height: 100vh;
     /* background: linear-gradient(-45deg, #040139, #0e0b4b, #3183CB, #040139); */
-    background: rgb(6,171,155);
-    background: linear-gradient(321deg,#e3ae15 0%,#2d285e 46%,#e3ae15 100%);
-    background-size: 400% 400%;
+    /* background: rgb(6,171,155);
+    background: linear-gradient(321deg,#e3ae15 0%,#2d285e 46%,#e3ae15 100%); */
+    background: url('https://image.freepik.com/free-photo/golden-particles-light-streak-background_1017-32781.jpg');
+    background-position: right center;
+    background-size: 130% 130%;
     animation: gradient 15s ease infinite;
     /* animatsia */
         @keyframes gradient{

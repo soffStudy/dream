@@ -19,7 +19,7 @@ const FooterWrapper = styled.div`
     p{
         cursor: pointer;
         color: blue;
-        text-shadow: 0 0 5px #FFF, 0 0 5px #FFF, 0 0 10px #FFF, 0 0 20px #00E7FF, 0 0 15px #00E7FF, 0 0 20px #00E7FF, 0 0 35px #00E7FF, 0 0 55px #00E7FF, -3px -10px 8px rgba(206,89,55,0.22);
+        text-shadow: 0 0 5px #FFF, 0 0 5px #FFF, 0 0 8px #FFF, 0 0 15px #00E7FF, 0 0 15px #00E7FF, 0 0 15px #00E7FF, 0 0 25px #00E7FF, 0 0 45px #00E7FF, -3px -10px 8px rgba(206,89,55,0.22);
         animation-name: animation-name2;
     }
     .geeks {

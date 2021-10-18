@@ -54,7 +54,7 @@ function Glogin() {
           <div className="loading">
             <Box sx={{ display: 'flex' }}>
               <CircularProgress className="loading2" />
-            </Box><br/><br/>
+            </Box>
             <h1>{user.name}</h1> 
           </div>
         ) : (

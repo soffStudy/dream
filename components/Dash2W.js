@@ -3,12 +3,19 @@ import styled from 'styled-components'
 const DashWrapper = styled.div`
     .css-19z1ozs-MuiPaper-root-MuiAppBar-root {
         background-color: #2D285E;
+        /* background-color: black; */
+        color: #F4C721;
     }
     .css-1191obr-MuiPaper-root-MuiAppBar-root{
         background-color: #2D285E;
+        /* background-color: black; */
+        color: #F4C721;
     }
     .css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
         height: auto;
+    }
+    .css-2s90m6-MuiAvatar-root{
+        background-color: #F4CA16;
     }
  
 
@@ -28,8 +35,8 @@ const DashWrapper = styled.div`
         display: flex;
         justify-content: center;
         padding: 0 5px 0 5px;
-        text-shadow: 2px 2px 5px white;
     }
+   
 `;
 
 export default DashWrapper;

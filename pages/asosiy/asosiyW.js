@@ -6,12 +6,16 @@ height: 100vh;
 font-family: 'Josefin Sans', sans-serif;
 margin-top: 100px;
 
+
+
+
+
 .asosiyCardlar{
     margin: 10px;
     padding: 10px;
-    background-position: center;
-    background-size: cover;
-    background-color: #2D285E;
+    /* background-position: center;
+    background-size: cover; */
+    /* background-color: #2D285E; */
     color: white;
     cursor: pointer;
     text-align: center;
@@ -22,10 +26,10 @@ margin-top: 100px;
     animation: animation-name 15s ease infinite;
     background: linear-gradient(-45deg, #040139, #0e0b4b, #3183CB, #040139);
     background-size: 400% 400%;
+    
 
     &:hover{
-        background-color: #2D285E;
-        transition: .5s !important;
+        /* transition: .5s !important; */
         transform: translateY(-10px);
         
         .logoAsosiy{  
@@ -91,7 +95,8 @@ a{
         overflow: hidden;
     }
 
-    @keyframes animation-name {   
+    @keyframes animation-name { 
+
             0%{
                 background-position: 0% 50%;
             }
@@ -103,6 +108,7 @@ a{
             }
         }
 
+      
 
     
 }

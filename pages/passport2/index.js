@@ -18,7 +18,7 @@ const Cards = () => {
 
     const router = useRouter();
     let fullData = {};
-    const [state, setstate] = useState(1);
+    const [state, setstate] = useState();
 
     useEffect(() => {
         setstate(localStorage && localStorage.getItem("ID"));

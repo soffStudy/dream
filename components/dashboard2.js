@@ -107,8 +107,10 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export default function MiniDrawer({ children }) {
     const theme = useTheme();
+    
     const [open, setOpen] = React.useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [fullName, setFullname] = React.useState(null)
     const openMenu = Boolean(anchorEl);
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
@@ -119,6 +121,7 @@ export default function MiniDrawer({ children }) {
   
     useEffect(() => {
         const storage = localStorage.getItem("name");
+        setFullname(storage)
         console.log(storage);
         if(!storage) router.push("/");
     }, [])
@@ -137,11 +140,6 @@ export default function MiniDrawer({ children }) {
     };
     const router = useRouter();
 
-    const handleRowClick2 = () => {
-        router.push("konsultatsiya");
-        console.log(router.query.keyword);
-    }
-
     const handleRowClick3 = () => {
         localStorage.clear()
         router.push("/");
@@ -156,8 +154,6 @@ export default function MiniDrawer({ children }) {
     // const handleClose = () => {
     //     setAnchorEl(null);
     // };
-
-
 
     return (
         <DashWrapper>
@@ -179,15 +175,15 @@ export default function MiniDrawer({ children }) {
                         </IconButton>
 
                         <Typography variant="h6" noWrap component="div" className='w-100'>
-                            <div className="container d-flex align-items-center justify-content-end w-100">
-
-                                <div className="d-flex justiy-content-center align-items-center h-100">
-                                    <Clock />
+                            <div className="container d-flex align-items-center justify-content-between w-100">
+                                <span className='animate__animated animate__bounce'>{fullName}</span>
+                                <div className="d-flex justiy-content-center align-items-center h-100 animate__animated animate__flip">
+                                    <Clock /> 
                                 </div>
 
                                 <Tooltip title="Account settings">
-                                <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}>
-                                    <Avatar />
+                                <IconButton className='animate__animated animate__flip' style={{color: '#F4C721'}} onClick={handleClick} size="small" sx={{ ml: 2 }}>
+                                    <Avatar style={{color: '#fff'}} />
                                 </IconButton>
                                 </Tooltip>
                                 <Menu

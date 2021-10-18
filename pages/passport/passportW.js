@@ -6,7 +6,7 @@ const PasswordWrapper = styled.div`
     margin-top: 100px;
 
     .passport{
-       padding: 10px;
+        padding: 10px;
         transition: .5s;
         border-radius: 15px;
         color: white;
@@ -14,13 +14,18 @@ const PasswordWrapper = styled.div`
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        font-size: 30px;
+        font-size: 20px;
         cursor: pointer;
         animation: animation-name 15s ease infinite;
         background: linear-gradient(-45deg, #040139, #0e0b4b, #3183CB, #040139);
         background-size: 400% 400%;
         box-shadow: 9px 9px 14px #00000078,
             -9px -9px 14px #FFFFFF26;
+        height: 200px;
+
+        /* .HiOutlineDoc{
+            font-size: 30px !important;
+        } */
 
         .dreamEdu{
             display: none;

@@ -21,6 +21,8 @@ import Dashboard2 from '../../components/dashboard2'
 import Hujjat from './hujjatw'
 import Link from 'next/link'
 import { AiOutlineFieldNumber } from "react-icons/ai";
+import { FaEye } from "react-icons/fa";
+import EditIcon from '@mui/icons-material/Edit';
 
 
 
@@ -117,6 +119,12 @@ const headCells = [
         numeric: true,
         disablePadding: false,
         label: 'Active',
+    },
+    {
+        id: `edit`,
+        numeric: true,
+        disablePadding: false,
+        label: `Edit`,
     }
 ];
 
@@ -214,6 +222,18 @@ export default function EnhancedTable() {
 
     };
 
+    const handleClick2 = (ID) => {
+        localStorage.setItem("ID", ID);
+        router.push("yangiHujjat")
+        console.log(ID);
+
+    };
+
+    // const handleClick3 = (ID) => {
+    //     localStorage.setItem("ID" , null);
+    //     router.push("yangiHujjat")
+    // };
+
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
@@ -274,12 +294,11 @@ export default function EnhancedTable() {
 
                                                 <TableRow
                                                     hover
-                                                    onClick={(event) => handleClick(index + 1)}
                                                     role="checkbox"
                                                     tabIndex={-1}
                                                     key={row.name}
                                                 >
-                                                    <TableCell align="right">{index}</TableCell>
+                                                    <TableCell align="right">{index +1}</TableCell>
 
                                                     <TableCell
                                                         // component="th"
@@ -296,9 +315,18 @@ export default function EnhancedTable() {
                                                     <TableCell align="right" className="text-center">{row.direction}</TableCell>
                                                     <TableCell align="right" className="text-center">{row.payment}</TableCell>
                                                     <TableCell align="right" className="text-center">{row.payment2}</TableCell>
-                                                    <TableCell align="right" className="text-center"><div className={` yumaloq  ${row.actives == "tolagan" && "yashil" || "sariq"}`}></div></TableCell>
-
+                                                    <TableCell align="right" className="text-center">
+                                                        <div className={` yumaloq  ${row.actives == "tolagan" && "yashil" || "sariq"}   `}>
+                                                        </div>
+                                                    </TableCell>
+                                                    <TableCell align="right" className="text-center">
+                                                         <div className='d-flex'>
+                                                            <button className='btn btn-primary' onClick={() => handleClick2(`${row.id}`)}><EditIcon/></button>
+                                                            <button className='btn btn-primary ms-1' onClick={() => handleClick(row.id)}><FaEye/></button>
+                                                        </div>
+                                                    </TableCell>
                                                 </TableRow>
+                                                
                                             );
                                         })}
                                     {emptyRows > 0 && (

@@ -202,7 +202,10 @@ export default function EnhancedTable() {
 
   const handleClick = (ID) => {
     localStorage.setItem("ID", ID);
-    router.push("passport")
+    router.push({
+            pathname: 'passport',
+            query: {"salom" :2}
+        })
     console.log(ID);
 
   };
