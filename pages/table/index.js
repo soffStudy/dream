@@ -37,7 +37,7 @@ const Table = () => {
                 <h1>Talabalarning umumiy ma'lumotlari</h1>
                
                 <div className='inputs'>
-                    <TextField id="filled-basic" label="Filled" variant="filled" onChange={event => { setSearchstern(event.target.value) }} />
+                    <TextField id="filled-basic" label="F.I.O" variant="filled" onChange={event => { setSearchstern(event.target.value) }} />
                     <Box sx={{ minWidth: 120 }} className='ms-3 options'>
                         <FormControl fullWidth >
                             <InputLabel id="demo-simple-select-label">Status</InputLabel>
