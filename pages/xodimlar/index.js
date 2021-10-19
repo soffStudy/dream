@@ -189,10 +189,13 @@ export default function EnhancedTable() {
         setSelected([]);
     };
 
-    const handleClick = (ID) => {
+    const handleClick = (ID, ism) => {
         localStorage.setItem("ID", ID);
+        localStorage.setItem("name", ism);
+
         router.push("passport2")
         console.log(ID);
+
 
     };
 
@@ -256,7 +259,7 @@ export default function EnhancedTable() {
 
                                                 <TableRow
                                                     hover
-                                                    onClick={(event) => handleClick(index + 1)}
+                                                    onClick={(event) => handleClick(index + 1, row.ism)}
                                                     role="checkbox"
                                                     tabIndex={-1}
                                                     key={row.name}

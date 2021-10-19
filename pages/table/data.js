@@ -48,7 +48,7 @@ const Data = [
                 id: "3",
                 passport: "passport1.jpg",
                 actives: "tolamagan",
-                ustoz: "Sherzod",
+                ustoz: "Alisher",
 
         },
         {
