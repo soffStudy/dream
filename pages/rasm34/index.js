@@ -7,14 +7,13 @@ import Data from '../table/data'
 import { AiFillPrinter } from "react-icons/ai";
 
 
-const Docs = () => {
+const Rasm34 = () => {
 
-    const router = useRouter();
     let fullData = {};
-    const [state, setstate] = useState(1);
+    const [state, setState] = useState();
 
     useEffect(() => {
-        setstate(localStorage && localStorage.getItem("ID"));
+        setState(localStorage && localStorage.getItem("ID"));
 
     }, []);
 
@@ -45,6 +44,7 @@ const Docs = () => {
                 <div className="d-flex justify-content-end me-3 mb-3" > <button className='btn btn-primary mt-2' onClick={() => printPageFun('print')}> <span className="fs-4" ><AiFillPrinter /></span> Pechat</button></div>
                 <div className="container docs2" id='print'>
                     <h1>3x4 rasmi</h1>
+                    <img className='img1' src={fullData.image} alt="3x4 rasm odam humans" />
                     <h1>{fullData.id}  : id raqami</h1>
                     <h1>{fullData.name}  : Ismi</h1>
                 </div>
@@ -53,4 +53,4 @@ const Docs = () => {
     )
 }
 
-export default Docs;
+export default Rasm34;

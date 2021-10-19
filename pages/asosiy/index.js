@@ -39,7 +39,7 @@ const Asosiy = () => {
                 <div className="container">
                     <div className="row">
 
-                        <div className="col-lg-4 col-md-6 col-sm-12">
+                        <div className="col-lg-4 col-md-6 col-sm-12 animate__animated animate__backInLeft">
                             <Link href="table">
                                 <div className='asosiyCardlar'>
                                     <div className=''>
@@ -51,8 +51,8 @@ const Asosiy = () => {
                             </Link>
                         </div>
 
-                        <div className="col-lg-4 col-md-6 col-sm-12">
-                            <div className='asosiyCardlar'  onClick={() => handleRowClick2()}>
+                        <div className="col-lg-4 col-md-6 col-sm-12 animate__animated animate__backInDown">
+                            <div className='asosiyCardlar '  onClick={() => handleRowClick2()}>
                                 <div className=''>
                                     <BiCalendarMinus className='fs-1' />
                                     <p className='mt-2 h1 fw-bold'>171</p>
@@ -62,7 +62,7 @@ const Asosiy = () => {
                         </div>
 
                         
-                        <div className="col-lg-4 col-md-6 col-sm-12">
+                        <div className="col-lg-4 col-md-6 col-sm-12 animate__animated animate__backInRight">
                             <div className='asosiyCardlar' onClick={() => handleRowClick()} >
                                 <div className=''>
                                     <BiCalendarPlus className='fs-1' />

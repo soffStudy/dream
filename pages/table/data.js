@@ -14,6 +14,7 @@ const Data = [
                 statusRealTime: 'tolagan',
                 id: "1",
                 passport: "passport1.jpg",
+                image: "de2.png",
                 actives: "tolagan",
                 ustoz: "Sherzod",
         },
@@ -30,6 +31,7 @@ const Data = [
                 statusRealTime: 'tolagan',
                 id: "2",
                 passport: "passport1.jpg",
+                image: "de2.png",
                 actives: "tolagan",
                 ustoz: "Sherzod",
 
@@ -47,6 +49,7 @@ const Data = [
                 statusRealTime: 'tolamagan',
                 id: "3",
                 passport: "passport1.jpg",
+                image: "de2.png",
                 actives: "tolamagan",
                 ustoz: "Alisher",
 
@@ -64,6 +67,7 @@ const Data = [
                 statusRealTime: 'tolamagan',
                 id: "4",
                 passport: "passport1.jpg",
+                image: "de2.png",
                 actives: "tolamagan",
                 ustoz: "Sherzod",
 
@@ -81,8 +85,9 @@ const Data = [
                 statusRealTime: 'tolagan',
                 id: "5",
                 passport: "passport1.jpg",
+                image: "de2.png",
                 actives: "tolagan",
-                ustoz: "Sherzod",
+                ustoz: "Xusan",
 
         },
         {
@@ -97,6 +102,7 @@ const Data = [
                 status: "active",
                 id: "6",
                 passport: "passport1.jpg",
+                image: "de2.png",
                 actives: "tolamagan",
                 ustoz: "Sherzod",
 

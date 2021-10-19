@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Dashboard2 from '../../components/dashboard2'
 import Link from 'next/link'
@@ -6,11 +6,24 @@ import PasswordWrapper from './passportW'
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { AiFillPicture, AiOutlineDownload } from "react-icons/ai";
 import { HiOutlineDocumentDuplicate } from "react-icons/hi";
-
+import Data from './../table/data'
 
 
 
 const Passport = () => {
+
+    let fullData = {};
+    const [state, setstate] = useState();
+
+    useEffect(() => {
+        setstate(localStorage && localStorage.getItem("ID"));
+
+    }, []);
+
+
+    Data.map(value => {
+        if (value.id == state) fullData = value;
+    });
 
     return (
         <Dashboard2>
@@ -36,7 +49,7 @@ const Passport = () => {
                                         <button className='btn btn-light m-1'><AiFillPicture className='fs-4 mb-1' />  Ko'rish</button>
                                     </Link>
 
-                                    <a href="favicon.ico" download><button className='btn btn-primary m-1'><AiOutlineDownload className='fs-4 mb-1' /> Yuklash</button></a>
+                                    <a href={fullData.passport} download><button className='btn btn-primary m-1'><AiOutlineDownload className='fs-4 mb-1' /> Yuklash</button></a>
                                 </div>
                             </div>
                         </div>
@@ -48,9 +61,10 @@ const Passport = () => {
                                     3x4 rasm
                                 </p>
                                 <div className=' p-2'>
-                                    <Link href='hujjat1'>
+                                    <Link href='rasm34'>
                                         <button className='btn btn-light m-1'><AiFillPicture className='fs-4 mb-1' />  Ko'rish</button>
                                     </Link>
+                                    <a href={fullData.image} download><button className='btn btn-primary m-1'><AiOutlineDownload className='fs-4 mb-1' /> Yuklash</button></a>
                                 </div>
                             </div>
                         </div>

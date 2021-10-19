@@ -34,30 +34,38 @@ const Table = () => {
 
 
             <TableWrapper>
-                <h1>Talabalarning umumiy ma'lumotlari</h1>
-               
-                <div className='inputs'>
-                    <TextField id="filled-basic" label="F.I.O" variant="filled" onChange={event => { setSearchstern(event.target.value) }} />
-                    <Box sx={{ minWidth: 120 }} className='ms-3 options'>
-                        <FormControl fullWidth >
-                            <InputLabel id="demo-simple-select-label">Status</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={age}
-                                label="Age"
-                                onChange={handleChange}
-                            >
-                                <MenuItem value={10}>To'lov tugatilgan talabalar</MenuItem>
-                                <MenuItem value={20}>Pul to'lanmagan talabalar</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Box>
-                    <div className='inputs_22'>
+                <h1 className='mt-4'>Talabalarning umumiy ma'lumotlari</h1>
+                <div className="row mt-4 mb-3">
+                    <div className="col-lg-3">
+                        <TextField id="filled-basic" label="F.I.O" variant="filled" onChange={event => { setSearchstern(event.target.value) }} />
+                    </div>
+                    <div className="col-lg-3">
+                        <Box sx={{ minWidth: 120 }} className='ms-3 options w-100%'>
+                            <FormControl fullWidth >
+                                <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={age}
+                                    label="Age"
+                                    onChange={handleChange}
+                                >
+                                    <MenuItem value={10}>To'lov tugatilgan talabalar</MenuItem>
+                                    <MenuItem value={20}>Pul to'lanmagan talabalar</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                    </div>
+                    <div className="col-lg-3">
                         <ResponsiveDatePickers />
+                    </div>
+                    <div className="col-lg-3">
                         <BasicDatePicker />
                     </div>
                 </div>
+
+                <StudentTable />
+
                 <div className='statusW'>
                     <div className='payment'>
                         <div className='span1'></div>
@@ -68,7 +76,7 @@ const Table = () => {
                         <p>Pul to'lanmagan talabalar</p>
                     </div>
                 </div>
-                <StudentTable />
+
             </TableWrapper>
         </Dashboard2>
     )
