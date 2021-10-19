@@ -9,7 +9,8 @@ const DataXodim = [
         boshlaganVaqti: "15.02.2020",
         xodimpassport: "de2.png",
         id: "1",
-        ism: "Sherzod"
+        ism: "Sherzod",
+        familiya: "Aliyev"
     },
 
     {
@@ -20,7 +21,9 @@ const DataXodim = [
         boshlaganVaqti: "15.05.2020",
         xodimpassport: "de2.png",
         id: "2",
-        ism: "Alisher"
+        ism: "Alisher",
+        familiya: "Nuriddinov"
+
 
     },
 
@@ -32,7 +35,9 @@ const DataXodim = [
         boshlaganVaqti: "20.02.2018",
         xodimpassport: "de2.png",
         id: "3",
-        ism: "Xusan"
+        ism: "Xusan",
+        familiya: "Boburov"
+
 
     },
 
@@ -44,7 +49,9 @@ const DataXodim = [
         boshlaganVaqti: "28.10.2020",
         xodimpassport: "de2.png",
         id: "4",
-        ism: "Begzod"
+        ism: "Begzod",
+        familiya: "Azizov"
+
 
     },
 
@@ -56,7 +63,9 @@ const DataXodim = [
         boshlaganVaqti: "09.07.2020",
         xodimpassport: "de2.png",
         id: "5",
-        ism: "Xojakbar"
+        ism: "Xojakbar",
+        familiya: "Rustamov"
+
 
     },
 
@@ -68,7 +77,9 @@ const DataXodim = [
         boshlaganVaqti: "15.02.2020",
         xodimpassport: "de2.png",
         id: "6",
-        ism: "Akbar"
+        ism: "Akbar",
+        familiya: "Doniyorov"
+
 
     },
 ]

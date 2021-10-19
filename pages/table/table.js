@@ -30,7 +30,8 @@ function createData(name, calories, fat, carbs, protein) {
 
 // const rows = data
 
-function descendingComparator(a, b, orderBy) {``
+function descendingComparator(a, b, orderBy) {
+  ``
   if (b[orderBy] < a[orderBy]) {
     return -1;
   }
@@ -203,9 +204,9 @@ export default function EnhancedTable() {
   const handleClick = (ID) => {
     localStorage.setItem("ID", ID);
     router.push({
-            pathname: 'passport',
-            query: {"salom" :2}
-        })
+      pathname: 'passport',
+      query: { "salom": 2 }
+    })
     console.log(ID);
 
   };
