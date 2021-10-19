@@ -55,7 +55,7 @@ function Glogin() {
             <Box sx={{ display: 'flex' }}>
               <CircularProgress className="loading2" />
             </Box>
-            <h1>{user.name}</h1> 
+            {/* <h1>{user.name}</h1>  */}
           </div>
         ) : (
           <Form Login={Login} error={error} />

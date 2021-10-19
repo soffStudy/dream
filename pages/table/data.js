@@ -4,7 +4,7 @@ const Data = [
         {
                 name: "Ibrohim Akromov",
                 address: "Toshkent shahar Yashnobod tumani Ohangrabo-54 ",
-                tel: "+998946910781",
+                tel: +998946910781,
                 state: "AQSH",
                 direction: "Garvard universiteti",
                 payment: "1-sentabr 3 000 000",
@@ -20,7 +20,7 @@ const Data = [
         {
                 name: "Izzat Toychiyev",
                 address: "Toshkent shahar Yashnobod tumani Tosh kochasi-78 ",
-                tel: "+998978888778",
+                tel: +998978888778,
                 state: "Qozogiston",
                 direction: "Almata universiteti Rus tili",
                 payment: "1-sentabr 3 000 000",
@@ -37,7 +37,7 @@ const Data = [
         {
                 name: "Asad fbjfj",
                 address: "Qashqadaryo viloyati Qamashi tumani Terak-90 ",
-                tel: "+998997777700",
+                tel: +998997777700,
                 state: "Qirgiziston",
                 direction: "Osh davlat universiteti Ingliz tili",
                 payment: "1-sentabr 3 000 000",
@@ -54,7 +54,7 @@ const Data = [
         {
                 name: "Doniyor Deff",
                 address: "Samarqand viloyati Registon-554 ",
-                tel: "+99890999999",
+                tel: +99890999999,
                 state: "Qirgiziston",
                 direction: "Osh davlat universiteti Ingliz tili",
                 payment: "1-sentabr 3 000 000",
@@ -71,7 +71,7 @@ const Data = [
         {
                 name: "Anvar Toychidfyev",
                 address: "Andijon viloyati Asaka-97 ",
-                tel: "+998998576423",
+                tel: +998998576423,
                 state: "Qirgiziston",
                 direction: "Osh davlat universiteti Ingliz tili",
                 payment: "1-sentabr 3 000 000",
@@ -88,7 +88,7 @@ const Data = [
         {
                 name: "Kamol fsf",
                 address: "Surxondaryo viloyti chegara-11 ",
-                tel: "+998941122211",
+                tel: +998941122211,
                 state: "Qirgiziston",
                 direction: "Osh davlat universiteti Ingliz tili",
                 payment: "1-sentabr 3 000 000",
