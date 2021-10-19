@@ -76,9 +76,7 @@ const Docs = () => {
             </Head>
             <DocsWrapper>
                 <div className="container docs2">
-
                     <img src={fullData.passport} alt="hujjat rasmi" />
-
                 </div>
             </DocsWrapper>
         </Dashboard2>

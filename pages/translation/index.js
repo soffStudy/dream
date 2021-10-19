@@ -7,7 +7,7 @@ import Data from '../table/data'
 import { AiFillPrinter } from "react-icons/ai";
 
 
-const Docs = () => {
+const Translation = () => {
 
     const router = useRouter();
     let fullData = {};
@@ -44,7 +44,7 @@ const Docs = () => {
             <DocsWrapper>
                 <div className="d-flex justify-content-end me-3 mb-3" > <button className='btn btn-primary mt-2' onClick={() => printPageFun('print')}> <span className="fs-4" ><AiFillPrinter /></span> Pechat</button></div>
                 <div className="container docs2" id='print'>
-                    <h1>hujjat N1</h1>
+                    <h1>P.Tarjima</h1>
                     <h1>{fullData.id}  : id raqami</h1>
                     <h1>{fullData.name}  : Ismi</h1>
                 </div>
@@ -53,4 +53,4 @@ const Docs = () => {
     )
 }
 
-export default Docs;
+export default Translation;

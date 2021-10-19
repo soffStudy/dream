@@ -7,7 +7,7 @@ import Data from '../table/data'
 import { AiFillPrinter } from "react-icons/ai";
 
 
-const Docs = () => {
+const Paymentss = () => {
 
     const router = useRouter();
     let fullData = {};
@@ -18,13 +18,14 @@ const Docs = () => {
 
     }, []);
 
+
     Data.map(value => {
         if (value.id == state) fullData = value;
     });
 
     const printPageFun = (divName) => {
-        let printContents = document.getElementById(divName).innerHTML
-        let originalContents = document.body.innerHTML
+        var printContents = document.getElementById(divName).innerHTML
+        var originalContents = document.body.innerHTML
         document.body.innerHTML = printContents
         window.print()
         document.body.innerHTML = originalContents
@@ -42,16 +43,14 @@ const Docs = () => {
             </Head>
             <DocsWrapper>
                 <div className="d-flex justify-content-end me-3 mb-3" > <button className='btn btn-primary mt-2' onClick={() => printPageFun('print')}> <span className="fs-4" ><AiFillPrinter /></span> Pechat</button></div>
-                <div className="container docs2" id="print">
-                    <h1>Diplom</h1>
+                <div className="container docs2" id='print'>
+                    <h1>Kontrakt tolovi</h1>
                     <h1>{fullData.id}  : id raqami</h1>
-                    <h1>{fullData.name}  : Diplomi</h1>
-
-
+                    <h1>{fullData.name}  : Ismi</h1>
                 </div>
             </DocsWrapper>
         </Dashboard2>
     )
 }
 
-export default Docs;
+export default Paymentss;

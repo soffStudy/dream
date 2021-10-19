@@ -39,13 +39,13 @@ const YangiHujjat = () => {
 
 
                                     <label htmlFor="manzil" className='mt-3 mb-1'>Manzil</label>
-                                    <input type="text" className='form-control' defaultValue="gyg" id="manzil" />
+                                    <input type="text" className='form-control' defaultValue={fullData.address}  placeholder='Toshkent shahar' id="manzil" />
 
                                     <label htmlFor="nomer" className='mt-3 mb-1'>Raqam</label>
-                                    <input type="number" className='form-control' placeholder={fullData.tel} id="nomer" />
+                                    <input type="number" className='form-control' defaultValue={fullData.tel} placeholder="+998" id="nomer" />
 
                                     <label htmlFor="davlat" className='mt-3 mb-1'>Topshirgan davlat</label>
-                                    <input type="text" className='form-control' placeholder="USA" id="davlat" />
+                                    <input type="text" className='form-control' defaultValue={fullData.state} placeholder="USA" id="davlat" />
 
 
                                 </form>
@@ -55,17 +55,17 @@ const YangiHujjat = () => {
                         <div className="col-lg-6 col-sm-12">
                             <form>
                                 <label htmlFor="yonalish" className='mt-3 mb-1'>Topshirgan yo'nalish</label>
-                                <input type="text" className='form-control' placeholder="Harvard" id="yonalish" />
+                                <input type="text" className='form-control' defaultValue={fullData.direction} placeholder="Harvard" id="yonalish" />
 
                                 <div className='d-flex  justify-content-between '>
                                     <div className='w-100 me-3  '>
                                         <label htmlFor="tolov1" className='mt-3 mb-1'>1- To'lov  </label>
-                                        <input type="number" className='form-control' placeholder="3200000" id="tolov1" />
+                                        <input type="number" className='form-control' defaultValue={fullData.payment} placeholder="3200000" id="tolov1" />
                                     </div>
 
                                     <div className='w-100'>
                                         <label htmlFor="passportid" className='mt-3 mb-1'>1- to'lov qilingan sana</label>
-                                        <input type="date" className='form-control' id="passportid" />
+                                        <input type="date" className='form-control'  id="passportid" />
                                     </div>
                                 </div>
 

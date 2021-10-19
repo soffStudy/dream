@@ -14,6 +14,10 @@ const DocsWrapper = styled.div`
         img{
             height: 400px;
         }
+        .img1{
+            width: 800px;
+            object-fit: cover;
+        }
     }
 
     .back{

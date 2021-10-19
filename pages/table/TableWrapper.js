@@ -93,12 +93,20 @@ const TableWrapper = styled.div`
     .sariq{
         background-color: yellow;
     }
-    .options{
+    /* .options{
         min-width: 200px;
-    }
+    } */
 
      .css-10dfkli-MuiTableCell-root{
         padding-left: 15px;
+    }
+
+    .css-10botns-MuiInputBase-input-MuiFilledInput-input{
+       min-width: 100% !important;
+    }
+
+    .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+        width: 100%;
     }
 
     .statusW{
