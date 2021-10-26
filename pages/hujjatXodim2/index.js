@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -13,19 +14,28 @@ import Paper from '@mui/material/Paper';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { visuallyHidden } from '@mui/utils';
-import Data from '../xodimlar/dataXodimlar';
 import Data2 from '../table/data';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Dashboard2 from '../../components/dashboard2'
 import Hujjat from '../xodimlar/xodimlarW'
-import { AiOutlineFieldNumber } from "react-icons/ai";
-// bu page hali ohirigacha yetmagan
 
 
 
+function createData(name, calories, fat, carbs, protein) {
+    return {
+        name,
+        calories,
+        fat,
+        carbs,
+        protein,
+    };
+}
+
+// const rows = data
 
 function descendingComparator(a, b, orderBy) {
+    ``
     if (b[orderBy] < a[orderBy]) {
         return -1;
     }
@@ -117,16 +127,14 @@ function EnhancedTableHead(props) {
         onRequestSort(event, property);
     };
     return (
-
         <TableHead>
-            <TableRow className="thuchun">
+            <TableRow>
                 {headCells.map((headCell) => (
                     <TableCell
                         key={headCell.id}
                         align={headCell.numeric ? 'right' : 'left'}
                         padding={headCell.disablePadding ? 'none' : 'normal'}
                         sortDirection={orderBy === headCell.id ? order : false}
-                        className="fs-5 text-center"
                     >
                         <TableSortLabel
                             active={orderBy === headCell.id}
@@ -164,7 +172,23 @@ export default function EnhancedTable() {
     const [dense, setDense] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
     const router = useRouter();
-    const [rows, setRows] = React.useState([]);
+    const [newData, setNewData] = React.useState([])
+    const [rows, setRows] = React.useState([])
+
+
+    useEffect(() => {
+        let exactData = []
+        if (Object.keys(routerr.query).length != 0) {
+            Data.map((item) => {
+                if (item.statusRealTime == routerr.query.types) {
+                    exactData.push(item)
+                }
+            })
+            setRows(exactData)
+        } else {
+            setRows(Data2)
+        }
+    }, []);
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -183,7 +207,10 @@ export default function EnhancedTable() {
 
     const handleClick = (ID) => {
         localStorage.setItem("ID", ID);
-        router.push("passport")
+        router.push({
+            pathname: 'passport',
+            query: { "salom": 2 }
+        })
         console.log(ID);
 
     };
@@ -210,9 +237,7 @@ export default function EnhancedTable() {
 
     const routerr = useRouter();
     console.log(routerr.query.types);
-
-
-    const [ism, setIsm] = useState();
+    const [ism, setIsm] = React.useState();
 
 
     useEffect(() => {
@@ -220,54 +245,92 @@ export default function EnhancedTable() {
 
     }, []);
 
-
-
     return (
         <Dashboard2>
             <Hujjat>
-
-
-                <h1 className='text-center'>Ishlangan talabalar ro'yxati </h1>
-                <table className='table table-hover'>
-                    <thead>
-                        <tr>
-                            <th>Number</th>
-                            <th>F.I.O</th>
-                            <th>Manzil</th>
-                            <th>Tel raqam</th>
-                            <th>topshirgan Davlat</th>
-                            <th>Topshirga Yo'nalishi</th>
-                            <th>1- To'lov</th>
-                            <th>2-To'lov</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-
-                        {Data2.map((row, i) => {
-                            return <tr
-                                onClick={() => handleClick(row.id)}
-                                key={row.name}
-                                className={row.ustoz == ism && "d" || "d-none"}
+                <Box sx={{ width: '100%' }}>
+                    <Paper sx={{ width: '100%', mb: 2 }}>
+                        <TableContainer className='materialTable'>
+                            <Table
+                                sx={{ minWidth: 750 }}
+                                aria-labelledby="tableTitle"
+                                size={dense ? 'small' : 'medium'}
                             >
-                                <td align="right" className="text-center">{row.id}</td>
-                                <td align="right" className="text-center">{row.name}</td>
-                                <td align="right" className="text-center">{row.address}</td>
-                                <td align="right" className="text-center">{row.tel}</td>
-                                <td align="right" className="text-center">{row.state}</td>
-                                <td align="right" className="text-center">{row.direction}</td>
-                                <td align="right" className="text-center">{row.payment}</td>
-                                <td align="right" className="text-center">{row.payment2}</td>
-                                <td align="right"><div className={` yumaloq  ${row.actives == "tolagan" && "yashil" || "sariq"}`}></div> </td>
+                                <EnhancedTableHead
+                                    numSelected={selected.length}
+                                    order={order}
+                                    orderBy={orderBy}
+                                    onSelectAllClick={handleSelectAllClick}
+                                    onRequestSort={handleRequestSort}
+                                    rowCount={rows.length}
+                                />
+                                <TableBody>
 
+                                    {stableSort(rows, getComparator(order, orderBy))
+                                        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                        .map((row, index) => {
+                                            const isItemSelected = isSelected(row.name);
+                                            const labelId = `enhanced-table-checkbox-${index}`;
 
-                            </tr>
+                                            return (
 
-                        })}
-                    </tbody>
-                </table>
+                                                <TableRow
+                                                    hover
+                                                    onClick={(event) => handleClick(index + 1)}
+                                                    role="checkbox"
+                                                    tabIndex={-1}
+                                                    key={row.name}
+                                                    className={row.ustoz == ism && "d" || "d-none"}
+                                                >
+                                                    <TableCell align="right">{row.id}</TableCell>
 
+                                                    <TableCell
+                                                        // component="th"
+                                                        id={labelId}
+                                                        scope="row"
+                                                        padding="none"
+                                                        className='ps-2'
+                                                    >
+                                                        {row.name}
+                                                    </TableCell>
+                                                    <TableCell align="right">{row.address}</TableCell>
+                                                    <TableCell align="right">{row.tel}</TableCell>
+                                                    <TableCell align="right">{row.state}</TableCell>
+                                                    <TableCell align="right">{row.direction}</TableCell>
+                                                    <TableCell align="right">{row.payment}</TableCell>
+                                                    <TableCell align="right">{row.payment2}</TableCell>
+                                                    <TableCell align="right"><div className={` yumaloq  ${row.actives == "tolagan" && "yashil" || "sariq"}`}></div> </TableCell>
+
+                                                </TableRow>
+                                            );
+                                        })}
+                                    {emptyRows > 0 && (
+                                        <TableRow
+                                            style={{
+                                                height: (dense ? 33 : 53) * emptyRows,
+                                            }}
+                                        >
+                                            <TableCell colSpan={6} />
+                                        </TableRow>
+                                    )}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                        <TablePagination
+                            rowsPerPageOptions={[5, 10, 25]}
+                            component="div"
+                            count={rows.length}
+                            rowsPerPage={rowsPerPage}
+                            page={page}
+                            onPageChange={handleChangePage}
+                            onRowsPerPageChange={handleChangeRowsPerPage}
+                        />
+                    </Paper>
+                    <FormControlLabel
+                        control={<Switch checked={dense} onChange={handleChangeDense} />}
+                        label="Dense padding"
+                    />
+                </Box>
             </Hujjat>
         </Dashboard2>
     );

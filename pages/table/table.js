@@ -335,6 +335,7 @@ export default function EnhancedTable() {
         control={<Switch checked={dense} onChange={handleChangeDense} />}
         label="Dense padding"
       />
+
     </Box>
   );
 }
