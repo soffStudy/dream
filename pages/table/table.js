@@ -17,6 +17,8 @@ import { visuallyHidden } from '@mui/utils';
 import Data from './data';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+// import axios from 'axios';
+
 
 function createData(name, calories, fat, carbs, protein) {
   return {
@@ -171,8 +173,10 @@ export default function EnhancedTable() {
   const [newData, setNewData] = React.useState([])
   const [rows, setRows] = React.useState([])
 
+  // const [data, setData] = React.useState(null);
 
   useEffect(() => {
+
     let exactData = []
     if (Object.keys(routerr.query).length != 0) {
       Data.map((item) => {
@@ -185,6 +189,11 @@ export default function EnhancedTable() {
       setRows(Data)
     }
   }, []);
+
+  // if (!data) return null;
+
+
+
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -210,6 +219,16 @@ export default function EnhancedTable() {
     console.log(ID);
 
   };
+
+  // const handleClick5 = () => {
+  //   localStorage.setItem("ID", -1);
+  //   router.push({
+  //     pathname: 'yangihujjat',
+  //     query: { "salom": 2 }
+  //   })
+  //   console.log(ID);
+
+  // };
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);

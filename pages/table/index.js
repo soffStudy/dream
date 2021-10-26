@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import TableWrapper from './TableWrapper';
 import { useRouter } from 'next//router';
 import Box from '@mui/material/Box';
@@ -11,12 +11,15 @@ import StudentTable from './table.js'
 import ResponsiveDatePickers from './pickers'
 import BasicDatePicker from './pickers2'
 import Dashboard2 from '../../components/dashboard2'
+import axios from 'axios';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
 
 const Table = () => {
     const router = useRouter();
     const [searchStern, setSearchstern] = useState('');
     const [age, setAge] = React.useState('');
+    const [data3, setData] = useState(null);
 
     const handleChange = (event) => {
         setAge(event.target.value);
@@ -28,13 +31,22 @@ const Table = () => {
         console.log(ID);
     }
 
+    useEffect(() => {
+        axios.get('https://jsonplaceholder.typicode.com/todos/1')
+        .then(res => {
+            console.log("Getting from :::", res.data)
+            setData(res.data)
+        }).catch(err => console.log(err))
+    }, []);
+
+    if (!data3) return null;
 
     return (
         <Dashboard2>
 
 
             <TableWrapper>
-                <h1 className='mt-4'>Talabalarning umumiy ma'lumotlari</h1>
+                <h1 className='mt-4 students' style={{padding: '10px', borderRadius: '5px'}}> <PeopleAltIcon style={{fontSize: '40px'}}/> Talabalarning umumiy ma'lumotlari</h1>
                 <div className="row mt-4 mb-3">
                     <div className="col-lg-3">
                         <TextField id="filled-basic" label="F.I.O" variant="filled" onChange={event => { setSearchstern(event.target.value) }} />
@@ -65,6 +77,29 @@ const Table = () => {
                 </div>
 
                 <StudentTable />
+                <div>
+                    <table className='table'>
+                        <thead>
+                            <tr className='hover'>
+                                <th>id</th>
+                                <th>Title</th>
+                                <th>userid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {/* <tr>
+                                <td>1</td>
+                                <td>Barc</td>
+                                <td>23</td>
+                            </tr> */}
+                            <tr>
+                                <td>{data3.id}</td>
+                                <td>{data3.title}</td>
+                                <td>{data3.userId}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <div className='statusW'>
                     <div className='payment'>

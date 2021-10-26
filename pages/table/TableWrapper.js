@@ -8,6 +8,14 @@ const TableWrapper = styled.div`
    table{
        margin-top: 15px;
    }
+
+   .students{
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+   }
+
    .css-177gid-MuiTableCell-root{
        text-align: center !important;
    }
@@ -37,13 +45,8 @@ const TableWrapper = styled.div`
     tr {
         transition: 0.8s;
         cursor: pointer;
-
-        &:hover{
-            background-color: gray;
-            color: white;
-            transform: translateY(-4px);
-        }
     }
+
     th{
         background-color: #2D285E;
         color: white;
