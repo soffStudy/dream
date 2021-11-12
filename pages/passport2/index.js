@@ -7,9 +7,10 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { AiFillPicture, AiOutlineDownload } from "react-icons/ai";
 import { HiOutlineDocumentDuplicate } from "react-icons/hi";
 import { useRouter } from 'next/router'
-import Data from '../xodimlar/dataXodimlar'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Axios from "axios"
+
 
 
 
@@ -17,18 +18,48 @@ import { useEffect } from 'react'
 const Cards = () => {
 
     const router = useRouter();
-    let fullData = {};
+    const [rows, setRows] = React.useState([])
+  
+  
+      const [post, setPost] = useState([]);
+      let fullData = {};
     const [state, setstate] = useState();
+  
+      useEffect(() => {
+          Axios.get(`http://localhost:1337/students`).then((result) => {
+            let exactData = []
+              if (Object.keys(router.query).length != 0) {
+                  result.data.map((item) => {
+                    console.log("=> ", item.statusRealTime, router.query.types)
+                      if (item.statusRealTime === router.query.types) {
+                          exactData.push(item)
+                        }
+                      })
+                  setRows(exactData)
+                } else {
+                    console.log("oxshadi ")
+                    setRows(result.data)
+                }
+              
+          }).catch((err) => {
+              
+          });
+          setstate(localStorage && localStorage.getItem("ID"));
+      }, []);
+  
+      console.log( rows);
 
-    useEffect(() => {
-        setstate(localStorage && localStorage.getItem("ID"));
 
-    }, []);
-
-
-    Data.map(value => {
+      rows.map(value => {
         if (value.id == state) fullData = value;
     });
+
+    const handlechange=()=>{
+        router.push(
+            { pathname: '/hujjatXodim2' }
+        );
+
+    }
 
 
     return (
@@ -67,9 +98,9 @@ const Cards = () => {
                                     Ish yuritgan talbalar ro'yxati
                                 </p>
                                 <div className=' p-2'>
-                                    <Link href='hujjatXodim2'>
-                                        <button className='btn btn-light m-1'><AiFillPicture className='fs-4 mb-1' />  Ko'rish</button>
-                                    </Link>
+                                  
+                                    <button className='btn btn-light m-1' onClick={()=>handlechange()} ><AiFillPicture className='fs-4 mb-1' />  Ko'rish</button>
+                                    
                                 </div>
                             </div>
                         </div>

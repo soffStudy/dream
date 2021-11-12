@@ -23,6 +23,8 @@ import Link from 'next/link'
 import { AiOutlineFieldNumber } from "react-icons/ai";
 import { FaEye } from "react-icons/fa";
 import EditIcon from '@mui/icons-material/Edit';
+import Axios from "axios"
+
 
 
 
@@ -184,21 +186,33 @@ export default function EnhancedTable() {
     const router = useRouter();
     const [newData, setNewData] = React.useState([])
     const [rows, setRows] = React.useState([])
-
-
-    useEffect(() => {
-        let exactData = []
-        if (Object.keys(routerr.query).length != 0) {
-            Data.map((item) => {
-                if (item.statusRealTime == routerr.query.types) {
-                    exactData.push(item)
+  
+  
+      // const [post, setPost] = useState([]);
+  
+      useEffect(() => {
+          Axios.get(`http://localhost:1337/students`).then((result) => {
+            let exactData = []
+              if (Object.keys(router.query).length != 0) {
+                  result.data.map((item) => {
+                    console.log("=> ", item.statusRealTime, router.query.types)
+                      if (item.statusRealTime === router.query.types) {
+                          exactData.push(item)
+                        }
+                      })
+                  setRows(exactData)
+                } else {
+                    console.log("oxshadi ")
+                    setRows(result.data)
                 }
-            })
-            setRows(exactData)
-        } else {
-            setRows(Data)
-        }
+              
+          }).catch((err) => {
+              
+          });
+  
     }, []);
+  
+    console.log(rows);
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -229,10 +243,12 @@ export default function EnhancedTable() {
 
     };
 
-    // const handleClick3 = (ID) => {
-    //     localStorage.setItem("ID" , null);
-    //     router.push("yangiHujjat")
-    // };
+
+
+    const handleClick3 = (ID) => {
+        localStorage.setItem("ID" , -1);
+        router.push("yangiHujjat")
+    };
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -262,9 +278,7 @@ export default function EnhancedTable() {
             <Hujjat>
                 <h1 className='text-center'>Hujjatlar</h1>
                 <div className="buttonuchun">
-                    <Link href="yangiHujjat">
-                        <button className='btn btn-primary'>Yangi hujjat</button>
-                    </Link>
+                    <button className='btn btn-primary' onClick={()=>handleClick3()}>Yangi hujjat</button>
                 </div>
                 <Box sx={{ width: '100%' }}>
                     <Paper sx={{ width: '100%', mb: 2 }}>
@@ -307,7 +321,7 @@ export default function EnhancedTable() {
                                                         padding="none"
                                                         className='ps-2'
                                                     >
-                                                        {row.name}
+                                                        {row.FIO}
                                                     </TableCell>
                                                     <TableCell align="right" className="text-center">{row.address}</TableCell>
                                                     <TableCell align="right" className="text-center">{row.tel}</TableCell>

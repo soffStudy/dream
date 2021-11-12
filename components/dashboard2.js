@@ -122,7 +122,6 @@ export default function MiniDrawer({ children }) {
     useEffect(() => {
         const storage = localStorage.getItem("name");
         setFullname(storage)
-        console.log(storage);
         if(!storage) router.push("/");
     }, [])
 
@@ -143,7 +142,6 @@ export default function MiniDrawer({ children }) {
     const handleRowClick3 = () => {
         localStorage.clear()
         router.push("/");
-        console.log(router.query.keyword);
     }
 
     // const [anchorEl, setAnchorEl] = React.useState(null);

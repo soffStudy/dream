@@ -62,7 +62,6 @@ export default function TemporaryDrawer() {
             <List>
                 {['All mail', 'Trash', 'Spam'].map((text, index) => (
                     <ListItem button key={text}>
-
                         <ListItemText primary={text} />
                     </ListItem>
                 ))}

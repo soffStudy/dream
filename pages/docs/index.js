@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Dashboard2 from '../../components/dashboard2'
 import Link from 'next/link'
 import DocsWrapper from './docsW'
-import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Data from '../table/data'
-import AssignmentReturnIcon from '@mui/icons-material/AssignmentReturn';
+// import AssignmentReturnIcon from '@mui/icons-material/AssignmentReturn';
+import { useRouter } from 'next/router';
+import Axios from "axios"
 
 const Docs = () => {
     const owners = [
@@ -42,24 +43,38 @@ const Docs = () => {
         }
 
     ]
-
-
-
-
     const router = useRouter();
+    const [rows, setRows] = React.useState([])
+  
     let fullData = [];
-
     const [state, setstate] = useState(1);
+    const [post, setPost] = useState([]);
+  
+      useEffect(() => {
+          Axios.get(`http://localhost:1337/students`).then((result) => {
+            let exactData = []
+              if (Object.keys(router.query).length != 0) {
+                  result.data.map((item) => {
+                    console.log("=> ", item.statusRealTime, router.query.types)
+                      if (item.statusRealTime === router.query.types) {
+                          exactData.push(item)
+                        }
+                      })
+                  setRows(exactData)
+                } else {
+                    console.log("oxshadi ")
+                    setRows(result.data)
+                }
+              
+          }).catch((err) => {
+              
+          });
+          setstate(localStorage && localStorage.getItem("ID"));
+      }, []);
+  
+      console.log(rows);
 
-    useEffect(() => {
-        setstate(localStorage && localStorage.getItem("ID"));
-
-
-    }, []);
-
-
-
-    Data.map(value => {
+      rows.map(value => {
         console.log("salom");
         if (value.id == state) fullData = value;
     })
@@ -76,7 +91,7 @@ const Docs = () => {
             </Head>
             <DocsWrapper>
                 <div className="container docs2">
-                    <img src={fullData.passport} alt="hujjat rasmi" />
+                    <img src={fullData.Passport} alt="hujjat rasmi" />
                 </div>
             </DocsWrapper>
         </Dashboard2>

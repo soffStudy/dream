@@ -3,23 +3,46 @@ import Dashboard2 from '../../components/dashboard2'
 import DocsWrapper from '../docs/docsW'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Data from '../table/data'
 import { AiFillPrinter } from "react-icons/ai";
+import Axios from "axios"
+
 
 
 const Rasm34 = () => {
 
-    let fullData = {};
-    const [state, setState] = useState();
+    const router = useRouter();
+    const [rows, setRows] = React.useState([])
+  
+    const [fullData, setFullData] = useState([])
+    const [state, setstate] = useState(1);
+    const [post, setPost] = useState([]);
+  
+      useEffect(() => {
+          Axios.get(`http://localhost:1337/students`).then((result) => {
+            let exactData = []
+              if (Object.keys(router.query).length != 0) {
+                  result.data.map((item) => {
+                    console.log("=> ", item.statusRealTime, router.query.types)
+                      if (item.statusRealTime === router.query.types) {
+                          exactData.push(item)
+                        }
+                      })
+                  setRows(exactData)
+                } else {
+                    console.log("oxshadi ")
+                    setRows(result.data)
+                }
+              
+          }).catch((err) => {
+              
+          });
+          setstate(localStorage && localStorage.getItem("ID"));
+      }, []);
+  
+      console.log(rows);
 
-    useEffect(() => {
-        setState(localStorage && localStorage.getItem("ID"));
-
-    }, []);
-
-
-    Data.map(value => {
-        if (value.id == state) fullData = value;
+      rows.map(value => {
+        if (value.id == state) setFullData(value);
     });
 
     const printPageFun = (divName) => {
@@ -31,6 +54,7 @@ const Rasm34 = () => {
     }
 
     return (
+        (fullData.length > 0) && (
         <Dashboard2>
             <Head>
                 <title>Dream</title>
@@ -44,12 +68,13 @@ const Rasm34 = () => {
                 <div className="d-flex justify-content-end me-3 mb-3" > <button className='btn btn-primary mt-2' onClick={() => printPageFun('print')}> <span className="fs-4" ><AiFillPrinter /></span> Pechat</button></div>
                 <div className="container docs2" id='print'>
                     <h1>3x4 rasmi</h1>
-                    <img className='img1' src={fullData.image} alt="3x4 rasm odam humans" />
+                    <img className='img1' src={`http://localhost:1337${fullData.passport[0].url}`} alt="3x4 rasm odam humans" />
                     <h1>{fullData.id}  : id raqami</h1>
-                    <h1>{fullData.name}  : Ismi</h1>
+                    <h1>{fullData.FIO}  : Ismi</h1>
                 </div>
             </DocsWrapper>
         </Dashboard2>
+        )
     )
 }
 

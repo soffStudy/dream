@@ -15,12 +15,13 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { visuallyHidden } from '@mui/utils';
 import Data from './dataXodimlar';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Dashboard2 from '../../components/dashboard2'
 import Hujjat from './xodimlarW'
 import Link from 'next/link'
 import { AiOutlineFieldNumber } from "react-icons/ai";
+import Axios from 'axios'
 
 
 
@@ -156,24 +157,29 @@ export default function EnhancedTable() {
     const [dense, setDense] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
     const router = useRouter();
-    const [newData, setNewData] = React.useState([])
     const [rows, setRows] = React.useState([])
 
 
     useEffect(() => {
-        let exactData = []
-        if (Object.keys(routerr.query).length != 0) {
-            Data.map((item) => {
-                if (item.statusRealTime == routerr.query.types) {
-                    exactData.push(item)
-                }
-            })
-            setRows(exactData)
-        } else {
-            setRows(Data)
-        }
+        Axios.get(`http://localhost:1337/teachers`).then((result) => {
+            if (Object.keys(routerr.query).length != 0) {
+                result.data.map((item) => {
+                    if (item.statusRealTime == routerr.query.types) {
+                        exactData.push(item)
+                    }
+                })
+                setRows(exactData)
+            } else {
+                setRows(result.data)
+            }
+            
+        }).catch((err) => {
+            
+        });
+
     }, []);
 
+  
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
@@ -189,10 +195,8 @@ export default function EnhancedTable() {
         setSelected([]);
     };
 
-    const handleClick = (ID, ism) => {
+    const handleClick = (ID) => {
         localStorage.setItem("ID", ID);
-        localStorage.setItem("name", ism);
-
         router.push("passport2")
         console.log(ID);
 
@@ -212,6 +216,12 @@ export default function EnhancedTable() {
         setDense(event.target.checked);
     };
 
+    const handleClick3 = () => {
+        localStorage.setItem("ID" , -1);
+        router.push("yangiHujjat2")
+    };
+
+
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
     // Avoid a layout jump when reaching the last page with empty rows.
@@ -227,9 +237,9 @@ export default function EnhancedTable() {
             <Hujjat>
                 <h1 className='text-center'>Xodimlar ro'yxati</h1>
                 <div className="d-flex justify-content-end">
-                    <Link href="yangiHujjat">
-                        <button className='btn btn-primary'>Yangi hujjat</button>
-                    </Link>
+                   
+                        <button className='btn btn-primary' onClick={()=>handleClick3()} >Yangi hujjat</button>
+                  
                 </div>
                 <Box sx={{ width: '100%' }}>
                     <Paper sx={{ width: '100%', mb: 2 }}>
@@ -259,7 +269,7 @@ export default function EnhancedTable() {
 
                                                 <TableRow
                                                     hover
-                                                    onClick={(event) => handleClick(index + 1, row.ism)}
+                                                    onClick={(event) => handleClick( row.id)}
                                                     role="checkbox"
                                                     tabIndex={-1}
                                                     key={row.name}
@@ -311,6 +321,8 @@ export default function EnhancedTable() {
                         label="Dense padding"
                     />
                 </Box>
+
+
             </Hujjat>
         </Dashboard2>
     );

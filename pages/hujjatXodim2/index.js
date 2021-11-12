@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { alpha } from '@mui/material/styles';
+import Axios from 'axios';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -172,23 +172,37 @@ export default function EnhancedTable() {
     const [dense, setDense] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
     const router = useRouter();
-    const [newData, setNewData] = React.useState([])
     const [rows, setRows] = React.useState([])
+    const [state, setstate] = useState(1);
+    const [ism, setIsm] = useState();
+
 
 
     useEffect(() => {
-        let exactData = []
-        if (Object.keys(routerr.query).length != 0) {
-            Data.map((item) => {
-                if (item.statusRealTime == routerr.query.types) {
-                    exactData.push(item)
-                }
-            })
-            setRows(exactData)
-        } else {
-            setRows(Data2)
-        }
+        Axios.get(`http://localhost:1337/students`).then((result) => {
+          let exactData = []
+            if (Object.keys(router.query).length != 0) {
+                result.data.map((item) => {
+                  console.log("=> ", item.statusRealTime, router.query.types)
+                    if (item.statusRealTime === router.query.types) {
+                        exactData.push(item)
+                      }
+                    })
+                setRows(exactData)
+              } else {
+                  setRows(result.data)
+              }
+            
+        }).catch((err) => {
+            
+        });
+        setstate(localStorage && localStorage.getItem("ID"));
+        console.log("ssdsdvwd" , state);
+        setIsm(localStorage && localStorage.getItem("name"));
+
     }, []);
+
+    console.log( rows);
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -211,7 +225,6 @@ export default function EnhancedTable() {
             pathname: 'passport',
             query: { "salom": 2 }
         })
-        console.log(ID);
 
     };
 
@@ -236,14 +249,8 @@ export default function EnhancedTable() {
 
 
     const routerr = useRouter();
-    console.log(routerr.query.types);
-    const [ism, setIsm] = React.useState();
 
 
-    useEffect(() => {
-        setIsm(localStorage && localStorage.getItem("name"));
-
-    }, []);
 
     return (
         <Dashboard2>
@@ -280,7 +287,7 @@ export default function EnhancedTable() {
                                                     role="checkbox"
                                                     tabIndex={-1}
                                                     key={row.name}
-                                                    className={row.ustoz == ism && "d" || "d-none"}
+                                                    className={row.ustozid == state && "d" || "d-none"}
                                                 >
                                                     <TableCell align="right">{row.id}</TableCell>
 
@@ -291,7 +298,7 @@ export default function EnhancedTable() {
                                                         padding="none"
                                                         className='ps-2'
                                                     >
-                                                        {row.name}
+                                                        {row.FIO}
                                                     </TableCell>
                                                     <TableCell align="right">{row.address}</TableCell>
                                                     <TableCell align="right">{row.tel}</TableCell>

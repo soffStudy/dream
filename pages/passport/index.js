@@ -7,21 +7,48 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { AiFillPicture, AiOutlineDownload } from "react-icons/ai";
 import { HiOutlineDocumentDuplicate } from "react-icons/hi";
 import Data from './../table/data'
+import { useRouter } from 'next/router';
+import Axios from "axios"
 
 
 
 const Passport = () => {
 
-    let fullData = {};
+
+    const router = useRouter();
+    const [rows, setRows] = React.useState([])
+  
+  
+      const [post, setPost] = useState([]);
+      let fullData = {};
     const [state, setstate] = useState();
+  
+      useEffect(() => {
+          Axios.get(`http://localhost:1337/students`).then((result) => {
+            let exactData = []
+              if (Object.keys(router.query).length != 0) {
+                  result.data.map((item) => {
+                    console.log("=> ", item.statusRealTime, router.query.types)
+                      if (item.statusRealTime === router.query.types) {
+                          exactData.push(item)
+                        }
+                      })
+                  setRows(exactData)
+                } else {
+                    console.log("oxshadi ")
+                    setRows(result.data)
+                }
+              
+          }).catch((err) => {
+              
+          });
+          setstate(localStorage && localStorage.getItem("ID"));
+      }, []);
+  
+      console.log( rows);
 
-    useEffect(() => {
-        setstate(localStorage && localStorage.getItem("ID"));
 
-    }, []);
-
-
-    Data.map(value => {
+      rows.map(value => {
         if (value.id == state) fullData = value;
     });
 

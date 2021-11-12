@@ -3,26 +3,47 @@ import Dashboard2 from '../../components/dashboard2'
 import DocsWrapper from '../docs/docsW'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Data from '../table/data'
 import { AiFillPrinter } from "react-icons/ai";
+import Axios from "axios"
+
 
 
 const Translation = () => {
 
     const router = useRouter();
-    let fullData = {};
+    const [rows, setRows] = React.useState([])
+  
+    let fullData = [];
     const [state, setstate] = useState(1);
+    const [post, setPost] = useState([]);
+  
+      useEffect(() => {
+          Axios.get(`http://localhost:1337/students`).then((result) => {
+            let exactData = []
+              if (Object.keys(router.query).length != 0) {
+                  result.data.map((item) => {
+                    console.log("=> ", item.statusRealTime, router.query.types)
+                      if (item.statusRealTime === router.query.types) {
+                          exactData.push(item)
+                        }
+                      })
+                  setRows(exactData)
+                } else {
+                    console.log("oxshadi ")
+                    setRows(result.data)
+                }
+              
+          }).catch((err) => {
+              
+          });
+          setstate(localStorage && localStorage.getItem("ID"));
+      }, []);
+  
+      console.log(rows);
 
-    useEffect(() => {
-        setstate(localStorage && localStorage.getItem("ID"));
-
-    }, []);
-
-
-    Data.map(value => {
+      rows.map(value => {
         if (value.id == state) fullData = value;
     });
-
     const printPageFun = (divName) => {
         var printContents = document.getElementById(divName).innerHTML
         var originalContents = document.body.innerHTML
@@ -46,7 +67,7 @@ const Translation = () => {
                 <div className="container docs2" id='print'>
                     <h1>P.Tarjima</h1>
                     <h1>{fullData.id}  : id raqami</h1>
-                    <h1>{fullData.name}  : Ismi</h1>
+                    <h1>{fullData.FIO}  : Ismi</h1>
                 </div>
             </DocsWrapper>
         </Dashboard2>

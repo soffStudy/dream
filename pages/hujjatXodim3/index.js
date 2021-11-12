@@ -3,24 +3,53 @@ import Dashboard2 from '../../components/dashboard2'
 import DocsWrapper from '../docs/docsW'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Data from '../xodimlar/dataXodimlar'
 import { AiFillPrinter } from "react-icons/ai";
+import Axios from "axios"
 
 
 const Docs = () => {
 
+
     const router = useRouter();
-    let fullData = {};
-    const [state, setstate] = useState(1);
+    const [newData, setNewData] = React.useState([])
+    const [rows, setRows] = React.useState([])
+
+    const [post, setPost] = useState([]);
+    const [state, setState] = useState(1);
+    const [ism, setIsm] = useState("erkin");
+
+
 
     useEffect(() => {
-        setstate(localStorage && localStorage.getItem("ID"));
+        Axios.get(`http://localhost:1337/teachers`).then((result) => {
+            if (Object.keys(router.query).length != 0) {
+                result.data.map((item) => {
+                    if (item.statusRealTime == routerr.query.types) {
+                        exactData.push(item)
+                    }
+                })
+                setRows(exactData)
+            } else {
+                setRows(result.data)
+            }
+            
+        }).catch((err) => {
+            
+        });
+
+
+        setState(localStorage && localStorage.getItem("ID"));
 
     }, []);
 
+    let fullData = {};
+  
 
-    Data.map(value => {
-        if (value.id == state) fullData = value;
+
+
+    rows.map(value => {
+        if (value.id == state ) fullData = value;
+        console.log(state);
     });
 
     const printPageFun = (divName) => {
@@ -45,8 +74,10 @@ const Docs = () => {
                 <div className="d-flex justify-content-end me-3 mb-3" > <button className='btn btn-primary mt-2' onClick={() => printPageFun('print')}> <span className="fs-4" ><AiFillPrinter /></span> Pechat</button></div>
                 <div className="container docs2" id='print'>
                     <h1>hujjat N3</h1>
-                    <h1>{fullData.id}  : id raqami</h1>
+                    <h1>{fullData.ism}  : id raqami</h1>
                     <h1>{fullData.name}  : Ismi</h1>
+                    <h1>{fullData.tel}  : Nomer</h1>
+
                 </div>
             </DocsWrapper>
         </Dashboard2>

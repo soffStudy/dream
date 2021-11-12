@@ -3,25 +3,49 @@ import Dashboard2 from '../../components/dashboard2'
 import DocsWrapper from '../docs/docsW'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Data from '../xodimlar/dataXodimlar'
 import { AiFillPrinter } from "react-icons/ai";
+import Axios from "axios"
 
 
 const Docs = () => {
 
     const router = useRouter();
-    let fullData = {};
-    const [state, setstate] = useState(1);
+    const [rows, setRows] = React.useState([])
+  
+  
+      const [post, setPost] = useState([]);
+      let fullData = {};
+    const [state, setstate] = useState();
+  
+      useEffect(() => {
+          Axios.get(`http://localhost:1337/teachers`).then((result) => {
+            let exactData = []
+              if (Object.keys(router.query).length != 0) {
+                  result.data.map((item) => {
+                    console.log("=> ", item.statusRealTime, router.query.types)
+                      if (item.statusRealTime === router.query.types) {
+                          exactData.push(item)
+                        }
+                      })
+                  setRows(exactData)
+                } else {
+                    console.log("oxshadi ")
+                    setRows(result.data)
+                }
+              
+          }).catch((err) => {
+              
+          });
+          setstate(localStorage && localStorage.getItem("ID"));
+      }, []);
+  
+      console.log( rows);
 
-    useEffect(() => {
-        setstate(localStorage && localStorage.getItem("ID"));
 
-    }, []);
-
-
-    Data.map(value => {
+      rows.map(value => {
         if (value.id == state) fullData = value;
     });
+
 
     const printPageFun = (divName) => {
         var printContents = document.getElementById(divName).innerHTML

@@ -15,11 +15,18 @@ import axios from 'axios';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
 
+// const client = axios.create({
+//     baseURL: "https://jsonplaceholder.typicode.com/posts" 
+//   });
+
+
 const Table = () => {
     const router = useRouter();
     const [searchStern, setSearchstern] = useState('');
     const [age, setAge] = React.useState('');
     const [data3, setData] = useState(null);
+
+
 
     const handleChange = (event) => {
         setAge(event.target.value);
@@ -31,15 +38,6 @@ const Table = () => {
         console.log(ID);
     }
 
-    useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/todos/1')
-        .then(res => {
-            console.log("Getting from :::", res.data)
-            setData(res.data)
-        }).catch(err => console.log(err))
-    }, []);
-
-    if (!data3) return null;
 
     return (
         <Dashboard2>
@@ -77,7 +75,7 @@ const Table = () => {
                 </div>
 
                 <StudentTable />
-                <div>
+                {/* <div>
                     <table className='table'>
                         <thead>
                             <tr className='hover'>
@@ -87,19 +85,10 @@ const Table = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* <tr>
-                                <td>1</td>
-                                <td>Barc</td>
-                                <td>23</td>
-                            </tr> */}
-                            <tr>
-                                <td>{data3.id}</td>
-                                <td>{data3.title}</td>
-                                <td>{data3.userId}</td>
-                            </tr>
+                   
                         </tbody>
                     </table>
-                </div>
+                </div> */}
 
                 <div className='statusW'>
                     <div className='payment'>

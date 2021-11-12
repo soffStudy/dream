@@ -1,6 +1,5 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -14,10 +13,9 @@ import Paper from '@mui/material/Paper';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { visuallyHidden } from '@mui/utils';
-import Data from './data';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import { useRouter } from 'next/router';
-// import axios from 'axios';
+import Axios from "axios"
 
 
 function createData(name, calories, fat, carbs, protein) {
@@ -29,8 +27,6 @@ function createData(name, calories, fat, carbs, protein) {
     protein,
   };
 }
-
-// const rows = data
 
 function descendingComparator(a, b, orderBy) {
   ``
@@ -170,29 +166,34 @@ export default function EnhancedTable() {
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const router = useRouter();
-  const [newData, setNewData] = React.useState([])
   const [rows, setRows] = React.useState([])
 
-  // const [data, setData] = React.useState(null);
 
-  useEffect(() => {
+    // const [post, setPost] = useState([]);
 
-    let exactData = []
-    if (Object.keys(routerr.query).length != 0) {
-      Data.map((item) => {
-        if (item.statusRealTime == routerr.query.types) {
-          exactData.push(item)
-        }
-      })
-      setRows(exactData)
-    } else {
-      setRows(Data)
-    }
-  }, []);
+    useEffect(() => {
+        Axios.get(`http://localhost:1337/students`).then((result) => {
+          let exactData = []
+            if (Object.keys(router.query).length != 0) {
+                result.data.map((item) => {
+                  console.log("=> ", item.statusRealTime, router.query.types)
+                    if (item.statusRealTime === router.query.types) {
+                        exactData.push(item)
+                      }
+                    })
+                setRows(exactData)
+              } else {
+                  console.log("oxshadi ")
+                  setRows(result.data)
+              }
+            
+        }).catch((err) => {
+            
+        });
 
-  // if (!data) return null;
+    }, []);
 
-
+    console.log(rows);
 
 
   const handleRequestSort = (event, property) => {
@@ -217,18 +218,8 @@ export default function EnhancedTable() {
       query: { "salom": 2 }
     })
     console.log(ID);
-
   };
 
-  // const handleClick5 = () => {
-  //   localStorage.setItem("ID", -1);
-  //   router.push({
-  //     pathname: 'yangihujjat',
-  //     query: { "salom": 2 }
-  //   })
-  //   console.log(ID);
-
-  // };
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -250,8 +241,6 @@ export default function EnhancedTable() {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
 
-  const routerr = useRouter();
-  console.log(routerr.query.types);
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -296,7 +285,7 @@ export default function EnhancedTable() {
                         padding="none"
                         className='ps-2'
                       >
-                        {row.name}
+                        {row.FIO}
                       </TableCell>
                       <TableCell align="right">{row.address}</TableCell>
                       <TableCell align="right">{row.tel}</TableCell>
